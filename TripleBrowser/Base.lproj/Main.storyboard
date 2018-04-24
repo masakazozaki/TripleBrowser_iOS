@@ -24,11 +24,11 @@
                                     <constraint firstAttribute="height" constant="44" id="XEI-HS-IR1"/>
                                 </constraints>
                                 <items>
-                                    <navigationItem title="1" id="pR4-1M-OcQ"/>
+                                    <navigationItem title="Title" id="PR4-Cs-G2i"/>
                                 </items>
                             </navigationBar>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.25882352941176473" green="0.60392156862745094" blue="0.87450980392156863" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="NAh-aR-IhM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ORb-tM-9qW"/>
                             <constraint firstItem="NAh-aR-IhM" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="RL8-eh-vgI"/>
@@ -59,7 +59,7 @@
                                 </items>
                             </navigationBar>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.7803921568627451" green="0.20392156862745098" blue="0.38039215686274508" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="7bj-LE-HoE" firstAttribute="top" secondItem="hmG-kA-Dyw" secondAttribute="top" id="Aec-rn-gzz"/>
                             <constraint firstItem="7bj-LE-HoE" firstAttribute="leading" secondItem="hmG-kA-Dyw" secondAttribute="leading" id="FqY-El-J6a"/>
@@ -84,7 +84,7 @@
         <scene sceneID="e4U-Zg-APz">
             <objects>
                 <viewController storyboardIdentifier="ThirdViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="iKP-Kk-FzU" customClass="ThirdViewController" customModule="TripleBrowser" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="x61-Ud-hac">
+                    <view key="view" opaque="NO" contentMode="scaleToFill" id="x61-Ud-hac">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -98,7 +98,7 @@
                                 </items>
                             </navigationBar>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.22745098039215686" green="0.52941176470588236" blue="0.4823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="uDX-uQ-aaR" firstAttribute="trailing" secondItem="7fd-Hk-H9T" secondAttribute="trailing" id="1On-lx-p27"/>
                             <constraint firstItem="uDX-uQ-aaR" firstAttribute="leading" secondItem="7fd-Hk-H9T" secondAttribute="leading" id="KPj-HO-ycL"/>

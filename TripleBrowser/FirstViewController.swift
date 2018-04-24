@@ -16,6 +16,8 @@ class FirstViewController: UIViewController, WKNavigationDelegate {
     var webView: WKWebView!
     let statusBarHeight: CGFloat = UIApplication.shared.statusBarFrame.height
     @IBOutlet var navigationBar: UINavigationBar!
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
