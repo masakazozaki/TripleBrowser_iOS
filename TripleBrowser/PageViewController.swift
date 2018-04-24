@@ -18,6 +18,7 @@ struct PageSettings{
     static func generateViewControllerList() -> [UIViewController] {
         var viewControllers : [UIViewController] = []
         self.pageViewControllerIdentifierList.forEach{ viewControllerName in
+            
             let viewController = UIStoryboard(name: "Main", bundle: nil) . instantiateViewController(withIdentifier: "\(viewControllerName)")
            
             viewControllers.append(viewController)
@@ -26,18 +27,26 @@ struct PageSettings{
         return viewControllers
     }
 }
-
 class PageViewController: UIPageViewController {
+    
+    
     var viewControllerIndex: Int = 0 {
         didSet{
             print(viewControllerIndex)
         }
     }
-    
 
+    var generateViewController: [UIViewController]!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+        generateViewController = [
+            self.storyboard!.instantiateViewController(withIdentifier: PageSettings.pageViewControllerIdentifierList[0]),
+            self.storyboard!.instantiateViewController(withIdentifier: PageSettings.pageViewControllerIdentifierList[1]),
+            self.storyboard!.instantiateViewController(withIdentifier: PageSettings.pageViewControllerIdentifierList[2]),
+            ]
+       
         self.setViewControllers([PageSettings.generateViewControllerList().first!], direction: .forward, animated: true, completion: nil)
         self.dataSource = self as UIPageViewControllerDataSource
 
@@ -67,9 +76,9 @@ extension PageViewController : UIPageViewControllerDataSource {
         let index = PageSettings.pageViewControllerIdentifierList.index(of: viewController.restorationIdentifier!)!
         if (index > 0) {
             //前ページのビューコントローラーを返す。
-            return storyboard!.instantiateViewController(withIdentifier: PageSettings.pageViewControllerIdentifierList[index-1])
+            return generateViewController[index-1]
         } else{
-            return storyboard!.instantiateViewController(withIdentifier: PageSettings.pageViewControllerIdentifierList[index+2])
+            return nil
         }
     }
     
@@ -77,13 +86,15 @@ extension PageViewController : UIPageViewControllerDataSource {
     
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
+        
         //現在のビューコントローラーのインデックス番号を取得する。
+        
         let index = PageSettings.pageViewControllerIdentifierList.index(of: viewController.restorationIdentifier!)!
         if (index < PageSettings.pageViewControllerIdentifierList.count-1) {
             //次ページのビューコントローラーを返す。
-            return storyboard!.instantiateViewController(withIdentifier: PageSettings.pageViewControllerIdentifierList[index+1])
+            return generateViewController[index+1]
         } else {
-            return storyboard!.instantiateViewController(withIdentifier: PageSettings.pageViewControllerIdentifierList[index-2])
+            return nil
         }
     }
     
