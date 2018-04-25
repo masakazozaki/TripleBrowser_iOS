@@ -11,8 +11,10 @@ import WebKit
 
 
 
-class FirstViewController: UIViewController, WKNavigationDelegate {
+class FirstViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegate {
     
+    
+    var searchBar: UISearchBar!
     var webView: WKWebView!
     let statusBarHeight: CGFloat = UIApplication.shared.statusBarFrame.height
     @IBOutlet var navigationBar: UINavigationBar!
@@ -49,6 +51,27 @@ class FirstViewController: UIViewController, WKNavigationDelegate {
         self.webView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0.0).isActive = true
         
         
+        //searchBar起動
+        
+    }
+    
+    private func setupSearchBar(){
+        if let navigationBarFrame = navigationController?.navigationBar.bounds{
+            let searchBar: UISearchBar = UISearchBar(frame: navigationBarFrame)
+            
+            searchBar.delegate = self
+            searchBar.placeholder = "Search"
+            searchBar.showsCancelButton = true
+//            searchBar.autocapitalizationType = UITextAutocorrectionType.none
+            searchBar.keyboardType = UIKeyboardType.URL
+            navigationItem.titleView = searchBar
+            navigationItem.titleView?.frame = searchBar.frame
+            self.searchBar = searchBar
+            searchBar.becomeFirstResponder()
+            
+            
+            
+        }
     }
 
     override func didReceiveMemoryWarning() {
