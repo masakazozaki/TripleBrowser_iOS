@@ -34,29 +34,9 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pYh-bA-kFe">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                                <color key="backgroundColor" red="0.36078431372549019" green="0.38823529411764707" blue="0.40392156862745099" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <wkWebViewConfiguration key="configuration">
-                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                    <wkPreferences key="preferences"/>
-                                </wkWebViewConfiguration>
-                            </wkWebView>
-                        </subviews>
-                        <color key="backgroundColor" red="0.25882352941176473" green="0.60392156862745094" blue="0.87450980392156863" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="pYh-bA-kFe" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="BSF-rp-uXl"/>
-                            <constraint firstItem="pYh-bA-kFe" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Duh-Gm-9C8"/>
-                            <constraint firstItem="pYh-bA-kFe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="PRj-wQ-F51"/>
-                            <constraint firstAttribute="bottom" secondItem="pYh-bA-kFe" secondAttribute="bottom" id="nXF-Aw-tFj"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="YgW-60-xgo"/>
-                    <connections>
-                        <outlet property="webView" destination="pYh-bA-kFe" id="8mM-7b-aUa"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -65,7 +45,7 @@
         <!--Navigation Controller-->
         <scene sceneID="P5S-PT-UE1">
             <objects>
-                <navigationController id="T25-l3-nFg" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="SecondViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="T25-l3-nFg" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="HkS-f5-Itn">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -82,26 +62,10 @@
         <!--Second View Controller-->
         <scene sceneID="bW3-6E-Gwd">
             <objects>
-                <viewController storyboardIdentifier="SecondViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="G6a-TA-Prv" customClass="SecondViewController" customModule="TripleBrowser" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="G6a-TA-Prv" customClass="SecondViewController" customModule="TripleBrowser" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Cu6-Gb-jZC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bWK-AM-Kw7">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <wkWebViewConfiguration key="configuration">
-                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                    <wkPreferences key="preferences"/>
-                                </wkWebViewConfiguration>
-                            </wkWebView>
-                        </subviews>
-                        <constraints>
-                            <constraint firstItem="bWK-AM-Kw7" firstAttribute="leading" secondItem="hmG-kA-Dyw" secondAttribute="leading" id="ALm-QC-qNO"/>
-                            <constraint firstItem="bWK-AM-Kw7" firstAttribute="top" secondItem="Cu6-Gb-jZC" secondAttribute="top" id="ER2-Pc-xnr"/>
-                            <constraint firstAttribute="bottom" secondItem="bWK-AM-Kw7" secondAttribute="bottom" id="JYb-XM-CwE"/>
-                            <constraint firstItem="hmG-kA-Dyw" firstAttribute="trailing" secondItem="bWK-AM-Kw7" secondAttribute="trailing" id="niM-Ex-L7M"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="hmG-kA-Dyw"/>
                     </view>
                     <navigationItem key="navigationItem" id="L9p-Ip-ENa"/>
@@ -121,33 +85,34 @@
         <!--Third View Controller-->
         <scene sceneID="e4U-Zg-APz">
             <objects>
-                <viewController storyboardIdentifier="ThirdViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="iKP-Kk-FzU" customClass="ThirdViewController" customModule="TripleBrowser" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="iKP-Kk-FzU" customClass="ThirdViewController" customModule="TripleBrowser" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" opaque="NO" contentMode="scaleToFill" id="x61-Ud-hac">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uDX-uQ-aaR">
-                                <rect key="frame" x="0.0" y="44" width="375" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="tW2-jJ-Iqw"/>
-                                </constraints>
-                                <items>
-                                    <navigationItem title="3" id="qcv-Uh-z7s"/>
-                                </items>
-                            </navigationBar>
-                        </subviews>
-                        <color key="backgroundColor" red="0.22745098039215686" green="0.52941176470588236" blue="0.4823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="uDX-uQ-aaR" firstAttribute="trailing" secondItem="7fd-Hk-H9T" secondAttribute="trailing" id="1On-lx-p27"/>
-                            <constraint firstItem="uDX-uQ-aaR" firstAttribute="leading" secondItem="7fd-Hk-H9T" secondAttribute="leading" id="KPj-HO-ycL"/>
-                            <constraint firstItem="uDX-uQ-aaR" firstAttribute="top" secondItem="7fd-Hk-H9T" secondAttribute="top" id="PiY-nW-Q80"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="7fd-Hk-H9T"/>
                     </view>
+                    <navigationItem key="navigationItem" id="V78-b8-QC8"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d1h-je-SnU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2076" y="137"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="jyK-hW-Sds">
+            <objects>
+                <navigationController storyboardIdentifier="ThirdViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ezw-r1-8TR" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hUS-d3-H3b">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.31764705879999999" green="0.63921568630000003" blue="0.60392156860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="iKP-Kk-FzU" kind="relationship" relationship="rootViewController" id="N61-qS-hM5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KNc-Lr-i8q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3001" y="137"/>
         </scene>
     </scenes>
 </document>

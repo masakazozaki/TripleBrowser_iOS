@@ -15,9 +15,7 @@ class FirstViewController: UIViewController, WKNavigationDelegate, UISearchBarDe
     
     
     var searchBar: UISearchBar!
-    let statusBarHeight: CGFloat = UIApplication.shared.statusBarFrame.height
-    @IBOutlet var webView: WKWebView!
-    
+    var webView: WKWebView!
     
     
     
@@ -28,8 +26,9 @@ class FirstViewController: UIViewController, WKNavigationDelegate, UISearchBarDe
         
         let config = WKWebViewConfiguration()
         config.allowsInlineMediaPlayback = true
-        //        self.webView = WKWebView(frame: self.view.frame, configuration: config)
+        self.webView = WKWebView(frame: self.view.frame, configuration: config)
         self.webView.navigationDelegate = self
+        
         self.webView.allowsLinkPreview = true
         
         let url = URL(string: "https://www.google.co.jp/")
@@ -37,14 +36,12 @@ class FirstViewController: UIViewController, WKNavigationDelegate, UISearchBarDe
         
         self.webView.load(urlRequest)
         
-        //self.view.insertSubview(self.webView, at: 0)
+        self.view.addSubview(self.webView)
         
         self.webView.translatesAutoresizingMaskIntoConstraints = false
         
-        //searchBarの表示
+        //searchBarを表示
         setupSearchBar()
-        
-        //toolBarにボタン
         
         let items = [
             UIBarButtonItem(barButtonHiddenItem: .Back, target: nil, action: nil),
@@ -97,6 +94,7 @@ class FirstViewController: UIViewController, WKNavigationDelegate, UISearchBarDe
      */
     
 }
+
 extension UIBarButtonItem {
     enum HiddenItem: Int {
         case Arrow = 100
