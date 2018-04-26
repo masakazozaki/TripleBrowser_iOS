@@ -17,7 +17,6 @@ class FirstViewController: UIViewController, WKNavigationDelegate, UISearchBarDe
     var searchBar: UISearchBar!
     //    var webView: WKWebView!
     let statusBarHeight: CGFloat = UIApplication.shared.statusBarFrame.height
-    @IBOutlet var navigationBar: UINavigationBar!
     @IBOutlet var webView: WKWebView!
     
     
@@ -50,12 +49,12 @@ class FirstViewController: UIViewController, WKNavigationDelegate, UISearchBarDe
         //        self.webView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0.0).isActive = true
         //        // 右辺の制約
         //        self.webView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0.0).isActive = true
-        
+     
+        //searchBarの表示
         setupSearchBar()
         //toolBarに隠しボタン
 
         let items = [
-            UIBarButtonItem(barButtonHiddenItem: .Arrow, target: nil, action: nil),
             UIBarButtonItem(barButtonHiddenItem: .Back, target: nil, action: nil),
             UIBarButtonItem(barButtonHiddenItem: .Forward, target: nil, action: nil),
             UIBarButtonItem(barButtonHiddenItem: .Up, target: nil, action: nil),
@@ -69,22 +68,17 @@ class FirstViewController: UIViewController, WKNavigationDelegate, UISearchBarDe
     
     
     private func setupSearchBar(){
-        if let navigationBarFrame = navigationController?.navigationBar.bounds{
-            let searchBar: UISearchBar = UISearchBar(frame: navigationBarFrame)
+        let searchBar: UISearchBar = UISearchBar(frame: (self.navigationController?.navigationBar.frame)!)
             
             searchBar.delegate = self
             searchBar.placeholder = "Search"
-            searchBar.showsCancelButton = true
-            //            searchBar.autocapitalizationType = UITextAutocorrectionType.none
+            searchBar.showsCancelButton = false
+            searchBar.autocapitalizationType = .none
             searchBar.keyboardType = UIKeyboardType.URL
-            navigationItem.titleView = searchBar
-            navigationItem.titleView?.frame = searchBar.frame
-            self.searchBar = searchBar
+            self.navigationItem.titleView = searchBar
+            self.navigationItem.titleView?.frame = searchBar.frame
             searchBar.becomeFirstResponder()
-            
-            
-            
-        }
+        
     }
     
     override func didReceiveMemoryWarning() {
