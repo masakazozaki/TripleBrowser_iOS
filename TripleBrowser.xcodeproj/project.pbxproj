@@ -18,6 +18,7 @@
 		E761DB9C208B2F5F0055D5C2 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E761DB9B208B2F5F0055D5C2 /* SecondViewController.swift */; };
 		E761DB9E208B2F660055D5C2 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E761DB9D208B2F660055D5C2 /* ThirdViewController.swift */; };
 		E761DBA0208B2F7C0055D5C2 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E761DB9F208B2F7C0055D5C2 /* PageViewController.swift */; };
+		E7A24B0220922F76007D006B /* reload.png in Resources */ = {isa = PBXBuildFile; fileRef = E7A24B0120922F75007D006B /* reload.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		E761DB9B208B2F5F0055D5C2 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		E761DB9D208B2F660055D5C2 /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		E761DB9F208B2F7C0055D5C2 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		E7A24B0120922F75007D006B /* reload.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reload.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 		E73B7F512083047E0071851A /* TripleBrowser */ = {
 			isa = PBXGroup;
 			children = (
+				E7A24B0120922F75007D006B /* reload.png */,
 				E73B7F522083047E0071851A /* AppDelegate.swift */,
 				E73B7F542083047E0071851A /* ViewController.swift */,
 				E73B7F562083047E0071851A /* Main.storyboard */,
@@ -241,6 +244,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7A24B0220922F76007D006B /* reload.png in Resources */,
 				E73B7F5D2083047F0071851A /* LaunchScreen.storyboard in Resources */,
 				E73B7F5A2083047F0071851A /* Assets.xcassets in Resources */,
 				E73B7F582083047E0071851A /* Main.storyboard in Resources */,

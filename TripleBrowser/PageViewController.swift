@@ -40,13 +40,13 @@ class PageViewController: UIPageViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+// VCの生成の配列
         generateViewController = [
             self.storyboard!.instantiateViewController(withIdentifier: PageSettings.pageViewControllerIdentifierList[0]),
             self.storyboard!.instantiateViewController(withIdentifier: PageSettings.pageViewControllerIdentifierList[1]),
             self.storyboard!.instantiateViewController(withIdentifier: PageSettings.pageViewControllerIdentifierList[2]),
             ]
-       
+       //VCの生成
         self.setViewControllers([PageSettings.generateViewControllerList().first!], direction: .forward, animated: true, completion: nil)
         self.dataSource = self as UIPageViewControllerDataSource
 

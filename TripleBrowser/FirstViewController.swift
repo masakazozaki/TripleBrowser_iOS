@@ -15,7 +15,6 @@ class FirstViewController: UIViewController, WKNavigationDelegate, UISearchBarDe
     
     
     var searchBar: UISearchBar!
-    //    var webView: WKWebView!
     let statusBarHeight: CGFloat = UIApplication.shared.statusBarFrame.height
     @IBOutlet var webView: WKWebView!
     
@@ -38,46 +37,46 @@ class FirstViewController: UIViewController, WKNavigationDelegate, UISearchBarDe
         
         self.webView.load(urlRequest)
         
-        //        self.view.insertSubview(self.webView, at: 0)
+        //self.view.insertSubview(self.webView, at: 0)
         
         self.webView.translatesAutoresizingMaskIntoConstraints = false
-        //        // 上辺の制約
-        //        self.webView.topAnchor.constraint(equalTo: view.topAnchor, constant: 44.0 + statusBarHeight).isActive = true
-        //        // 下辺の制約
-        //        self.webView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0.0).isActive = true
-        //        // 左辺の制約
-        //        self.webView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0.0).isActive = true
-        //        // 右辺の制約
-        //        self.webView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0.0).isActive = true
-     
+        
         //searchBarの表示
         setupSearchBar()
-        //toolBarに隠しボタン
-
+        
+        //toolBarにボタン
+        
         let items = [
             UIBarButtonItem(barButtonHiddenItem: .Back, target: nil, action: nil),
+            UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.fixedSpace, target: nil, action: nil),
             UIBarButtonItem(barButtonHiddenItem: .Forward, target: nil, action: nil),
-            UIBarButtonItem(barButtonHiddenItem: .Up, target: nil, action: nil),
-            UIBarButtonItem(barButtonHiddenItem: .Down, target: nil, action: nil)
+            UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil),
+            UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.action, target: nil, action: nil),
+            UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
+            
         ]
+        
+        items[1].width = 60
         
         self.navigationController?.setToolbarHidden(false, animated: false)
         self.setToolbarItems(items, animated: false)
         
     }
     
-    
+    //SeatchBar関連 -> ViewDidLoadで読まれる
     private func setupSearchBar(){
         let searchBar: UISearchBar = UISearchBar(frame: (self.navigationController?.navigationBar.frame)!)
-            
-            searchBar.delegate = self
-            searchBar.placeholder = "Search"
-            searchBar.showsCancelButton = false
-            searchBar.autocapitalizationType = .none
-            searchBar.keyboardType = UIKeyboardType.URL
-            self.navigationItem.titleView = searchBar
-            self.navigationItem.titleView?.frame = searchBar.frame
-            searchBar.becomeFirstResponder()
+        
+        searchBar.delegate = self
+        searchBar.placeholder = "Search or enter website name"
+        searchBar.showsCancelButton = false
+        searchBar.autocapitalizationType = .none
+        searchBar.keyboardType = UIKeyboardType.default
+//        searchBar.showsBookmarkButton = true
+//        searchBar.setImage(UIImage(named: "reload"), for: .bookmark, state: .normal)
+        self.navigationItem.titleView = searchBar
+        self.navigationItem.titleView?.frame = searchBar.frame
+        searchBar.becomeFirstResponder()
         
     }
     
