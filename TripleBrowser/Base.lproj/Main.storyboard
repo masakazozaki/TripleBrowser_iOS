@@ -18,6 +18,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pYh-bA-kFe">
+                                <rect key="frame" x="0.0" y="88" width="375" height="646"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kfx-r6-C57">
+                                <rect key="frame" x="0.0" y="734" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="XTi-Wk-e0J"/>
+                                </constraints>
+                                <items/>
+                            </toolbar>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NAh-aR-IhM">
                                 <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                                 <constraints>
@@ -28,14 +43,25 @@
                                 </items>
                             </navigationBar>
                         </subviews>
-                        <color key="backgroundColor" red="0.25882352941176473" green="0.60392156862745094" blue="0.87450980392156863" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.25882352939999997" green="0.60392156860000001" blue="0.87450980389999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="pYh-bA-kFe" secondAttribute="trailing" id="044-dI-cCF"/>
+                            <constraint firstItem="kfx-r6-C57" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="78c-ty-SVg"/>
                             <constraint firstItem="NAh-aR-IhM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ORb-tM-9qW"/>
+                            <constraint firstItem="kfx-r6-C57" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="RAO-mO-GQj"/>
                             <constraint firstItem="NAh-aR-IhM" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="RL8-eh-vgI"/>
+                            <constraint firstItem="kfx-r6-C57" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="SWs-zr-Tfu"/>
+                            <constraint firstItem="pYh-bA-kFe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="U6g-XL-mcb"/>
                             <constraint firstItem="NAh-aR-IhM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="XA1-BL-nkW"/>
+                            <constraint firstItem="kfx-r6-C57" firstAttribute="top" secondItem="pYh-bA-kFe" secondAttribute="bottom" id="cBA-3S-Zv7"/>
+                            <constraint firstItem="pYh-bA-kFe" firstAttribute="top" secondItem="NAh-aR-IhM" secondAttribute="bottom" id="skE-oF-WCk"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="navigationBar" destination="NAh-aR-IhM" id="3IQ-4q-2MA"/>
+                        <outlet property="webView" destination="pYh-bA-kFe" id="8mM-7b-aUa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
