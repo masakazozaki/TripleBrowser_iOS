@@ -17,7 +17,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Uyc-jf-kuk">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.25882352941176473" green="0.60392156862745094" blue="0.87450980392156863" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.21168657628573304" green="0.55829951454638016" blue="0.92288626269035534" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </navigationBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Vao-d5-W0J"/>
@@ -25,7 +25,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RrA-78-aPH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-719" y="137"/>
+            <point key="canvasLocation" x="142" y="-605"/>
         </scene>
         <!--First View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -49,7 +49,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="HkS-f5-Itn">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.78039215689999997" green="0.20392156859999999" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="1" green="0.35487514210344706" blue="0.53532349075921637" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </navigationBar>
                     <connections>
                         <segue destination="G6a-TA-Prv" kind="relationship" relationship="rootViewController" id="eNu-xA-iBx"/>
@@ -80,7 +80,7 @@
                 <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="ahX-AW-sqB" customClass="PageViewController" customModule="TripleBrowser" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Td7-mm-6sk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1122" y="805"/>
+            <point key="canvasLocation" x="1121" y="850"/>
         </scene>
         <!--Third View Controller-->
         <scene sceneID="e4U-Zg-APz">
@@ -104,7 +104,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hUS-d3-H3b">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.31764705879999999" green="0.63921568630000003" blue="0.60392156860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.05337949843960077" green="1" blue="0.00033646567800915683" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </navigationBar>
                     <connections>
                         <segue destination="iKP-Kk-FzU" kind="relationship" relationship="rootViewController" id="N61-qS-hM5"/>
@@ -112,7 +112,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KNc-Lr-i8q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3001" y="137"/>
+            <point key="canvasLocation" x="2076" y="-605"/>
         </scene>
     </scenes>
 </document>
