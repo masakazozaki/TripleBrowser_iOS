@@ -10,14 +10,16 @@ import UIKit
 import WebKit
 
 class ThirdViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegate {
-
+    
     var webView: WKWebView!
- 
+    
     var searchBar: UISearchBar!
+    
+    var progressView = UIProgressView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         
         let config = WKWebViewConfiguration()
@@ -39,6 +41,16 @@ class ThirdViewController: UIViewController, WKNavigationDelegate, UISearchBarDe
         //searchBarを表示
         setupSearchBar()
         
+        //progressView関連
+        self.progressView = UIProgressView(frame: CGRect(x: 0.0, y: (self.navigationController?.navigationBar.frame.size.height)! + 10, width: self.view.frame.size.width, height: 3.0))
+        self.progressView.progressViewStyle = .bar
+        self.navigationController?.navigationBar.addSubview(self.progressView)
+        
+        // KVO 監視
+        self.webView.addObserver(self, forKeyPath: "estimatedProgress", options: .new, context: nil)
+        self.webView.addObserver(self, forKeyPath: "loading", options: .new, context: nil)
+        
+        //barButtonItemを表示
         let items = [
             UIBarButtonItem(barButtonHiddenItem: .Back, target: nil, action: nil),
             UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.fixedSpace, target: nil, action: nil),
@@ -57,6 +69,25 @@ class ThirdViewController: UIViewController, WKNavigationDelegate, UISearchBarDe
         
     }
     
+
+    /// 監視しているWKWebViewのestimatedProgressの値をUIProgressViewに反映
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        // ここでUIProgressViewに値を入れるコードを書く
+        
+        if (keyPath == "estimatedProgress") {
+            // estimatedProgressが変更されたときにプログレスバーの値を変更
+            self.progressView.setProgress(Float(self.webView.estimatedProgress), animated: true)
+        } else if (keyPath == "loading") {
+            UIApplication.shared.isNetworkActivityIndicatorVisible = self.webView.isLoading
+            if (self.webView.isLoading) {
+                self.progressView.setProgress(0.1, animated: true)
+            }else{
+                // 読み込みが終わったら0.0をセット
+                self.progressView.setProgress(0.0, animated: false)
+            }
+        }
+        
+    }
     //SeatchBar関連 -> ViewDidLoadで読まれる
     private func setupSearchBar(){
         let searchBar: UISearchBar = UISearchBar(frame: (self.navigationController?.navigationBar.frame)!)
@@ -73,21 +104,22 @@ class ThirdViewController: UIViewController, WKNavigationDelegate, UISearchBarDe
         searchBar.becomeFirstResponder()
         
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 
 }

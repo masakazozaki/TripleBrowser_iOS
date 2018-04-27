@@ -17,7 +17,7 @@ class FirstViewController: UIViewController, WKNavigationDelegate, UISearchBarDe
     var searchBar: UISearchBar!
     var webView: WKWebView!
     
-    
+    var progressView = UIProgressView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +42,14 @@ class FirstViewController: UIViewController, WKNavigationDelegate, UISearchBarDe
         
         //searchBarを表示
         setupSearchBar()
+        //progressView関連
+        self.progressView = UIProgressView(frame: CGRect(x: 0.0, y: (self.navigationController?.navigationBar.frame.size.height)! + 10, width: self.view.frame.size.width, height: 3.0))
+        self.progressView.progressViewStyle = .bar
+        self.navigationController?.navigationBar.addSubview(self.progressView)
+        
+        // KVO 監視
+        self.webView.addObserver(self, forKeyPath: "estimatedProgress", options: .new, context: nil)
+        self.webView.addObserver(self, forKeyPath: "loading", options: .new, context: nil)
         
         let items = [
             UIBarButtonItem(barButtonHiddenItem: .Back, target: nil, action: nil),
@@ -58,6 +66,31 @@ class FirstViewController: UIViewController, WKNavigationDelegate, UISearchBarDe
         self.navigationController?.setToolbarHidden(false, animated: false)
         self.setToolbarItems(items, animated: false)
         
+        
+    }
+    
+    deinit {
+        self.webView.removeObserver(self, forKeyPath: "estimatedProgress", context: nil)
+        self.webView.removeObserver(self, forKeyPath: "loading", context: nil)
+    }
+    
+    /// 監視しているWKWebViewのestimatedProgressの値をUIProgressViewに反映
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        // ここでUIProgressViewに値を入れるコードを書く
+        
+        if (keyPath == "estimatedProgress") {
+            // estimatedProgressが変更されたときにプログレスバーの値を変更
+            self.progressView.setProgress(Float(self.webView.estimatedProgress), animated: true)
+        } else if (keyPath == "loading") {
+            UIApplication.shared.isNetworkActivityIndicatorVisible = self.webView.isLoading
+            if (self.webView.isLoading) {
+                self.progressView.setProgress(0.1, animated: true)
+            }else{
+                // 読み込みが終わったら0.0をセット
+                self.progressView.setProgress(0.0, animated: false)
+            }
+        }
+    
     }
     
     //SeatchBar関連 -> ViewDidLoadで読まれる
@@ -72,7 +105,7 @@ class FirstViewController: UIViewController, WKNavigationDelegate, UISearchBarDe
 //        searchBar.showsBookmarkButton = true
 //        searchBar.setImage(UIImage(named: "reload"), for: .bookmark, state: .normal)
         self.navigationItem.titleView = searchBar
-        self.navigationItem.titleView?.frame = searchBar.frame
+        self.navigationItem.titleView?.frame = searchBar.frame  
         searchBar.becomeFirstResponder()
         
     }
