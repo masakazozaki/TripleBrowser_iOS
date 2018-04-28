@@ -68,29 +68,33 @@ class SecondViewController: UIViewController, WKNavigationDelegate, UISearchBarD
     }
 
     deinit {
-        self.webView.removeObserver(self, forKeyPath: "estimatedProgress", context: nil)
-        self.webView.removeObserver(self, forKeyPath: "loading", context: nil)
+        self.webView?.removeObserver(self, forKeyPath: "estimatedProgress", context: nil)
+        self.webView?.removeObserver(self, forKeyPath: "loading", context: nil)
     }
     
  
     
-    /// 監視しているWKWebViewのestimatedProgressの値をUIProgressViewに反映
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        // ここでUIProgressViewに値を入れるコードを書く
         
         if (keyPath == "estimatedProgress") {
+            // alphaを1にする(表示)
+            self.progressView.alpha = 1.0
             // estimatedProgressが変更されたときにプログレスバーの値を変更
             self.progressView.setProgress(Float(self.webView.estimatedProgress), animated: true)
-        } else if (keyPath == "loading") {
-            UIApplication.shared.isNetworkActivityIndicatorVisible = self.webView.isLoading
-            if (self.webView.isLoading) {
-                self.progressView.setProgress(0.1, animated: true)
-            }else{
-                // 読み込みが終わったら0.0をセット
-                self.progressView.setProgress(0.0, animated: false)
+            
+            // estimatedProgressが1.0になったらアニメーションを使って非表示にしアニメーション完了時0.0をセットする
+            if (self.webView.estimatedProgress >= 1.0) {
+                UIView.animate(withDuration: 0.3,
+                               delay: 0.3,
+                               options: [.curveEaseOut],
+                               animations: { [weak self] in
+                                self?.progressView.alpha = 0.0
+                    }, completion: {
+                        (finished : Bool) in
+                        self.progressView.setProgress(0.0, animated: false)
+                })
             }
         }
-        
     }
     //SeatchBar関連 -> ViewDidLoadで読まれる
     private func setupSearchBar(){
