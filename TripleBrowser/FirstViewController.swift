@@ -46,6 +46,7 @@ class FirstViewController: UIViewController, WKNavigationDelegate, UISearchBarDe
         //progressView関連
         self.progressView = UIProgressView(frame: CGRect(x: 0.0, y: (self.navigationController?.navigationBar.frame.size.height)! + 10, width: self.view.frame.size.width, height: 3.0))
         self.progressView.progressViewStyle = .bar
+        self.progressView.progressTintColor = UIColor.blue
         self.navigationController?.navigationBar.addSubview(self.progressView)
         
         // KVO 監視

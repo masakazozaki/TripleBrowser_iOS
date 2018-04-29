@@ -44,6 +44,7 @@ class ThirdViewController: UIViewController, WKNavigationDelegate, UISearchBarDe
         //progressView関連
         self.progressView = UIProgressView(frame: CGRect(x: 0.0, y: (self.navigationController?.navigationBar.frame.size.height)! + 10, width: self.view.frame.size.width, height: 3.0))
         self.progressView.progressViewStyle = .bar
+        self.progressView.progressTintColor = UIColor(red:0.00,green:150 / 255 ,blue:136 / 255,alpha:1.0)
         self.navigationController?.navigationBar.addSubview(self.progressView)
         
         // KVO 監視
