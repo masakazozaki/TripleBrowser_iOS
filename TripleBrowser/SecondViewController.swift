@@ -51,11 +51,11 @@ class SecondViewController: UIViewController, WKNavigationDelegate, UISearchBarD
         
         //barButtonItemを表示
         let items = [
-            UIBarButtonItem(barButtonHiddenItem: .Back, target: nil, action: nil),
+            UIBarButtonItem(barButtonHiddenItem: .Back, target: self, action: #selector(backButtonTapped)),
             UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.fixedSpace, target: nil, action: nil),
-            UIBarButtonItem(barButtonHiddenItem: .Forward, target: nil, action: nil),
+            UIBarButtonItem(barButtonHiddenItem: .Forward, target: self, action: #selector(forwardButtonTapped)),
             UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil),
-            UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.action, target: nil, action: nil),
+            UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.action, target: self, action: #selector(actionButtonTapped)),
             UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
             
         ]
@@ -66,13 +66,41 @@ class SecondViewController: UIViewController, WKNavigationDelegate, UISearchBarD
         self.setToolbarItems(items, animated: false)
         
     }
-
+    
+    @objc func backButtonTapped(){
+        if self.webView.canGoBack{
+            self.webView.goBack()
+        }
+    }
+    
+    @objc func forwardButtonTapped(){
+        if self.webView.canGoForward{
+            self.webView.goForward()
+        }
+    }
+    
+    @objc func actionButtonTapped() {
+        // 共有する項目
+        let shareText = self.webView?.title!
+        let shareWebsite = self.webView?.url!
+        let shareImage = self.view.getScreenShot(windowFrame: self.view.frame, adFrame: CGRect (x: 0, y: 0, width: 0, height: 0))
+        
+        let activityItems = [shareText, shareWebsite, shareImage] as [Any]
+        
+        // 初期化処理
+        let activityVC = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
+        
+        
+        // UIActivityViewControllerを表示
+        self.present(activityVC, animated: true, completion: nil)
+    }
+    
     deinit {
         self.webView?.removeObserver(self, forKeyPath: "estimatedProgress", context: nil)
         self.webView?.removeObserver(self, forKeyPath: "loading", context: nil)
     }
     
- 
+    
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         
@@ -84,8 +112,8 @@ class SecondViewController: UIViewController, WKNavigationDelegate, UISearchBarD
             
             // estimatedProgressが1.0になったらアニメーションを使って非表示にしアニメーション完了時0.0をセットする
             if (self.webView.estimatedProgress >= 1.0) {
-                UIView.animate(withDuration: 0.3,
-                               delay: 0.3,
+                UIView.animate(withDuration: 0.9,
+                               delay: 0.6,
                                options: [.curveEaseOut],
                                animations: { [weak self] in
                                 self?.progressView.alpha = 0.0
@@ -110,9 +138,60 @@ class SecondViewController: UIViewController, WKNavigationDelegate, UISearchBarD
         self.navigationItem.titleView = searchBar
         self.navigationItem.titleView?.frame = searchBar.frame
         searchBar.becomeFirstResponder()
+        searchBar.resignFirstResponder()
         
     }
+
     
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        if searchText.hasPrefix("http") {
+            
+            let url = URL(string: searchText)
+            let urlRequest = URLRequest(url: url!)
+            self.webView.load(urlRequest)
+            
+        } else if searchText.hasPrefix("www") {
+            
+            let urlp: String = "https://" + searchText
+            let url = URL(string: urlp)
+            let urlRequest = URLRequest(url: url!)
+            self.webView.load(urlRequest)
+            
+        } else  if searchText.hasSuffix("com") {
+            
+            let url = URL(string: searchText)
+            let urlRequest = URLRequest(url: url!)
+            self.webView.load(urlRequest)
+        } else  if searchText.hasSuffix("jp") {
+            
+            let url = URL(string: searchText)
+            let urlRequest = URLRequest(url: url!)
+            self.webView.load(urlRequest)
+        }else {
+            
+            let url: URL!
+            let percent = urlEncording(str: searchText)
+            let urlp: String = "https://www.google.co.jp/search?q=" + percent
+            url = URL(string: urlp)
+            let urlRequest = URLRequest(url: url!)
+            self.webView.load(urlRequest)
+        }
+    }
+    
+    //searchabarでreturnキーを押したときにキーボードを閉じる
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+    }
+    
+    //URLのパーセントエンコーディング
+    func urlEncording(str: String) -> String {
+        let characterSetTobeAllowed = (CharacterSet(charactersIn: "!*'();:@&=+$,/?%#[] ").inverted)
+        if let encodedURLString = str.addingPercentEncoding(withAllowedCharacters: characterSetTobeAllowed) {
+            return encodedURLString
+        }
+        return str
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -129,3 +208,4 @@ class SecondViewController: UIViewController, WKNavigationDelegate, UISearchBarD
      */
     
 }
+
