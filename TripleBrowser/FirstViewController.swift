@@ -126,6 +126,7 @@ class FirstViewController: UIViewController, WKNavigationDelegate, UISearchBarDe
     }
     //SeatchBar関連 -> ViewDidLoadで読まれる
     private func setupSearchBar(){
+        
         let searchBar: UISearchBar = UISearchBar(frame: (self.navigationController?.navigationBar.frame)!)
         
         searchBar.delegate = self
@@ -136,7 +137,7 @@ class FirstViewController: UIViewController, WKNavigationDelegate, UISearchBarDe
         //        searchBar.showsBookmarkButton = true
         //        searchBar.setImage(UIImage(named: "reload"), for: .bookmark, state: .normal)
         self.navigationItem.titleView = searchBar
-        self.navigationItem.titleView?.frame = searchBar.frame  
+        self.navigationItem.titleView?.frame = searchBar.frame
         searchBar.becomeFirstResponder()
         searchBar.resignFirstResponder()
         
