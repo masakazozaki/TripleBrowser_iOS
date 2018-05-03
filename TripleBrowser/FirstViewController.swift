@@ -59,18 +59,20 @@ class FirstViewController: UIViewController, WKNavigationDelegate, UISearchBarDe
             UIBarButtonItem(barButtonHiddenItem: .Forward, target: self, action: #selector(forwardButtonTapped)),
             UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil),
             UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.action, target: self, action: #selector(actionButtonTapped)),
-            UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
-        ]
+            UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil),
+            UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.camera, target: self, action: #selector(screenShotButtonTapped)),
+            ]
         
         items[1].width = 60
         
         self.navigationController?.setToolbarHidden(false, animated: false)
         self.setToolbarItems(items, animated: false)
     }
+    
     //戻るボタン
     @objc func backButtonTapped(){
         if self.webView.canGoBack {
-         self.webView.goBack()
+            self.webView.goBack()
         }
     }
     //進むボタン
@@ -90,18 +92,48 @@ class FirstViewController: UIViewController, WKNavigationDelegate, UISearchBarDe
         
         // 初期化処理
         let activityVC = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
-
+        
         
         // UIActivityViewControllerを表示
         self.present(activityVC, animated: true, completion: nil)
-
+        
+    }
+    
+    //スクショボタン
+    
+    @objc func screenShotButtonTapped(){
+        
+        let screenShot = self.view.getScreenShot(windowFrame: self.view.frame, adFrame: CGRect(x: 0, y: 0, width: 0, height: 0))
+        
+        let alertController: UIAlertController = UIAlertController(title: "Save Screen Shot", message: "To save screen shot, Tap the save button", preferredStyle: .actionSheet)
+        
+        let actionChoice1 = UIAlertAction(title: "Save", style: .default){
+            action in
+            UIImageWriteToSavedPhotosAlbum(screenShot, self, nil, nil)
+            
+            let alert: UIAlertController = UIAlertController(title: "Screenshot saved", message:"", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default))
+            self.present(alert, animated: true, completion: nil)
+        }
+        
+        let actionCancel = UIAlertAction(title: "Cancel", style: .cancel){
+            action -> Void in
+        }
+        
+        alertController.addAction(actionChoice1)
+        alertController.addAction(actionCancel)
+        
+        present(alertController, animated: true, completion: nil)
+        
+        
+        
     }
     
     deinit {
         self.webView.removeObserver(self, forKeyPath: "estimatedProgress", context: nil)
         self.webView.removeObserver(self, forKeyPath: "loading", context: nil)
     }
-    
+    // progress bar関連
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         
         if (keyPath == "estimatedProgress") {
@@ -145,6 +177,8 @@ class FirstViewController: UIViewController, WKNavigationDelegate, UISearchBarDe
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
+        searchBar.showsCancelButton = true
+        
         if searchText.hasPrefix("http") {
             
             let url = URL(string: searchText)
@@ -164,7 +198,7 @@ class FirstViewController: UIViewController, WKNavigationDelegate, UISearchBarDe
             let urlRequest = URLRequest(url: url!)
             self.webView.load(urlRequest)
         } else  if searchText.hasSuffix("jp") {
-           
+            
             let url = URL(string: searchText)
             let urlRequest = URLRequest(url: url!)
             self.webView.load(urlRequest)
@@ -193,7 +227,7 @@ class FirstViewController: UIViewController, WKNavigationDelegate, UISearchBarDe
         return str
     }
     
-   
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -243,10 +277,10 @@ extension UIView {
         //contextにスクリーンショットを書き込む
         layer.render(in: context)
         
-        //広告の領域を白で塗りつぶす
-        context.setFillColor(UIColor.white.cgColor)
-        context.fill(adFrame)
-        
+        //        //広告の領域を白で塗りつぶす
+        //        context.setFillColor(UIColor.white.cgColor)
+        //        context.fill(adFrame)
+        //
         //contextをUIImageに書き出す
         let capturedImage : UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         
