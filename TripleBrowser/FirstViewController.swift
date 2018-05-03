@@ -70,19 +70,19 @@ class FirstViewController: UIViewController, WKNavigationDelegate, UISearchBarDe
     }
     
     //戻るボタン
-    @objc func backButtonTapped(){
+    @objc func backButtonTapped() {
         if self.webView.canGoBack {
             self.webView.goBack()
         }
     }
     //進むボタン
-    @objc func forwardButtonTapped(){
+    @objc func forwardButtonTapped() {
         if self.webView.canGoForward {
             self.webView.goForward()
         }
     }
     //共有ボタン
-    @objc func actionButtonTapped(){
+    @objc func actionButtonTapped() {
         
         // 共有する項目
         let shareText = self.webView?.title!
@@ -101,17 +101,17 @@ class FirstViewController: UIViewController, WKNavigationDelegate, UISearchBarDe
     
     //スクショボタン
     
-    @objc func screenShotButtonTapped(){
+    @objc func screenShotButtonTapped() {
         
         let screenShot = self.view.getScreenShot(windowFrame: self.view.frame, adFrame: CGRect(x: 0, y: 0, width: 0, height: 0))
         
-        let alertController: UIAlertController = UIAlertController(title: "Save Screen Shot", message: "To save screen shot, Tap the save button", preferredStyle: .actionSheet)
+        let alertController: UIAlertController = UIAlertController(title: "Save Screen Shot", message: "To save screen shot, tap the save button", preferredStyle: .actionSheet)
         
         let actionChoice1 = UIAlertAction(title: "Save", style: .default){
             action in
             UIImageWriteToSavedPhotosAlbum(screenShot, self, nil, nil)
             
-            let alert: UIAlertController = UIAlertController(title: "Screenshot saved", message:"", preferredStyle: .alert)
+            let alert: UIAlertController = UIAlertController(title: "Save Completed", message:"", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default))
             self.present(alert, animated: true, completion: nil)
         }
@@ -124,8 +124,6 @@ class FirstViewController: UIViewController, WKNavigationDelegate, UISearchBarDe
         alertController.addAction(actionCancel)
         
         present(alertController, animated: true, completion: nil)
-        
-        
         
     }
     
@@ -174,48 +172,44 @@ class FirstViewController: UIViewController, WKNavigationDelegate, UISearchBarDe
         searchBar.resignFirstResponder()
         
     }
+
     
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+    //searchabarでreturnキーを押したとき
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         
-        searchBar.showsCancelButton = true
+        //キーボードを閉じる
+        searchBar.resignFirstResponder()
         
+        //テキストを判定
+        let searchText: String!
+        searchText = searchBar.text
+        let url:URL!
         if searchText.hasPrefix("http") {
             
-            let url = URL(string: searchText)
-            let urlRequest = URLRequest(url: url!)
-            self.webView.load(urlRequest)
-            
+            url = URL(string: searchText)
+        
         } else if searchText.hasPrefix("www") {
             
             let urlp: String = "https://" + searchText
-            let url = URL(string: urlp)
-            let urlRequest = URLRequest(url: url!)
-            self.webView.load(urlRequest)
-            
+            url = URL(string: urlp)
+          
         } else  if searchText.hasSuffix("com") {
             
-            let url = URL(string: searchText)
-            let urlRequest = URLRequest(url: url!)
-            self.webView.load(urlRequest)
+            url = URL(string: searchText)
+           
         } else  if searchText.hasSuffix("jp") {
             
-            let url = URL(string: searchText)
-            let urlRequest = URLRequest(url: url!)
-            self.webView.load(urlRequest)
+            url = URL(string: searchText)
+
         } else {
             
-            let url: URL!
             let percent = urlEncording(str: searchText)
             let urlp: String = "https://www.google.co.jp/search?q=" + percent
             url = URL(string: urlp)
-            let urlRequest = URLRequest(url: url!)
-            self.webView.load(urlRequest)
+
         }
-    }
-    
-    //searchabarでreturnキーを押したときにキーボードを閉じる
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        searchBar.resignFirstResponder()
+        let urlRequest = URLRequest(url: url!)
+        self.webView.load(urlRequest)
     }
     
     //URLのパーセントエンコーディング
@@ -226,8 +220,6 @@ class FirstViewController: UIViewController, WKNavigationDelegate, UISearchBarDe
         }
         return str
     }
-    
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

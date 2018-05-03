@@ -57,7 +57,8 @@ class SecondViewController: UIViewController, WKNavigationDelegate, UISearchBarD
             UIBarButtonItem(barButtonHiddenItem: .Forward, target: self, action: #selector(forwardButtonTapped)),
             UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil),
             UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.action, target: self, action: #selector(actionButtonTapped)),
-            UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
+            UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil),
+            UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.camera, target: self, action: #selector(screenShotButtonTapped))
             
         ]
         
@@ -68,14 +69,14 @@ class SecondViewController: UIViewController, WKNavigationDelegate, UISearchBarD
         
     }
     
-    @objc func backButtonTapped(){
-        if self.webView.canGoBack{
+    @objc func backButtonTapped() {
+        if self.webView.canGoBack {
             self.webView.goBack()
         }
     }
     
-    @objc func forwardButtonTapped(){
-        if self.webView.canGoForward{
+    @objc func forwardButtonTapped() {
+        if self.webView.canGoForward {
             self.webView.goForward()
         }
     }
@@ -96,6 +97,29 @@ class SecondViewController: UIViewController, WKNavigationDelegate, UISearchBarD
         self.present(activityVC, animated: true, completion: nil)
     }
     
+    @objc func screenShotButtonTapped() {
+        let screenShot = self.view.getScreenShot(windowFrame: self.view.frame, adFrame: CGRect(x: 0, y: 0, width: 0, height: 0))
+        
+        let alertController: UIAlertController = UIAlertController(title: "Save Screen Shot", message: "To save screen shot, tap the save button.", preferredStyle: .actionSheet)
+        
+        let actionChoice1 = UIAlertAction(title: "Save", style: .default) {
+            action in
+            UIImageWriteToSavedPhotosAlbum(screenShot, self, nil, nil)
+            
+            let alert: UIAlertController = UIAlertController(title: "Save Completed", message:"", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default))
+            self.present(alert, animated: true, completion: nil)
+        }
+        
+        let actionCancel = UIAlertAction(title: "Cancel", style: .cancel){
+            action -> Void in
+        }
+        
+        alertController.addAction(actionChoice1)
+        alertController.addAction(actionCancel)
+        self.present(alertController, animated: true, completion: nil)
+        
+    }
     deinit {
         self.webView?.removeObserver(self, forKeyPath: "estimatedProgress", context: nil)
         self.webView?.removeObserver(self, forKeyPath: "loading", context: nil)
@@ -143,46 +167,42 @@ class SecondViewController: UIViewController, WKNavigationDelegate, UISearchBarD
         
     }
 
+
     
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+    //searchabarでreturnキーを押したときにキーボードを閉じる
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
+        searchBar.resignFirstResponder()
+        let searchText: String!
+        searchText = searchBar.text
+        let url: URL!
         
         if searchText.hasPrefix("http") {
             
-            let url = URL(string: searchText)
-            let urlRequest = URLRequest(url: url!)
-            self.webView.load(urlRequest)
+            url = URL(string: searchText)
             
         } else if searchText.hasPrefix("www") {
             
             let urlp: String = "https://" + searchText
-            let url = URL(string: urlp)
-            let urlRequest = URLRequest(url: url!)
-            self.webView.load(urlRequest)
+            url = URL(string: urlp)
             
         } else  if searchText.hasSuffix("com") {
             
-            let url = URL(string: searchText)
-            let urlRequest = URLRequest(url: url!)
-            self.webView.load(urlRequest)
+            url = URL(string: searchText)
+
         } else  if searchText.hasSuffix("jp") {
             
-            let url = URL(string: searchText)
-            let urlRequest = URLRequest(url: url!)
-            self.webView.load(urlRequest)
+            url = URL(string: searchText)
+
         }else {
             
-            let url: URL!
             let percent = urlEncording(str: searchText)
             let urlp: String = "https://www.google.co.jp/search?q=" + percent
             url = URL(string: urlp)
-            let urlRequest = URLRequest(url: url!)
-            self.webView.load(urlRequest)
         }
-    }
-    
-    //searchabarでreturnキーを押したときにキーボードを閉じる
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        searchBar.resignFirstResponder()
+        
+        let urlRequest = URLRequest(url: url!)
+        self.webView.load(urlRequest)
     }
     
     //URLのパーセントエンコーディング
