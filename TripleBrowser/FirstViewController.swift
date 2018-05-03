@@ -164,8 +164,8 @@ class FirstViewController: UIViewController, WKNavigationDelegate, UISearchBarDe
         searchBar.showsCancelButton = false
         searchBar.autocapitalizationType = .none
         searchBar.keyboardType = UIKeyboardType.default
-        //        searchBar.showsBookmarkButton = true
-        //        searchBar.setImage(UIImage(named: "reload"), for: .bookmark, state: .normal)
+        searchBar.showsBookmarkButton = true
+        searchBar.setImage(UIImage(named: "reload_x3.png"), for: .bookmark, state: .normal)
         self.navigationItem.titleView = searchBar
         self.navigationItem.titleView?.frame = searchBar.frame
         searchBar.becomeFirstResponder()
