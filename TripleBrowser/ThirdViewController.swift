@@ -117,6 +117,7 @@ class ThirdViewController: UIViewController, WKNavigationDelegate, UISearchBarDe
         
         alertController.addAction(actionChoice1)
         alertController.addAction(actionCancel)
+        self.present(alertController, animated: true, completion: nil)
         
     }
     deinit {

@@ -47,11 +47,13 @@ class PageViewController: UIPageViewController {
             self.storyboard!.instantiateViewController(withIdentifier: PageSettings.pageViewControllerIdentifierList[2]),
             ]
        //VCの生成
-        self.setViewControllers([PageSettings.generateViewControllerList().first!], direction: .forward, animated: true, completion: nil)
+        self.setViewControllers([PageSettings.generateViewControllerList()[1]], direction: .forward, animated: true, completion: nil)
         self.dataSource = self as UIPageViewControllerDataSource
 
         // Do any additional setup after loading the view.
     }
+    
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -97,7 +99,14 @@ extension PageViewController : UIPageViewControllerDataSource {
             return nil
         }
     }
-    
+//
+//    func pageViewControllerCreated() -> UIViewController? {
+//
+//
+//            return generateViewController[1]
+//        return generateViewController[2]
+//        return generateViewController[1]
+//        }
     
 }
 

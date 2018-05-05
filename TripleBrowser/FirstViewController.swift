@@ -122,14 +122,13 @@ class FirstViewController: UIViewController, WKNavigationDelegate, UISearchBarDe
         
         alertController.addAction(actionChoice1)
         alertController.addAction(actionCancel)
-        
-        present(alertController, animated: true, completion: nil)
+        self.present(alertController, animated: true, completion: nil)
         
     }
     
     deinit {
-        self.webView.removeObserver(self, forKeyPath: "estimatedProgress", context: nil)
-        self.webView.removeObserver(self, forKeyPath: "loading", context: nil)
+        self.webView?.removeObserver(self, forKeyPath: "estimatedProgress", context: nil)
+        self.webView?.removeObserver(self, forKeyPath: "loading", context: nil)
     }
     // progress bar関連
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
@@ -164,8 +163,8 @@ class FirstViewController: UIViewController, WKNavigationDelegate, UISearchBarDe
         searchBar.showsCancelButton = false
         searchBar.autocapitalizationType = .none
         searchBar.keyboardType = UIKeyboardType.default
-        searchBar.showsBookmarkButton = true
-        searchBar.setImage(UIImage(named: "reload_x3.png"), for: .bookmark, state: .normal)
+//        searchBar.showsBookmarkButton = true
+//        searchBar.setImage(UIImage(named: "reload_x3.png"), for: .bookmark, state: .normal)
         self.navigationItem.titleView = searchBar
         self.navigationItem.titleView?.frame = searchBar.frame
         searchBar.becomeFirstResponder()
