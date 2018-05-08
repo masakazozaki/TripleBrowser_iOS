@@ -11,6 +11,16 @@ import WebKit
 
 class SecondViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegate {
     
+    private let feedbackGenerator: Any? = {
+        if #available(iOS 10.0, *) {
+            let generator = UINotificationFeedbackGenerator()
+            generator.prepare()
+            return generator
+        } else {
+            return nil
+        }
+    }()
+    
     var webView: WKWebView!
     var searchBar: UISearchBar!
     
@@ -92,6 +102,10 @@ class SecondViewController: UIViewController, WKNavigationDelegate, UISearchBarD
         // 初期化処理
         let activityVC = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
         
+        //iPadのエラーを回避
+        activityVC.popoverPresentationController?.sourceView = self.view
+        activityVC.popoverPresentationController?.sourceRect = CGRect(x: self.view.frame.size.width / 2, y: self.view.frame.size.height - 44.0, width: 0, height: 0)
+        
         
         // UIActivityViewControllerを表示
         self.present(activityVC, animated: true, completion: nil)
@@ -109,6 +123,10 @@ class SecondViewController: UIViewController, WKNavigationDelegate, UISearchBarD
             let alert: UIAlertController = UIAlertController(title: "Save Completed", message:"", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default))
             self.present(alert, animated: true, completion: nil)
+            
+            if #available(iOS 10.0, *), let generator = self.feedbackGenerator as? UINotificationFeedbackGenerator {
+                generator.notificationOccurred(.success)
+            }
         }
         
         let actionCancel = UIAlertAction(title: "Cancel", style: .cancel){
@@ -117,6 +135,11 @@ class SecondViewController: UIViewController, WKNavigationDelegate, UISearchBarD
         
         alertController.addAction(actionChoice1)
         alertController.addAction(actionCancel)
+        
+        //iPadのエラーを回避
+        alertController.popoverPresentationController?.sourceView = self.view
+        alertController.popoverPresentationController?.sourceRect = CGRect(x: self.view.frame.size.width - 36.0, y: self.view.frame.size.height - 40.0, width: 0, height: 0)
+        
         self.present(alertController, animated: true, completion: nil)
         
     }

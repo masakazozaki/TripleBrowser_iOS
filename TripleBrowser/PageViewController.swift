@@ -30,6 +30,17 @@ struct PageSettings{
 class PageViewController: UIPageViewController {
     
     
+    private let feedbackGenerator: Any? = {
+        if #available(iOS 10.0, *) {
+            let generator = UINotificationFeedbackGenerator()
+            generator.prepare()
+            return generator
+        } else {
+            return nil
+        }
+    }()
+    
+    
     var viewControllerIndex: Int = 0 {
         didSet{
             print(viewControllerIndex)
@@ -49,6 +60,7 @@ class PageViewController: UIPageViewController {
        //VCの生成
         self.setViewControllers([PageSettings.generateViewControllerList()[1]], direction: .forward, animated: true, completion: nil)
         self.dataSource = self as UIPageViewControllerDataSource
+        
 
         // Do any additional setup after loading the view.
     }
