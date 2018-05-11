@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E72C60C420989F6D00F2E41D /* ic_settings_backup_restore_48pt_3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E72C60C320989F6C00F2E41D /* ic_settings_backup_restore_48pt_3x.png */; };
+		E73B43842096037500E4DD73 /* Screen Shot 2018-04-26 at 22.05.52.png in Resources */ = {isa = PBXBuildFile; fileRef = E73B43832096037500E4DD73 /* Screen Shot 2018-04-26 at 22.05.52.png */; };
 		E73B7F532083047E0071851A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73B7F522083047E0071851A /* AppDelegate.swift */; };
 		E73B7F552083047E0071851A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73B7F542083047E0071851A /* ViewController.swift */; };
 		E73B7F582083047E0071851A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E73B7F562083047E0071851A /* Main.storyboard */; };
@@ -18,6 +20,9 @@
 		E761DB9C208B2F5F0055D5C2 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E761DB9B208B2F5F0055D5C2 /* SecondViewController.swift */; };
 		E761DB9E208B2F660055D5C2 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E761DB9D208B2F660055D5C2 /* ThirdViewController.swift */; };
 		E761DBA0208B2F7C0055D5C2 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E761DB9F208B2F7C0055D5C2 /* PageViewController.swift */; };
+		E7A10957209BC5F5006F8368 /* ic_settings_backup_restore_48pt_2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E7A10956209BC5F4006F8368 /* ic_settings_backup_restore_48pt_2x.png */; };
+		E7A10959209BC785006F8368 /* reload_x3.png in Resources */ = {isa = PBXBuildFile; fileRef = E7A10958209BC785006F8368 /* reload_x3.png */; };
+		E7A24B0220922F76007D006B /* reload.png in Resources */ = {isa = PBXBuildFile; fileRef = E7A24B0120922F75007D006B /* reload.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +43,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E72C60C320989F6C00F2E41D /* ic_settings_backup_restore_48pt_3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_settings_backup_restore_48pt_3x.png; sourceTree = "<group>"; };
+		E73B43832096037500E4DD73 /* Screen Shot 2018-04-26 at 22.05.52.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2018-04-26 at 22.05.52.png"; sourceTree = "<group>"; };
 		E73B7F4F2083047E0071851A /* TripleBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TripleBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E73B7F522083047E0071851A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E73B7F542083047E0071851A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -55,6 +62,9 @@
 		E761DB9B208B2F5F0055D5C2 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		E761DB9D208B2F660055D5C2 /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		E761DB9F208B2F7C0055D5C2 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		E7A10956209BC5F4006F8368 /* ic_settings_backup_restore_48pt_2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_settings_backup_restore_48pt_2x.png; sourceTree = "<group>"; };
+		E7A10958209BC785006F8368 /* reload_x3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reload_x3.png; sourceTree = "<group>"; };
+		E7A24B0120922F75007D006B /* reload.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reload.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +95,10 @@
 		E73B7F462083047E0071851A = {
 			isa = PBXGroup;
 			children = (
+				E7A10958209BC785006F8368 /* reload_x3.png */,
+				E7A10956209BC5F4006F8368 /* ic_settings_backup_restore_48pt_2x.png */,
+				E72C60C320989F6C00F2E41D /* ic_settings_backup_restore_48pt_3x.png */,
+				E73B43832096037500E4DD73 /* Screen Shot 2018-04-26 at 22.05.52.png */,
 				E73B7F512083047E0071851A /* TripleBrowser */,
 				E73B7F662083047F0071851A /* TripleBrowserTests */,
 				E73B7F712083047F0071851A /* TripleBrowserUITests */,
@@ -105,6 +119,7 @@
 		E73B7F512083047E0071851A /* TripleBrowser */ = {
 			isa = PBXGroup;
 			children = (
+				E7A24B0120922F75007D006B /* reload.png */,
 				E73B7F522083047E0071851A /* AppDelegate.swift */,
 				E73B7F542083047E0071851A /* ViewController.swift */,
 				E73B7F562083047E0071851A /* Main.storyboard */,
@@ -241,6 +256,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7A10957209BC5F5006F8368 /* ic_settings_backup_restore_48pt_2x.png in Resources */,
+				E7A10959209BC785006F8368 /* reload_x3.png in Resources */,
+				E73B43842096037500E4DD73 /* Screen Shot 2018-04-26 at 22.05.52.png in Resources */,
+				E7A24B0220922F76007D006B /* reload.png in Resources */,
+				E72C60C420989F6D00F2E41D /* ic_settings_backup_restore_48pt_3x.png in Resources */,
 				E73B7F5D2083047F0071851A /* LaunchScreen.storyboard in Resources */,
 				E73B7F5A2083047F0071851A /* Assets.xcassets in Resources */,
 				E73B7F582083047E0071851A /* Main.storyboard in Resources */,
@@ -446,15 +466,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = D4YS85MKQ2;
+				DEVELOPMENT_TEAM = 7R974FN29R;
 				INFOPLIST_FILE = TripleBrowser/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.masakazozaki.TripleBrowser;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.masakazozaki.TripleBrowser-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -464,15 +486,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = D4YS85MKQ2;
+				DEVELOPMENT_TEAM = 7R974FN29R;
 				INFOPLIST_FILE = TripleBrowser/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.masakazozaki.TripleBrowser;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.masakazozaki.TripleBrowser-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

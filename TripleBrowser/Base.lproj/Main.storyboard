@@ -10,63 +10,65 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="bhx-Rc-9Ae">
+            <objects>
+                <navigationController storyboardIdentifier="FirstViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8oW-Py-WNI" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Uyc-jf-kuk">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.21168657628573304" green="0.55829951454638016" blue="0.92288626269035534" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Vao-d5-W0J"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RrA-78-aPH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="142" y="-605"/>
+        </scene>
         <!--First View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="FirstViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="FirstViewController" customModule="TripleBrowser" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="FirstViewController" customModule="TripleBrowser" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NAh-aR-IhM">
-                                <rect key="frame" x="0.0" y="44" width="375" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="XEI-HS-IR1"/>
-                                </constraints>
-                                <items>
-                                    <navigationItem title="Title" id="PR4-Cs-G2i"/>
-                                </items>
-                            </navigationBar>
-                        </subviews>
-                        <color key="backgroundColor" red="0.25882352941176473" green="0.60392156862745094" blue="0.87450980392156863" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="NAh-aR-IhM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ORb-tM-9qW"/>
-                            <constraint firstItem="NAh-aR-IhM" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="RL8-eh-vgI"/>
-                            <constraint firstItem="NAh-aR-IhM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="XA1-BL-nkW"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="YgW-60-xgo"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="142" y="137"/>
+            <point key="canvasLocation" x="141.59999999999999" y="136.69950738916256"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="P5S-PT-UE1">
+            <objects>
+                <navigationController storyboardIdentifier="SecondViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="T25-l3-nFg" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="HkS-f5-Itn">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="1" green="0.35487514210344706" blue="0.53532349075921637" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="G6a-TA-Prv" kind="relationship" relationship="rootViewController" id="eNu-xA-iBx"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jsl-7z-8Te" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1121" y="-605"/>
         </scene>
         <!--Second View Controller-->
         <scene sceneID="bW3-6E-Gwd">
             <objects>
-                <viewController storyboardIdentifier="SecondViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="G6a-TA-Prv" customClass="SecondViewController" customModule="TripleBrowser" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="G6a-TA-Prv" customClass="SecondViewController" customModule="TripleBrowser" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Cu6-Gb-jZC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7bj-LE-HoE">
-                                <rect key="frame" x="0.0" y="44" width="375" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="EDN-LY-Gvu"/>
-                                </constraints>
-                                <items>
-                                    <navigationItem title="2" id="thw-fD-4U9"/>
-                                </items>
-                            </navigationBar>
-                        </subviews>
-                        <color key="backgroundColor" red="0.7803921568627451" green="0.20392156862745098" blue="0.38039215686274508" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="7bj-LE-HoE" firstAttribute="top" secondItem="hmG-kA-Dyw" secondAttribute="top" id="Aec-rn-gzz"/>
-                            <constraint firstItem="7bj-LE-HoE" firstAttribute="leading" secondItem="hmG-kA-Dyw" secondAttribute="leading" id="FqY-El-J6a"/>
-                            <constraint firstItem="7bj-LE-HoE" firstAttribute="trailing" secondItem="hmG-kA-Dyw" secondAttribute="trailing" id="r97-Sa-pO1"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="hmG-kA-Dyw"/>
                     </view>
+                    <navigationItem key="navigationItem" id="L9p-Ip-ENa"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gls-aW-R5f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -78,38 +80,39 @@
                 <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="ahX-AW-sqB" customClass="PageViewController" customModule="TripleBrowser" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Td7-mm-6sk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1122" y="805"/>
+            <point key="canvasLocation" x="1121" y="850"/>
         </scene>
         <!--Third View Controller-->
         <scene sceneID="e4U-Zg-APz">
             <objects>
-                <viewController storyboardIdentifier="ThirdViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="iKP-Kk-FzU" customClass="ThirdViewController" customModule="TripleBrowser" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="iKP-Kk-FzU" customClass="ThirdViewController" customModule="TripleBrowser" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" opaque="NO" contentMode="scaleToFill" id="x61-Ud-hac">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uDX-uQ-aaR">
-                                <rect key="frame" x="0.0" y="44" width="375" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="tW2-jJ-Iqw"/>
-                                </constraints>
-                                <items>
-                                    <navigationItem title="3" id="qcv-Uh-z7s"/>
-                                </items>
-                            </navigationBar>
-                        </subviews>
-                        <color key="backgroundColor" red="0.22745098039215686" green="0.52941176470588236" blue="0.4823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="uDX-uQ-aaR" firstAttribute="trailing" secondItem="7fd-Hk-H9T" secondAttribute="trailing" id="1On-lx-p27"/>
-                            <constraint firstItem="uDX-uQ-aaR" firstAttribute="leading" secondItem="7fd-Hk-H9T" secondAttribute="leading" id="KPj-HO-ycL"/>
-                            <constraint firstItem="uDX-uQ-aaR" firstAttribute="top" secondItem="7fd-Hk-H9T" secondAttribute="top" id="PiY-nW-Q80"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="7fd-Hk-H9T"/>
                     </view>
+                    <navigationItem key="navigationItem" id="V78-b8-QC8"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d1h-je-SnU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2076" y="137"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="jyK-hW-Sds">
+            <objects>
+                <navigationController storyboardIdentifier="ThirdViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ezw-r1-8TR" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hUS-d3-H3b">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.39215686274509803" green="0.8784313725490196" blue="0.37582301651943073" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="iKP-Kk-FzU" kind="relationship" relationship="rootViewController" id="N61-qS-hM5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KNc-Lr-i8q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2076" y="-605"/>
         </scene>
     </scenes>
 </document>

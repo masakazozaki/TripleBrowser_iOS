@@ -30,6 +30,17 @@ struct PageSettings{
 class PageViewController: UIPageViewController {
     
     
+    private let feedbackGenerator: Any? = {
+        if #available(iOS 10.0, *) {
+            let generator = UINotificationFeedbackGenerator()
+            generator.prepare()
+            return generator
+        } else {
+            return nil
+        }
+    }()
+    
+    
     var viewControllerIndex: Int = 0 {
         didSet{
             print(viewControllerIndex)
@@ -40,18 +51,21 @@ class PageViewController: UIPageViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+// VCの生成の配列
         generateViewController = [
             self.storyboard!.instantiateViewController(withIdentifier: PageSettings.pageViewControllerIdentifierList[0]),
             self.storyboard!.instantiateViewController(withIdentifier: PageSettings.pageViewControllerIdentifierList[1]),
             self.storyboard!.instantiateViewController(withIdentifier: PageSettings.pageViewControllerIdentifierList[2]),
             ]
-       
-        self.setViewControllers([PageSettings.generateViewControllerList().first!], direction: .forward, animated: true, completion: nil)
+       //VCの生成
+        self.setViewControllers([PageSettings.generateViewControllerList()[1]], direction: .forward, animated: true, completion: nil)
         self.dataSource = self as UIPageViewControllerDataSource
+        
 
         // Do any additional setup after loading the view.
     }
+    
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -97,7 +111,14 @@ extension PageViewController : UIPageViewControllerDataSource {
             return nil
         }
     }
-    
+//
+//    func pageViewControllerCreated() -> UIViewController? {
+//
+//
+//            return generateViewController[1]
+//        return generateViewController[2]
+//        return generateViewController[1]
+//        }
     
 }
 
