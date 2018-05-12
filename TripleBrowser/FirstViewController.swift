@@ -165,7 +165,7 @@ class FirstViewController: UIViewController, WKNavigationDelegate, UISearchBarDe
             self.progressView.setProgress(Float(self.webView.estimatedProgress), animated: true)
             
             // estimatedProgressが1.0になったらアニメーションを使って非表示にしアニメーション完了時0.0をセットする
-            if (self.webView.estimatedProgress >= 1.0) {
+            if self.webView.estimatedProgress >= 1.0 {
                 UIView.animate(withDuration: 0.9,
                                delay: 0.6,
                                options: [.curveEaseOut],
