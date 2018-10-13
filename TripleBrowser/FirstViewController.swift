@@ -14,8 +14,6 @@ import Accounts
 
 class FirstViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegate, UINavigationControllerDelegate {
     
-    
-    
     private let feedbackGenerator: Any? = {
         if #available(iOS 10.0, *) {
             let generator = UINotificationFeedbackGenerator()
@@ -26,11 +24,8 @@ class FirstViewController: UIViewController, WKNavigationDelegate, UISearchBarDe
         }
     }()
     
-    
     var searchBar: UISearchBar!
     var webView: WKWebView!
-
-    
     var progressView = UIProgressView()
     
     override func viewDidLoad() {
@@ -38,21 +33,16 @@ class FirstViewController: UIViewController, WKNavigationDelegate, UISearchBarDe
         
         let toolBarHeight: CGFloat  = (self.navigationController?.toolbar.frame.size.height)!
         // Do any additional setup after loading the view.
-        
         let config = WKWebViewConfiguration()
         config.allowsInlineMediaPlayback = true
         self.webView = WKWebView(frame: self.view.frame, configuration: config)
         self.webView.navigationDelegate = self
-        
         self.webView.allowsLinkPreview = true
         
         let url = URL(string: "https://www.google.co.jp/")
         let urlRequest = URLRequest(url: url!)
-        
         self.webView.load(urlRequest)
-        
         self.view.addSubview(self.webView)
-        
         self.webView.translatesAutoresizingMaskIntoConstraints = false
         
         //searchBarを表示
@@ -308,5 +298,13 @@ extension UIView {
     }
 }
 
-
+// （Safariでは新しいタブがひらく）リンク先を開けるようにする
+extension ViewController: WKUIDelegate {
+    func webView(_ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView? {
+        if navigationAction.targetFrame == nil {
+            webView.load(navigationAction.request)
+        }
+        return nil
+    }
+}
 

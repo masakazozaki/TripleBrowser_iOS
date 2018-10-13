@@ -95,8 +95,8 @@
 		E73B7F462083047E0071851A = {
 			isa = PBXGroup;
 			children = (
-				E7A10958209BC785006F8368 /* reload_x3.png */,
 				E7A10956209BC5F4006F8368 /* ic_settings_backup_restore_48pt_2x.png */,
+				E7A10958209BC785006F8368 /* reload_x3.png */,
 				E72C60C320989F6C00F2E41D /* ic_settings_backup_restore_48pt_3x.png */,
 				E73B43832096037500E4DD73 /* Screen Shot 2018-04-26 at 22.05.52.png */,
 				E73B7F512083047E0071851A /* TripleBrowser */,

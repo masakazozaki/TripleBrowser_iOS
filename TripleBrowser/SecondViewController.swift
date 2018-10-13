@@ -9,7 +9,7 @@
 import UIKit
 import WebKit
 
-class SecondViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegate {
+class SecondViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegate, WKUIDelegate {
     
     private let feedbackGenerator: Any? = {
         if #available(iOS 10.0, *) {
@@ -77,6 +77,25 @@ class SecondViewController: UIViewController, WKNavigationDelegate, UISearchBarD
         self.navigationController?.setToolbarHidden(false, animated: false)
         self.setToolbarItems(items, animated: false)
         
+    }
+    
+    // 読み込み開始時イベント
+    func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
+        print("start")
+    }
+    
+    func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
+        print(error.localizedDescription)
+    }
+    
+    // 読み込み終了時イベント
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        print("finish")
+    }
+    
+    // 読み込み失敗時イベント
+    func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
+        print(error.localizedDescription)
     }
     
     @objc func backButtonTapped() {
