@@ -212,6 +212,11 @@
 					E73B7F4E2083047E0071851A = {
 						CreatedOnToolsVersion = 9.3;
 						LastSwiftMigration = 1010;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
+						};
 					};
 					E73B7F622083047F0071851A = {
 						CreatedOnToolsVersion = 9.3;

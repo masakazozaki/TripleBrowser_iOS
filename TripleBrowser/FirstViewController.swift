@@ -35,6 +35,7 @@ class FirstViewController: UIViewController, WKNavigationDelegate, UISearchBarDe
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         // Do any additional setup after loading the view
         setWebView()
         
@@ -204,6 +205,11 @@ class FirstViewController: UIViewController, WKNavigationDelegate, UISearchBarDe
         searchBar.becomeFirstResponder()
         searchBar.resignFirstResponder()
         
+    }
+    
+    func enteredBackground(notification: Notification) {
+        let script = "var vids = document.getElementsByTagName('video'); for( var i = 0; i < vids.length; i++ ){vids.item(i).pause()}"
+        self.webView.evaluateJavaScript(script, completionHandler:nil)
     }
 
     
