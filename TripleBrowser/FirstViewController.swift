@@ -12,7 +12,11 @@ import Accounts
 
 
 
-class FirstViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegate, UINavigationControllerDelegate {
+@IBDesignable class FirstViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegate, UINavigationControllerDelegate {
+    
+    @IBInspectable var progressBarColor: UIColor = UIColor.blue
+    
+    public var pageNum: Int = 0
     
     private let feedbackGenerator: Any? = {
         if #available(iOS 10.0, *) {
@@ -39,7 +43,7 @@ class FirstViewController: UIViewController, WKNavigationDelegate, UISearchBarDe
         //progressView関連
         self.progressView = UIProgressView(frame: CGRect(x: 0.0, y: (self.navigationController?.navigationBar.frame.size.height)! + 10, width: self.view.frame.size.width, height: 3.0))
         self.progressView.progressViewStyle = .bar
-        self.progressView.progressTintColor = UIColor.blue
+        self.progressView.progressTintColor = progressBarColor
         self.navigationController?.navigationBar.addSubview(self.progressView)
         
         // KVO 監視
@@ -62,13 +66,13 @@ class FirstViewController: UIViewController, WKNavigationDelegate, UISearchBarDe
         self.setToolbarItems(items, animated: false)
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        NotificationCenter.default.addObserver(self, selector: #selector(self.rotationChange(notification:)), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
-    }
-    
-    @objc func rotationChange(notification: NSNotification) {
-        webView.frame = self.view.frame
-    }
+//    override func viewDidAppear(_ animated: Bool) {
+//        NotificationCenter.default.addObserver(self, selector: #selector(self.rotationChange(notification:)), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
+//    }
+//
+//    @objc func rotationChange(notification: NSNotification) {
+//        webView.frame = self.view.frame
+//    }
     
     func setWebView() {
         let config = WKWebViewConfiguration()
@@ -77,11 +81,16 @@ class FirstViewController: UIViewController, WKNavigationDelegate, UISearchBarDe
         self.webView.navigationDelegate = self
         self.webView.allowsLinkPreview = true
         
+        
         let url = URL(string: "https://www.google.co.jp/")
         let urlRequest = URLRequest(url: url!)
         self.webView.load(urlRequest)
-        self.view.addSubview(self.webView)
+        self.view.addSubview(webView)
         self.webView.translatesAutoresizingMaskIntoConstraints = false
+        webView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        webView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        webView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        webView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
     }
     
     //戻るボタン
@@ -310,7 +319,7 @@ extension UIView {
 }
 
 // （Safariでは新しいタブがひらく）リンク先を開けるようにする
-extension ViewController: WKUIDelegate {
+extension FirstViewController: WKUIDelegate {
     func webView(_ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView? {
         if navigationAction.targetFrame == nil {
             webView.load(navigationAction.request)
