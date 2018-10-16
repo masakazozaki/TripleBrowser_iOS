@@ -21,7 +21,7 @@
                         <color key="backgroundColor" red="0.21168657628573304" green="0.55829951454638016" blue="0.92288626269035534" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Vao-d5-W0J"/>
+                        <segue destination="YIF-zm-JDR" kind="relationship" relationship="rootViewController" id="wkl-8T-qfe"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RrA-78-aPH" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -29,24 +29,20 @@
             <point key="canvasLocation" x="142" y="-605"/>
         </scene>
         <!--First View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <scene sceneID="aSu-oZ-rxS">
             <objects>
-                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="FirstViewController" customModule="TripleBrowser" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <viewController id="YIF-zm-JDR" customClass="FirstViewController" customModule="TripleBrowser" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="r8e-7u-oks">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="AXb-14-Ss8"/>
                     </view>
-                    <navigationItem key="navigationItem" id="YgW-60-xgo"/>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="color" keyPath="progressBarColor">
-                            <color key="value" red="0.21168657630000001" green="0.55829951450000004" blue="0.92288626269999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
+                    <navigationItem key="navigationItem" id="FjF-iS-oKv"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2S3-dL-Qqm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="141.59999999999999" y="136.69950738916256"/>
+            <point key="canvasLocation" x="-641" y="-622"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="vma-CW-Abw">

@@ -35,6 +35,7 @@ class FirstViewController: UIViewController, WKNavigationDelegate, UISearchBarDe
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         // Do any additional setup after loading the view
         setWebView()
         
@@ -206,7 +207,6 @@ class FirstViewController: UIViewController, WKNavigationDelegate, UISearchBarDe
         
     }
 
-    
     //searchabarでreturnキーを押したとき
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         
