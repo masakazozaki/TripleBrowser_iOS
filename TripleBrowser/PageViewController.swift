@@ -8,27 +8,7 @@
 
 import UIKit
 
-struct PageSettings{
-    static let pageViewControllerIdentifierList: [String] = [
-        "FirstViewController",
-        "SecondViewController",
-        "ThirdViewController",
-        ]
-    
-    static func generateViewControllerList() -> [UIViewController] {
-        var viewControllers : [UIViewController] = []
-        self.pageViewControllerIdentifierList.forEach{ viewControllerName in
-            
-            let viewController = UIStoryboard(name: "Main", bundle: nil) . instantiateViewController(withIdentifier: "\(viewControllerName)")
-           
-            viewControllers.append(viewController)
-            
-        }
-        return viewControllers
-    }
-}
-class PageViewController: UIPageViewController {
-    
+class PageViewController: UIPageViewController, UIPageViewControllerDataSource {
     
     private let feedbackGenerator: Any? = {
         if #available(iOS 10.0, *) {
@@ -39,30 +19,41 @@ class PageViewController: UIPageViewController {
             return nil
         }
     }()
-    
-    
-    var viewControllerIndex: Int = 0 {
-        didSet{
-            print(viewControllerIndex)
-        }
-    }
 
-    var generateViewController: [UIViewController]!
+    var generateViewController: [UIViewController] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-// VCの生成の配列
-        generateViewController = [
-            self.storyboard!.instantiateViewController(withIdentifier: PageSettings.pageViewControllerIdentifierList[0]),
-            self.storyboard!.instantiateViewController(withIdentifier: PageSettings.pageViewControllerIdentifierList[1]),
-            self.storyboard!.instantiateViewController(withIdentifier: PageSettings.pageViewControllerIdentifierList[2]),
-            ]
-       //VCの生成
-        self.setViewControllers([PageSettings.generateViewControllerList()[1]], direction: .forward, animated: true, completion: nil)
-        self.dataSource = self as UIPageViewControllerDataSource
         
+        for i in 0 ..< 3
+        {
+            let vc = UIStoryboard(name: "Main", bundle: nil) . instantiateViewController(withIdentifier: "FirstViewController")
+            let fvc = vc.childViewControllers.first as! FirstViewController
+            fvc.pageNum = i
+            let themeColor:UIColor
+            switch i{
+            case 0:
+                themeColor = UIColor.blue
+                break
+            case 1:
+                themeColor = UIColor.red
+                break
+            case 2:
+                themeColor = UIColor.green
+                break
+            default:
+                themeColor = UIColor.black
+                break
+            }
+            fvc.progressBarColor = themeColor
+            fvc.navigationController!.navigationBar.backgroundColor = themeColor
+            generateViewController.append(vc)
+        }
+        
+       //VCの生成
+        setViewControllers([generateViewController[1]], direction: .forward, animated: true, completion: nil)
+        dataSource = self
 
-        // Do any additional setup after loading the view.
     }
     
 
@@ -82,14 +73,11 @@ class PageViewController: UIPageViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
-}
-extension PageViewController : UIPageViewControllerDataSource {
+    
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         //現在のビューコントローラーのインデックス番号を取得する。
-        let index = PageSettings.pageViewControllerIdentifierList.index(of: viewController.restorationIdentifier!)!
+        let index = (viewController.childViewControllers.first as! FirstViewController).pageNum
         if (index > 0) {
-            //前ページのビューコントローラーを返す。
             return generateViewController[index-1]
         } else{
             return nil
@@ -102,24 +90,14 @@ extension PageViewController : UIPageViewControllerDataSource {
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         
         //現在のビューコントローラーのインデックス番号を取得する。
-        
-        let index = PageSettings.pageViewControllerIdentifierList.index(of: viewController.restorationIdentifier!)!
-        if (index < PageSettings.pageViewControllerIdentifierList.count-1) {
-            //次ページのビューコントローラーを返す。
+        let index = (viewController.childViewControllers.first as! FirstViewController).pageNum
+        if (index < 3 - 1) {
             return generateViewController[index+1]
         } else {
             return nil
         }
     }
-//
-//    func pageViewControllerCreated() -> UIViewController? {
-//
-//
-//            return generateViewController[1]
-//        return generateViewController[2]
-//        return generateViewController[1]
-//        }
-    
+
 }
 
 

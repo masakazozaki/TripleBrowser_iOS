@@ -16,6 +16,8 @@ import Accounts
     
     @IBInspectable var progressBarColor: UIColor = UIColor.blue
     
+    public var pageNum: Int = 0
+    
     private let feedbackGenerator: Any? = {
         if #available(iOS 10.0, *) {
             let generator = UINotificationFeedbackGenerator()
@@ -317,7 +319,7 @@ extension UIView {
 }
 
 // （Safariでは新しいタブがひらく）リンク先を開けるようにする
-extension ViewController: WKUIDelegate {
+extension FirstViewController: WKUIDelegate {
     func webView(_ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView? {
         if navigationAction.targetFrame == nil {
             webView.load(navigationAction.request)

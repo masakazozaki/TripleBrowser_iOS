@@ -48,89 +48,13 @@
             </objects>
             <point key="canvasLocation" x="141.59999999999999" y="136.69950738916256"/>
         </scene>
-        <!--Item-->
-        <scene sceneID="P5S-PT-UE1">
-            <objects>
-                <navigationController storyboardIdentifier="SecondViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="T25-l3-nFg" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="gef-sP-v1f"/>
-                    <navigationBar key="navigationBar" opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="HkS-f5-Itn">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="1" green="0.35487514210344706" blue="0.53532349075921637" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="G6a-TA-Prv" kind="relationship" relationship="rootViewController" id="eNu-xA-iBx"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Jsl-7z-8Te" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1121" y="-605"/>
-        </scene>
-        <!--First View Controller-->
-        <scene sceneID="bW3-6E-Gwd">
-            <objects>
-                <viewController id="G6a-TA-Prv" customClass="FirstViewController" customModule="TripleBrowser" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Cu6-Gb-jZC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="hmG-kA-Dyw"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="L9p-Ip-ENa"/>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="color" keyPath="progressBarColor">
-                            <color key="value" red="1" green="0.35487514209999999" blue="0.53532349079999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gls-aW-R5f" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1123" y="138"/>
-        </scene>
         <!--Page View Controller-->
         <scene sceneID="vma-CW-Abw">
             <objects>
                 <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="ahX-AW-sqB" customClass="PageViewController" customModule="TripleBrowser" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Td7-mm-6sk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1121" y="850"/>
-        </scene>
-        <!--First View Controller-->
-        <scene sceneID="e4U-Zg-APz">
-            <objects>
-                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="iKP-Kk-FzU" customClass="FirstViewController" customModule="TripleBrowser" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" opaque="NO" contentMode="scaleToFill" id="x61-Ud-hac">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="7fd-Hk-H9T"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="V78-b8-QC8"/>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="color" keyPath="progressBarColor">
-                            <color key="value" red="0.3921568627" green="0.87843137250000003" blue="0.3758230165" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="d1h-je-SnU" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2076" y="137"/>
-        </scene>
-        <!--Item-->
-        <scene sceneID="jyK-hW-Sds">
-            <objects>
-                <navigationController storyboardIdentifier="ThirdViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ezw-r1-8TR" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="uUY-G7-4fE"/>
-                    <navigationBar key="navigationBar" opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hUS-d3-H3b">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.39215686274509803" green="0.8784313725490196" blue="0.37582301651943073" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="iKP-Kk-FzU" kind="relationship" relationship="rootViewController" id="N61-qS-hM5"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="KNc-Lr-i8q" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2076" y="-605"/>
+            <point key="canvasLocation" x="1122" y="-605"/>
         </scene>
     </scenes>
 </document>
