@@ -1,0 +1,16 @@
+PODS:
+  - TabPageViewController (0.2.7)
+
+DEPENDENCIES:
+  - TabPageViewController
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - TabPageViewController
+
+SPEC CHECKSUMS:
+  TabPageViewController: c37a1257a50c2b50712dde61bf499768eee95b67
+
+PODFILE CHECKSUM: 09744fd673e75ab46120602341c0732d156aa53f
+
+COCOAPODS: 1.5.0
