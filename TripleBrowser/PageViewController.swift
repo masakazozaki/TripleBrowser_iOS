@@ -9,16 +9,6 @@
 import UIKit
 
 class PageViewController: UIPageViewController, UIPageViewControllerDataSource {
-    
-    private let feedbackGenerator: Any? = {
-        if #available(iOS 10.0, *) {
-            let generator = UINotificationFeedbackGenerator()
-            generator.prepare()
-            return generator
-        } else {
-            return nil
-        }
-    }()
 
     var generateViewController: [UIViewController] = []
     
@@ -33,13 +23,13 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource {
             let themeColor:UIColor
             switch i{
             case 0:
-                themeColor = UIColor.blue
+                themeColor = UIColor(red: 54/255, green: 142/255, blue: 235/255, alpha: 1)
                 break
             case 1:
-                themeColor = UIColor.red
+                themeColor = UIColor(red: 1, green: 90/255, blue: 137/255, alpha: 1)
                 break
             case 2:
-                themeColor = UIColor.green
+                themeColor = UIColor(red: 100/255, green: 224/255, blue: 96/255, alpha: 1)
                 break
             default:
                 themeColor = UIColor.black
@@ -55,24 +45,11 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource {
         dataSource = self
 
     }
-    
-
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         //現在のビューコントローラーのインデックス番号を取得する。
@@ -83,9 +60,6 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource {
             return nil
         }
     }
-    
-    
-    
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         
