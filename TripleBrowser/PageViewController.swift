@@ -17,8 +17,8 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource {
         
         for i in 0 ..< 3
         {
-            let vc = UIStoryboard(name: "Main", bundle: nil) . instantiateViewController(withIdentifier: "FirstViewController")
-            let fvc = vc.childViewControllers.first as! FirstViewController
+            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FirstViewController")
+            let fvc = vc.children.first as! FirstViewController
             fvc.pageNum = i
             let themeColor:UIColor
             switch i{
@@ -53,7 +53,7 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource {
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         //現在のビューコントローラーのインデックス番号を取得する。
-        let index = (viewController.childViewControllers.first as! FirstViewController).pageNum
+        let index = (viewController.children.first as! FirstViewController).pageNum
         if (index > 0) {
             return generateViewController[index-1]
         } else{
@@ -64,7 +64,7 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource {
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         
         //現在のビューコントローラーのインデックス番号を取得する。
-        let index = (viewController.childViewControllers.first as! FirstViewController).pageNum
+        let index = (viewController.children.first as! FirstViewController).pageNum
         if (index < 3 - 1) {
             return generateViewController[index+1]
         } else {

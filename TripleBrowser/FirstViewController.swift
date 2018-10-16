@@ -12,9 +12,9 @@ import Accounts
 
 
 
-@IBDesignable class FirstViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegate, UINavigationControllerDelegate, WKUIDelegate {
+class FirstViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegate, UINavigationControllerDelegate, WKUIDelegate {
     
-    @IBInspectable var progressBarColor: UIColor = UIColor.blue
+    var progressBarColor: UIColor = UIColor.blue
     
     public var pageNum: Int = 0
     
@@ -41,52 +41,52 @@ import Accounts
         //searchBarを表示
         setupSearchBar()
         //progressView関連
-        self.progressView = UIProgressView(frame: CGRect(x: 0.0, y: (self.navigationController?.navigationBar.frame.size.height)! + 10, width: self.view.frame.size.width, height: 3.0))
-        self.progressView.progressViewStyle = .bar
-        self.progressView.progressTintColor = progressBarColor
-        self.navigationController?.navigationBar.addSubview(self.progressView)
+        progressView = UIProgressView(frame: CGRect(x: 0.0, y: (navigationController?.navigationBar.frame.size.height)! + 10, width: view.frame.size.width, height: 3.0))
+        progressView.progressViewStyle = .bar
+        progressView.progressTintColor = progressBarColor
+        navigationController?.navigationBar.addSubview(progressView)
         
         // KVO 監視
-        self.webView.addObserver(self, forKeyPath: "estimatedProgress", options: .new, context: nil)
-        self.webView.addObserver(self, forKeyPath: "loading", options: .new, context: nil)
+        webView.addObserver(self, forKeyPath: "estimatedProgress", options: .new, context: nil)
+        webView.addObserver(self, forKeyPath: "loading", options: .new, context: nil)
         
         let items = [
             UIBarButtonItem(barButtonHiddenItem: .Back, target: self, action: #selector(backButtonTapped)),
-            UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.fixedSpace, target: nil, action: nil),
+            UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.fixedSpace, target: nil, action: nil),
             UIBarButtonItem(barButtonHiddenItem: .Forward, target: self, action: #selector(forwardButtonTapped)),
-            UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil),
-            UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.action, target: self, action: #selector(actionButtonTapped)),
-            UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil),
-            UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.camera, target: self, action: #selector(screenShotButtonTapped)),
+            UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil),
+            UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.action, target: self, action: #selector(actionButtonTapped)),
+            UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil),
+            UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.camera, target: self, action: #selector(screenShotButtonTapped)),
             ]
         
         items[1].width = 60
         
-        self.navigationController?.setToolbarHidden(false, animated: false)
-        self.setToolbarItems(items, animated: false)
+        navigationController?.setToolbarHidden(false, animated: false)
+        setToolbarItems(items, animated: false)
     }
     
 //    override func viewDidAppear(_ animated: Bool) {
-//        NotificationCenter.default.addObserver(self, selector: #selector(self.rotationChange(notification:)), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(rotationChange(notification:)), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
 //    }
 //
 //    @objc func rotationChange(notification: NSNotification) {
-//        webView.frame = self.view.frame
+//        webView.frame = view.frame
 //    }
     
     func setWebView() {
         let config = WKWebViewConfiguration()
         config.allowsInlineMediaPlayback = true
-        self.webView = WKWebView(frame: self.view.frame, configuration: config)
-        self.webView.navigationDelegate = self
-        self.webView.allowsLinkPreview = true
+        webView = WKWebView(frame: view.frame, configuration: config)
+        webView.navigationDelegate = self
+        webView.allowsLinkPreview = true
         
         
         let url = URL(string: "https://www.google.co.jp/")
         let urlRequest = URLRequest(url: url!)
-        self.webView.load(urlRequest)
-        self.view.addSubview(webView)
-        self.webView.translatesAutoresizingMaskIntoConstraints = false
+        webView.load(urlRequest)
+        view.addSubview(webView)
+        webView.translatesAutoresizingMaskIntoConstraints = false
         webView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         webView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         webView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
@@ -95,34 +95,33 @@ import Accounts
     
     //戻るボタン
     @objc func backButtonTapped() {
-        if self.webView.canGoBack {
-            self.webView.goBack()
+        if webView.canGoBack {
+            webView.goBack()
         }
     }
     //進むボタン
     @objc func forwardButtonTapped() {
-        if self.webView.canGoForward {
-            self.webView.goForward()
+        if webView.canGoForward {
+            webView.goForward()
         }
     }
     //共有ボタン
     @objc func actionButtonTapped() {
         
         // 共有する項目
-        let shareText = self.webView?.title!
-        let shareWebsite = self.webView?.url!
-        let shareImage = self.view.getScreenShot(windowFrame: self.view.frame, adFrame: CGRect.zero)
-        let activityItems = [shareText, shareWebsite, shareImage] as [Any]
+        let shareText: String = webView!.title!
+        let shareWebsite: URL = webView!.url!
+        let shareImage: UIImage = view.getScreenShot(windowFrame: view.frame, adFrame: CGRect.zero)
         
         // 初期化処理
-        let activityVC = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
+        let activityVC = UIActivityViewController(activityItems: [shareText, shareWebsite, shareImage], applicationActivities: nil)
         
         //iPadのエラーを回避
-        activityVC.popoverPresentationController?.sourceView = self.view
-        activityVC.popoverPresentationController?.sourceRect = CGRect(x: self.view.frame.size.width/2, y: self.view.frame.size.height - 44.0, width: 0, height: 0)
+        activityVC.popoverPresentationController?.sourceView = view
+        activityVC.popoverPresentationController?.sourceRect = CGRect(x: view.frame.size.width/2, y: view.frame.size.height - 44.0, width: 0, height: 0)
         
         // UIActivityViewControllerを表示
-        self.present(activityVC, animated: true, completion: nil)
+        present(activityVC, animated: true, completion: nil)
         
     }
     
@@ -130,7 +129,7 @@ import Accounts
     
     @objc func screenShotButtonTapped() {
         
-        let screenShot = self.view.getScreenShot(windowFrame: self.view.frame, adFrame: CGRect(x: 0, y: 0, width: 0, height: 0))
+        let screenShot = view.getScreenShot(windowFrame: view.frame, adFrame: CGRect(x: 0, y: 0, width: 0, height: 0))
         
         let alertController: UIAlertController = UIAlertController(title: "Save Screen Shot", message: "To save screen shot, tap the save button", preferredStyle: .actionSheet)
         
@@ -154,28 +153,28 @@ import Accounts
         alertController.addAction(actionCancel)
         
         //iPadのエラーを回避
-        alertController.popoverPresentationController?.sourceView = self.view
-        alertController.popoverPresentationController?.sourceRect = CGRect(x: self.view.frame.size.width - 36.0, y: self.view.frame.size.height - 40.0, width: 0, height: 0)
+        alertController.popoverPresentationController?.sourceView = view
+        alertController.popoverPresentationController?.sourceRect = CGRect(x: view.frame.size.width - 36.0, y: view.frame.size.height - 40.0, width: 0, height: 0)
         
-        self.present(alertController, animated: true, completion: nil)
+        present(alertController, animated: true, completion: nil)
         
     }
     
     deinit {
-        self.webView?.removeObserver(self, forKeyPath: "estimatedProgress", context: nil)
-        self.webView?.removeObserver(self, forKeyPath: "loading", context: nil)
+        webView?.removeObserver(self, forKeyPath: "estimatedProgress", context: nil)
+        webView?.removeObserver(self, forKeyPath: "loading", context: nil)
     }
     // progress bar関連
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         
         if (keyPath == "estimatedProgress") {
             // alphaを1にする(表示)
-            self.progressView.alpha = 1.0
+            progressView.alpha = 1.0
             // estimatedProgressが変更されたときにプログレスバーの値を変更
-            self.progressView.setProgress(Float(self.webView.estimatedProgress), animated: true)
+            progressView.setProgress(Float(webView.estimatedProgress), animated: true)
             
             // estimatedProgressが1.0になったらアニメーションを使って非表示にしアニメーション完了時0.0をセットする
-            if self.webView.estimatedProgress >= 1.0 {
+            if webView.estimatedProgress >= 1.0 {
                 UIView.animate(withDuration: 0.9,
                                delay: 0.6,
                                options: [.curveEaseOut],
@@ -191,7 +190,7 @@ import Accounts
     //SeatchBar関連 -> ViewDidLoadで読まれる
     private func setupSearchBar(){
         
-        let searchBar: UISearchBar = UISearchBar(frame: (self.navigationController?.navigationBar.frame)!)
+        let searchBar: UISearchBar = UISearchBar(frame: (navigationController?.navigationBar.frame)!)
         
         searchBar.delegate = self
         searchBar.placeholder = "Search or enter website name"
@@ -200,8 +199,8 @@ import Accounts
         searchBar.keyboardType = UIKeyboardType.default
 //        searchBar.showsBookmarkButton = true
 //        searchBar.setImage(UIImage(named: "reload_x3.png"), for: .bookmark, state: .normal)
-        self.navigationItem.titleView = searchBar
-        self.navigationItem.titleView?.frame = searchBar.frame
+        navigationItem.titleView = searchBar
+        navigationItem.titleView?.frame = searchBar.frame
         searchBar.becomeFirstResponder()
         searchBar.resignFirstResponder()
         
@@ -243,7 +242,7 @@ import Accounts
 
         }
         let urlRequest = URLRequest(url: url!)
-        self.webView.load(urlRequest)
+        webView.load(urlRequest)
 
     }
     
@@ -309,7 +308,7 @@ extension UIBarButtonItem {
     }
     
     convenience init(barButtonHiddenItem: HiddenItem, target: AnyObject?, action: Selector?) {
-        let systemItem = UIBarButtonSystemItem(rawValue: barButtonHiddenItem.rawValue)
+        let systemItem = UIBarButtonItem.SystemItem(rawValue: barButtonHiddenItem.rawValue)
         self.init(barButtonSystemItem: systemItem!, target: target, action: action)
     }
 }

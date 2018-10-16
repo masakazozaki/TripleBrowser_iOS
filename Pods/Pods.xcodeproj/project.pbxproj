@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -64,7 +64,7 @@
 		239CFAB41E7875909878FABCF2C73035 /* Pods-TripleBrowser.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TripleBrowser.debug.xcconfig"; sourceTree = "<group>"; };
 		2DF981751B5B79F40E20487651A88508 /* Pods-TripleBrowserTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TripleBrowserTests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		35F8BE5F3E675697E33DB1C44CA809BE /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3FE6312C3AD6A9D79352D84F2B7CF73A /* Pods_TripleBrowser.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_TripleBrowser.framework; path = "Pods-TripleBrowser.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3FE6312C3AD6A9D79352D84F2B7CF73A /* Pods_TripleBrowser.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TripleBrowser.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4812B485FC4751E017D920D1BAD1A1A8 /* Pods-TripleBrowser-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TripleBrowser-acknowledgements.plist"; sourceTree = "<group>"; };
 		4D562343641F0803BCA9E0B58BAB08EF /* Pods-TripleBrowser-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TripleBrowser-frameworks.sh"; sourceTree = "<group>"; };
 		50C5F04266104AD9B79CC5F8510F3FB2 /* Pods-TripleBrowser-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TripleBrowser-acknowledgements.markdown"; sourceTree = "<group>"; };
@@ -76,17 +76,17 @@
 		653B92F43695571126239CA9AAB3DF29 /* TabPageViewController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TabPageViewController-dummy.m"; sourceTree = "<group>"; };
 		666F9D3D8659CEF8736331BC14FF2ED9 /* TabPageViewController.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = TabPageViewController.modulemap; sourceTree = "<group>"; };
 		69D4CAB32A7D404F1A947BB22AFFC510 /* Pods-TripleBrowserTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TripleBrowserTests.release.xcconfig"; sourceTree = "<group>"; };
-		71C30CE0CD7AC3785AF691D9F3C16F20 /* Pods_TripleBrowserTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_TripleBrowserTests.framework; path = "Pods-TripleBrowserTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		7243DECBA6F302279288ABDF6C88AA39 /* Pods_TripleBrowserUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_TripleBrowserUITests.framework; path = "Pods-TripleBrowserUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		71C30CE0CD7AC3785AF691D9F3C16F20 /* Pods_TripleBrowserTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TripleBrowserTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7243DECBA6F302279288ABDF6C88AA39 /* Pods_TripleBrowserUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TripleBrowserUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F327EE3135B1E2A6EC7DE17D31D932D /* Pods-TripleBrowserTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TripleBrowserTests.debug.xcconfig"; sourceTree = "<group>"; };
 		83C29AE6F404C29AE6C8651D2F6624BB /* TabPageViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TabPageViewController.swift; path = Sources/TabPageViewController.swift; sourceTree = "<group>"; };
 		858089E3C5C5A6262F6C7385BD221CC2 /* Pods-TripleBrowser.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TripleBrowser.release.xcconfig"; sourceTree = "<group>"; };
 		8E770647AAFF0DCEC9672C7AB4C0CEDE /* Pods-TripleBrowserUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TripleBrowserUITests.release.xcconfig"; sourceTree = "<group>"; };
 		9004C658557782251941D0F56D2AB342 /* Pods-TripleBrowserTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TripleBrowserTests-acknowledgements.plist"; sourceTree = "<group>"; };
 		904B00F34EE4EA73C03669B786EDA9FA /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		97BEC2F14555985CA91B31462C158547 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9CAE6377E71CCFC78B87F4D0BD40F499 /* TabPageViewController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = TabPageViewController.framework; path = TabPageViewController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9CAE6377E71CCFC78B87F4D0BD40F499 /* TabPageViewController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TabPageViewController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEDF8ED14CE8C1B331F364C50CA61650 /* Pods-TripleBrowserTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TripleBrowserTests-dummy.m"; sourceTree = "<group>"; };
 		B63C6A64CF66340668996F78DA6BB482 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		BD024C92F51BAA9244EFE031B6674881 /* TabPageViewController.storyboard */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.storyboard; name = TabPageViewController.storyboard; path = Sources/TabPageViewController.storyboard; sourceTree = "<group>"; };
@@ -232,7 +232,6 @@
 				CDAF0940335F8EA0A64E1389C0E2DB64 /* Resources */,
 				9BF35BEC764708835FD0714E4F476F40 /* Support Files */,
 			);
-			name = TabPageViewController;
 			path = TabPageViewController;
 			sourceTree = "<group>";
 		};
@@ -409,7 +408,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
-				LastUpgradeCheck = 0930;
+				LastUpgradeCheck = 1010;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -891,6 +890,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Release;
