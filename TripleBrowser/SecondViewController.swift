@@ -9,7 +9,9 @@
 import UIKit
 import WebKit
 
-class SecondViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegate {
+
+
+class SecondViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegate, WKUIDelegate {
     
     private let feedbackGenerator: Any? = {
         if #available(iOS 10.0, *) {
@@ -30,22 +32,7 @@ class SecondViewController: UIViewController, WKNavigationDelegate, UISearchBarD
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        
-        let config = WKWebViewConfiguration()
-        config.allowsInlineMediaPlayback = true
-        self.webView = WKWebView(frame: self.view.frame, configuration: config)
-        self.webView.navigationDelegate = self
-        
-        self.webView.allowsLinkPreview = true
-        
-        let url = URL(string: "https://www.google.co.jp/")
-        let urlRequest = URLRequest(url: url!)
-        
-        self.webView.load(urlRequest)
-        
-        self.view.addSubview(self.webView)
-        
-        self.webView.translatesAutoresizingMaskIntoConstraints = false
+        setWebView()
         
         //searchBarを表示
         setupSearchBar()
@@ -77,6 +64,32 @@ class SecondViewController: UIViewController, WKNavigationDelegate, UISearchBarD
         self.navigationController?.setToolbarHidden(false, animated: false)
         self.setToolbarItems(items, animated: false)
         
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        NotificationCenter.default.addObserver(self, selector: #selector(self.rotationChange(notification:)), name: Notification.Name.UIDeviceOrientationDidChange, object: nil)
+    }
+    
+    @objc func rotationChange(notification: NSNotification) {
+        self.webView.frame = self.view.frame
+    }
+    
+    func setWebView() {
+        let config = WKWebViewConfiguration()
+        config.allowsInlineMediaPlayback = true
+        self.webView = WKWebView(frame: self.view.frame, configuration: config)
+        self.webView.navigationDelegate = self
+        
+        self.webView.allowsLinkPreview = true
+        
+        let url = URL(string: "https://www.google.co.jp/")
+        let urlRequest = URLRequest(url: url!)
+        
+        self.webView.load(urlRequest)
+        
+        self.view.addSubview(self.webView)
+        
+        self.webView.translatesAutoresizingMaskIntoConstraints = false
     }
     
     @objc func backButtonTapped() {

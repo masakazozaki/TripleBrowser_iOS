@@ -1,0 +1,6 @@
+framework module Pods_TripleBrowserTests {
+  umbrella header "Pods-TripleBrowserTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -14,8 +14,6 @@ import Accounts
 
 class FirstViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegate, UINavigationControllerDelegate {
     
-    
-    
     private let feedbackGenerator: Any? = {
         if #available(iOS 10.0, *) {
             let generator = UINotificationFeedbackGenerator()
@@ -26,34 +24,15 @@ class FirstViewController: UIViewController, WKNavigationDelegate, UISearchBarDe
         }
     }()
     
-    
     var searchBar: UISearchBar!
     var webView: WKWebView!
-
-    
     var progressView = UIProgressView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let toolBarHeight: CGFloat  = (self.navigationController?.toolbar.frame.size.height)!
-        // Do any additional setup after loading the view.
-        
-        let config = WKWebViewConfiguration()
-        config.allowsInlineMediaPlayback = true
-        self.webView = WKWebView(frame: self.view.frame, configuration: config)
-        self.webView.navigationDelegate = self
-        
-        self.webView.allowsLinkPreview = true
-        
-        let url = URL(string: "https://www.google.co.jp/")
-        let urlRequest = URLRequest(url: url!)
-        
-        self.webView.load(urlRequest)
-        
-        self.view.addSubview(self.webView)
-        
-        self.webView.translatesAutoresizingMaskIntoConstraints = false
+        // Do any additional setup after loading the view
+        setWebView()
         
         //searchBarを表示
         setupSearchBar()
@@ -81,6 +60,28 @@ class FirstViewController: UIViewController, WKNavigationDelegate, UISearchBarDe
         
         self.navigationController?.setToolbarHidden(false, animated: false)
         self.setToolbarItems(items, animated: false)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        NotificationCenter.default.addObserver(self, selector: #selector(self.rotationChange(notification:)), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
+    }
+    
+    @objc func rotationChange(notification: NSNotification) {
+        webView.frame = self.view.frame
+    }
+    
+    func setWebView() {
+        let config = WKWebViewConfiguration()
+        config.allowsInlineMediaPlayback = true
+        self.webView = WKWebView(frame: self.view.frame, configuration: config)
+        self.webView.navigationDelegate = self
+        self.webView.allowsLinkPreview = true
+        
+        let url = URL(string: "https://www.google.co.jp/")
+        let urlRequest = URLRequest(url: url!)
+        self.webView.load(urlRequest)
+        self.view.addSubview(self.webView)
+        self.webView.translatesAutoresizingMaskIntoConstraints = false
     }
     
     //戻るボタン
@@ -165,7 +166,7 @@ class FirstViewController: UIViewController, WKNavigationDelegate, UISearchBarDe
             self.progressView.setProgress(Float(self.webView.estimatedProgress), animated: true)
             
             // estimatedProgressが1.0になったらアニメーションを使って非表示にしアニメーション完了時0.0をセットする
-            if (self.webView.estimatedProgress >= 1.0) {
+            if self.webView.estimatedProgress >= 1.0 {
                 UIView.animate(withDuration: 0.9,
                                delay: 0.6,
                                options: [.curveEaseOut],
@@ -308,5 +309,13 @@ extension UIView {
     }
 }
 
-
+// （Safariでは新しいタブがひらく）リンク先を開けるようにする
+extension ViewController: WKUIDelegate {
+    func webView(_ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView? {
+        if navigationAction.targetFrame == nil {
+            webView.load(navigationAction.request)
+        }
+        return nil
+    }
+}
 

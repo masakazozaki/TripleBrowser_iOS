@@ -25,27 +25,12 @@ class ThirdViewController: UIViewController, WKNavigationDelegate, UISearchBarDe
     var searchBar: UISearchBar!
     var progressView = UIProgressView()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        
-        let config = WKWebViewConfiguration()
-        config.allowsInlineMediaPlayback = true
-        self.webView = WKWebView(frame: self.view.frame, configuration: config)
-        self.webView.navigationDelegate = self
-        
-        self.webView.allowsLinkPreview = true
-        
-        let url = URL(string: "https://www.google.co.jp/")
-        let urlRequest = URLRequest(url: url!)
-        
-        self.webView.load(urlRequest)
-        
-        self.view.addSubview(self.webView)
-        
-        self.webView.translatesAutoresizingMaskIntoConstraints = false
-
+        setWebView()
         //searchBarを表示
         setupSearchBar()
         
@@ -76,8 +61,43 @@ class ThirdViewController: UIViewController, WKNavigationDelegate, UISearchBarDe
         self.navigationController?.setToolbarHidden(false, animated: false)
         self.setToolbarItems(items, animated: false)
         
-        
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        NotificationCenter.default.addObserver(self, selector: #selector(self.rotationChange(notification:)), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
+    }
+    
+    @objc func rotationChange(notification: NSNotification) {
+        webView.frame = self.view.frame
+    }
+    
+    func setWebView() {
+        let config = WKWebViewConfiguration()
+        config.allowsInlineMediaPlayback = true
+        
+        self.webView = WKWebView(frame: self.view.frame, configuration: config)
+        self.webView.navigationDelegate = self
+        
+        self.webView.allowsLinkPreview = true
+        
+        let url = URL(string: "https://www.google.co.jp/")
+        let urlRequest = URLRequest(url: url!)
+        
+        self.webView.load(urlRequest)
+        
+        self.view.addSubview(self.webView)
+        
+        self.webView.translatesAutoresizingMaskIntoConstraints = false
+    }
+    
+    
+//
+//    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+//
+//        let config = WKWebViewConfiguration()
+//        config.allowsInlineMediaPlayback = true
+//        self.webView = WKWebView(frame: self.view.frame, configuration: config)
+//    }
     
     @objc func backButtonTapped() {
         if self.webView.canGoBack{
@@ -250,6 +270,10 @@ class ThirdViewController: UIViewController, WKNavigationDelegate, UISearchBarDe
      }
      */
     
-    
 }
+
+
+
+
+
 
