@@ -38,6 +38,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="YgW-60-xgo"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="progressBarColor">
+                            <color key="value" red="0.21168657630000001" green="0.55829951450000004" blue="0.92288626269999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -71,6 +76,11 @@
                         <viewLayoutGuide key="safeArea" id="hmG-kA-Dyw"/>
                     </view>
                     <navigationItem key="navigationItem" id="L9p-Ip-ENa"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="progressBarColor">
+                            <color key="value" red="1" green="0.35487514209999999" blue="0.53532349079999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gls-aW-R5f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -94,6 +104,11 @@
                         <viewLayoutGuide key="safeArea" id="7fd-Hk-H9T"/>
                     </view>
                     <navigationItem key="navigationItem" id="V78-b8-QC8"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="progressBarColor">
+                            <color key="value" red="0.3921568627" green="0.87843137250000003" blue="0.3758230165" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d1h-je-SnU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -12,7 +12,9 @@ import Accounts
 
 
 
-class FirstViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegate, UINavigationControllerDelegate {
+@IBDesignable class FirstViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegate, UINavigationControllerDelegate {
+    
+    @IBInspectable var progressBarColor: UIColor = UIColor.blue
     
     private let feedbackGenerator: Any? = {
         if #available(iOS 10.0, *) {
@@ -39,7 +41,7 @@ class FirstViewController: UIViewController, WKNavigationDelegate, UISearchBarDe
         //progressView関連
         self.progressView = UIProgressView(frame: CGRect(x: 0.0, y: (self.navigationController?.navigationBar.frame.size.height)! + 10, width: self.view.frame.size.width, height: 3.0))
         self.progressView.progressViewStyle = .bar
-        self.progressView.progressTintColor = UIColor.blue
+        self.progressView.progressTintColor = progressBarColor
         self.navigationController?.navigationBar.addSubview(self.progressView)
         
         // KVO 監視
