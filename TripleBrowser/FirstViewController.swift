@@ -62,13 +62,13 @@ class FirstViewController: UIViewController, WKNavigationDelegate, UISearchBarDe
         self.setToolbarItems(items, animated: false)
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        NotificationCenter.default.addObserver(self, selector: #selector(self.rotationChange(notification:)), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
-    }
-    
-    @objc func rotationChange(notification: NSNotification) {
-        webView.frame = self.view.frame
-    }
+//    override func viewDidAppear(_ animated: Bool) {
+//        NotificationCenter.default.addObserver(self, selector: #selector(self.rotationChange(notification:)), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
+//    }
+//
+//    @objc func rotationChange(notification: NSNotification) {
+//        webView.frame = self.view.frame
+//    }
     
     func setWebView() {
         let config = WKWebViewConfiguration()
@@ -77,11 +77,16 @@ class FirstViewController: UIViewController, WKNavigationDelegate, UISearchBarDe
         self.webView.navigationDelegate = self
         self.webView.allowsLinkPreview = true
         
+        
         let url = URL(string: "https://www.google.co.jp/")
         let urlRequest = URLRequest(url: url!)
         self.webView.load(urlRequest)
-        self.view.addSubview(self.webView)
+        self.view.addSubview(webView)
         self.webView.translatesAutoresizingMaskIntoConstraints = false
+        webView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        webView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        webView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        webView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
     }
     
     //戻るボタン
