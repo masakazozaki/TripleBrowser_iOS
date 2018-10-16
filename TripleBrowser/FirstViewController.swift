@@ -12,7 +12,7 @@ import Accounts
 
 
 
-@IBDesignable class FirstViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegate, UINavigationControllerDelegate {
+@IBDesignable class FirstViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegate, UINavigationControllerDelegate, WKUIDelegate {
     
     @IBInspectable var progressBarColor: UIColor = UIColor.blue
     
@@ -111,7 +111,7 @@ import Accounts
         // 共有する項目
         let shareText = self.webView?.title!
         let shareWebsite = self.webView?.url!
-        let shareImage = self.view.getScreenShot(windowFrame: self.view.frame, adFrame: CGRect(x: 0, y: 0, width: 0, height: 0))
+        let shareImage = self.view.getScreenShot(windowFrame: self.view.frame, adFrame: CGRect.zero)
         let activityItems = [shareText, shareWebsite, shareImage] as [Any]
         
         // 初期化処理
@@ -244,6 +244,7 @@ import Accounts
         }
         let urlRequest = URLRequest(url: url!)
         self.webView.load(urlRequest)
+
     }
     
     //URLのパーセントエンコーディング
@@ -270,6 +271,31 @@ import Accounts
      // Pass the selected object to the new view controller.
      }
      */
+    
+    //MARK: - WKUIDelegate
+    
+    func webView(_ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView? {
+        if navigationAction.targetFrame == nil {
+            webView.load(navigationAction.request)
+        }
+        return nil
+    }
+    
+    //Universal Link Disable
+    func webView(_ webView: WKWebView,
+                 decidePolicyFor navigationAction: WKNavigationAction,
+                 decisionHandler: @escaping (WKNavigationActionPolicy) -> Swift.Void) {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        decisionHandler(WKNavigationActionPolicy(rawValue: WKNavigationActionPolicy.allow.rawValue + 2)!)
+    }
+    
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = false
+    }
+    
+    func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = false
+    }
     
 }
 
@@ -317,14 +343,3 @@ extension UIView {
         return capturedImage
     }
 }
-
-// （Safariでは新しいタブがひらく）リンク先を開けるようにする
-extension FirstViewController: WKUIDelegate {
-    func webView(_ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView? {
-        if navigationAction.targetFrame == nil {
-            webView.load(navigationAction.request)
-        }
-        return nil
-    }
-}
-
