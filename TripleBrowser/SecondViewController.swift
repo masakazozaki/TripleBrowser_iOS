@@ -9,6 +9,8 @@
 import UIKit
 import WebKit
 
+
+
 class SecondViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegate, WKUIDelegate {
     
     private let feedbackGenerator: Any? = {
@@ -30,22 +32,7 @@ class SecondViewController: UIViewController, WKNavigationDelegate, UISearchBarD
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        
-        let config = WKWebViewConfiguration()
-        config.allowsInlineMediaPlayback = true
-        self.webView = WKWebView(frame: self.view.frame, configuration: config)
-        self.webView.navigationDelegate = self
-        
-        self.webView.allowsLinkPreview = true
-        
-        let url = URL(string: "https://www.google.co.jp/")
-        let urlRequest = URLRequest(url: url!)
-        
-        self.webView.load(urlRequest)
-        
-        self.view.addSubview(self.webView)
-        
-        self.webView.translatesAutoresizingMaskIntoConstraints = false
+        setWebView()
         
         //searchBarを表示
         setupSearchBar()
@@ -79,23 +66,30 @@ class SecondViewController: UIViewController, WKNavigationDelegate, UISearchBarD
         
     }
     
-    // 読み込み開始時イベント
-    func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
-        print("start")
+    override func viewDidAppear(_ animated: Bool) {
+        NotificationCenter.default.addObserver(self, selector: #selector(self.rotationChange(notification:)), name: Notification.Name.UIDeviceOrientationDidChange, object: nil)
     }
     
-    func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
-        print(error.localizedDescription)
+    @objc func rotationChange(notification: NSNotification) {
+        self.webView.frame = self.view.frame
     }
     
-    // 読み込み終了時イベント
-    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        print("finish")
-    }
-    
-    // 読み込み失敗時イベント
-    func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
-        print(error.localizedDescription)
+    func setWebView() {
+        let config = WKWebViewConfiguration()
+        config.allowsInlineMediaPlayback = true
+        self.webView = WKWebView(frame: self.view.frame, configuration: config)
+        self.webView.navigationDelegate = self
+        
+        self.webView.allowsLinkPreview = true
+        
+        let url = URL(string: "https://www.google.co.jp/")
+        let urlRequest = URLRequest(url: url!)
+        
+        self.webView.load(urlRequest)
+        
+        self.view.addSubview(self.webView)
+        
+        self.webView.translatesAutoresizingMaskIntoConstraints = false
     }
     
     @objc func backButtonTapped() {

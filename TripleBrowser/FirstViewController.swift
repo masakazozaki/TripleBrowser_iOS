@@ -31,19 +31,8 @@ class FirstViewController: UIViewController, WKNavigationDelegate, UISearchBarDe
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let toolBarHeight: CGFloat  = (self.navigationController?.toolbar.frame.size.height)!
-        // Do any additional setup after loading the view.
-        let config = WKWebViewConfiguration()
-        config.allowsInlineMediaPlayback = true
-        self.webView = WKWebView(frame: self.view.frame, configuration: config)
-        self.webView.navigationDelegate = self
-        self.webView.allowsLinkPreview = true
-        
-        let url = URL(string: "https://www.google.co.jp/")
-        let urlRequest = URLRequest(url: url!)
-        self.webView.load(urlRequest)
-        self.view.addSubview(self.webView)
-        self.webView.translatesAutoresizingMaskIntoConstraints = false
+        // Do any additional setup after loading the view
+        setWebView()
         
         //searchBarを表示
         setupSearchBar()
@@ -71,6 +60,28 @@ class FirstViewController: UIViewController, WKNavigationDelegate, UISearchBarDe
         
         self.navigationController?.setToolbarHidden(false, animated: false)
         self.setToolbarItems(items, animated: false)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        NotificationCenter.default.addObserver(self, selector: #selector(self.rotationChange(notification:)), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
+    }
+    
+    @objc func rotationChange(notification: NSNotification) {
+        webView.frame = self.view.frame
+    }
+    
+    func setWebView() {
+        let config = WKWebViewConfiguration()
+        config.allowsInlineMediaPlayback = true
+        self.webView = WKWebView(frame: self.view.frame, configuration: config)
+        self.webView.navigationDelegate = self
+        self.webView.allowsLinkPreview = true
+        
+        let url = URL(string: "https://www.google.co.jp/")
+        let urlRequest = URLRequest(url: url!)
+        self.webView.load(urlRequest)
+        self.view.addSubview(self.webView)
+        self.webView.translatesAutoresizingMaskIntoConstraints = false
     }
     
     //戻るボタン
