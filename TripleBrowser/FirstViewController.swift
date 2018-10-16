@@ -206,13 +206,7 @@ class FirstViewController: UIViewController, WKNavigationDelegate, UISearchBarDe
         searchBar.resignFirstResponder()
         
     }
-    
-    func enteredBackground(notification: Notification) {
-        let script = "var vids = document.getElementsByTagName('video'); for( var i = 0; i < vids.length; i++ ){vids.item(i).pause()}"
-        self.webView.evaluateJavaScript(script, completionHandler:nil)
-    }
 
-    
     //searchabarでreturnキーを押したとき
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         
