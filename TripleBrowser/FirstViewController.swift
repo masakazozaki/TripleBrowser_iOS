@@ -16,8 +16,6 @@ class FirstViewController: UIViewController, WKNavigationDelegate, UISearchBarDe
     
     var progressBarColor: UIColor = UIColor.blue
     
-    public var pageNum: Int = 0
-    
     private let feedbackGenerator: Any? = {
         if #available(iOS 10.0, *) {
             let generator = UINotificationFeedbackGenerator()
@@ -31,14 +29,16 @@ class FirstViewController: UIViewController, WKNavigationDelegate, UISearchBarDe
     var searchBar: UISearchBar!
     var webView: WKWebView!
     var progressView = UIProgressView()
-    
+	
+	override func viewDidLayoutSubviews() {
+		print("viewDidLayout")
+	}
+	
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         // Do any additional setup after loading the view
         setWebView()
-        
         //searchBarを表示
         setupSearchBar()
         //progressView関連
@@ -190,7 +190,6 @@ class FirstViewController: UIViewController, WKNavigationDelegate, UISearchBarDe
     }
     //SeatchBar関連 -> ViewDidLoadで読まれる
     private func setupSearchBar(){
-        
         let searchBar: UISearchBar = UISearchBar(frame: (navigationController?.navigationBar.frame)!)
         
         searchBar.delegate = self
@@ -259,17 +258,8 @@ class FirstViewController: UIViewController, WKNavigationDelegate, UISearchBarDe
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
+	
+	
     
     //MARK: - WKUIDelegate
     
@@ -295,6 +285,7 @@ class FirstViewController: UIViewController, WKNavigationDelegate, UISearchBarDe
     func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
     }
+	
     
 }
 
