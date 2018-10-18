@@ -29,10 +29,13 @@ class FirstViewController: UIViewController, WKNavigationDelegate, UISearchBarDe
     var searchBar: UISearchBar!
     var webView: WKWebView!
     var progressView = UIProgressView()
-    
+	
+	override func viewDidLayoutSubviews() {
+		print("viewDidLayout")
+	}
+	
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         // Do any additional setup after loading the view
         setWebView()

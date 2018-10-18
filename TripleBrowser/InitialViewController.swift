@@ -9,11 +9,8 @@
 import UIKit
 
 class InitialViewController: UIViewController {
-
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
 
@@ -34,8 +31,7 @@ class InitialViewController: UIViewController {
 			themeColor = UIColor(red: 100/255, green: 224/255, blue: 96/255, alpha: 1)
 			break
 		default:
-			themeColor = UIColor.black
-			break
+			return
 		}
 		(segue.destination.children.first as! FirstViewController).progressBarColor = themeColor
 		(segue.destination.children.first as! FirstViewController).navigationController!.navigationBar.backgroundColor = themeColor
