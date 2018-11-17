@@ -15,6 +15,7 @@
 		E73B7F682083047F0071851A /* TripleBrowserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73B7F672083047F0071851A /* TripleBrowserTests.swift */; };
 		E73B7F732083047F0071851A /* TripleBrowserUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73B7F722083047F0071851A /* TripleBrowserUITests.swift */; };
 		E761DB9A208B2F510055D5C2 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E761DB99208B2F510055D5C2 /* FirstViewController.swift */; };
+		E77BD93821A0224D00F02C3D /* WKWebViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77BD93721A0224D00F02C3D /* WKWebViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		E73B7F722083047F0071851A /* TripleBrowserUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripleBrowserUITests.swift; sourceTree = "<group>"; };
 		E73B7F742083047F0071851A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E761DB99208B2F510055D5C2 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		E77BD93721A0224D00F02C3D /* WKWebViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKWebViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				E73B7F5B2083047F0071851A /* LaunchScreen.storyboard */,
 				E73B7F5E2083047F0071851A /* Info.plist */,
 				BADADC7721782B5600525596 /* InitialViewController.swift */,
+				E77BD93721A0224D00F02C3D /* WKWebViewModel.swift */,
 			);
 			path = TripleBrowser;
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 				BADADC7821782B5600525596 /* InitialViewController.swift in Sources */,
 				E761DB9A208B2F510055D5C2 /* FirstViewController.swift in Sources */,
 				E73B7F532083047E0071851A /* AppDelegate.swift in Sources */,
+				E77BD93821A0224D00F02C3D /* WKWebViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,7 +450,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7R974FN29R;
 				INFOPLIST_FILE = TripleBrowser/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -467,7 +471,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7R974FN29R;
 				INFOPLIST_FILE = TripleBrowser/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -10,8 +10,6 @@ import UIKit
 import WebKit
 import Accounts
 
-
-
 class FirstViewController: UIViewController, WKNavigationDelegate, UISearchBarDelegate, UINavigationControllerDelegate, WKUIDelegate {
     
     var progressBarColor: UIColor = UIColor.blue
@@ -26,20 +24,15 @@ class FirstViewController: UIViewController, WKNavigationDelegate, UISearchBarDe
         }
     }()
     
+    var webViewModel = WKWebViewModel()
     var searchBar: UISearchBar!
     var webView: WKWebView!
     var progressView = UIProgressView()
 	
-	override func viewDidLayoutSubviews() {
-		print("viewDidLayout")
-	}
-	
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Do any additional setup after loading the view
         setWebView()
-        //searchBarを表示
         setupSearchBar()
         //progressView関連
         progressView = UIProgressView(frame: CGRect(x: 0.0, y: (navigationController?.navigationBar.frame.size.height)! + 10, width: view.frame.size.width, height: 3.0))
@@ -67,21 +60,12 @@ class FirstViewController: UIViewController, WKNavigationDelegate, UISearchBarDe
         setToolbarItems(items, animated: false)
     }
     
-//    override func viewDidAppear(_ animated: Bool) {
-//        NotificationCenter.default.addObserver(self, selector: #selector(rotationChange(notification:)), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
-//    }
-//
-//    @objc func rotationChange(notification: NSNotification) {
-//        webView.frame = view.frame
-//    }
-    
     func setWebView() {
         let config = WKWebViewConfiguration()
         config.allowsInlineMediaPlayback = true
         webView = WKWebView(frame: view.frame, configuration: config)
         webView.navigationDelegate = self
         webView.allowsLinkPreview = true
-        
         
         let url = URL(string: "https://www.google.co.jp/")
         let urlRequest = URLRequest(url: url!)
@@ -110,34 +94,26 @@ class FirstViewController: UIViewController, WKNavigationDelegate, UISearchBarDe
     @objc func actionButtonTapped() {
         
         // 共有する項目
-        let shareText: String = webView!.title!
-        let shareWebsite: URL = webView!.url!
+        let shareTitle: String = webView!.title!
+        let shareURL: URL = webView!.url!
         let shareImage: UIImage = view.getScreenShot(windowFrame: view.frame, adFrame: CGRect.zero)
-        
         // 初期化処理
-        let activityVC = UIActivityViewController(activityItems: [shareText, shareWebsite, shareImage], applicationActivities: nil)
-        
+        let activityVC = UIActivityViewController(activityItems: [shareTitle, shareURL, shareImage], applicationActivities: nil)
         //iPadのエラーを回避
         activityVC.popoverPresentationController?.sourceView = view
         activityVC.popoverPresentationController?.sourceRect = CGRect(x: view.frame.size.width/2, y: view.frame.size.height - 44.0, width: 0, height: 0)
         
         // UIActivityViewControllerを表示
         present(activityVC, animated: true, completion: nil)
-        
     }
     
     //スクショボタン
-    
     @objc func screenShotButtonTapped() {
-        
         let screenShot = view.getScreenShot(windowFrame: view.frame, adFrame: CGRect(x: 0, y: 0, width: 0, height: 0))
-        
         let alertController: UIAlertController = UIAlertController(title: "Save Screen Shot", message: "To save screen shot, tap the save button", preferredStyle: .actionSheet)
-        
-        let actionChoice1 = UIAlertAction(title: "Save", style: .default){
+        let actionChoice1 = UIAlertAction(title: "Save", style: .default) {
             action in
             UIImageWriteToSavedPhotosAlbum(screenShot, self, nil, nil)
-            
             let alert: UIAlertController = UIAlertController(title: "Save Completed", message:"", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default))
             self.present(alert, animated: true, completion: nil)
@@ -152,13 +128,11 @@ class FirstViewController: UIViewController, WKNavigationDelegate, UISearchBarDe
         
         alertController.addAction(actionChoice1)
         alertController.addAction(actionCancel)
-        
         //iPadのエラーを回避
         alertController.popoverPresentationController?.sourceView = view
         alertController.popoverPresentationController?.sourceRect = CGRect(x: view.frame.size.width - 36.0, y: view.frame.size.height - 40.0, width: 0, height: 0)
         
         present(alertController, animated: true, completion: nil)
-        
     }
     
     deinit {
@@ -211,55 +185,16 @@ class FirstViewController: UIViewController, WKNavigationDelegate, UISearchBarDe
         
         //キーボードを閉じる
         searchBar.resignFirstResponder()
-        
-        //テキストを判定
-        let searchText: String!
-        searchText = searchBar.text
-        let url:URL!
-        if searchText.hasPrefix("http") {
-            
-            url = URL(string: searchText)
-        
-        } else if searchText.hasPrefix("www") {
-            
-            let urlp: String = "https://" + searchText
-            url = URL(string: urlp)
-          
-        } else  if searchText.hasSuffix("com") {
-            
-            url = URL(string: searchText)
-           
-        } else  if searchText.hasSuffix("jp") {
-            
-            url = URL(string: searchText)
 
-        } else {
-            
-            let percent = urlEncording(str: searchText)
-            let urlp: String = "https://www.google.co.jp/search?q=" + percent
-            url = URL(string: urlp)
-
-        }
-        let urlRequest = URLRequest(url: url!)
+        let urlRequest = URLRequest(url: webViewModel.checkSearchText(searchText: searchBar.text!))
         webView.load(urlRequest)
 
-    }
-    
-    //URLのパーセントエンコーディング
-    func urlEncording(str: String) -> String {
-        let characterSetTobeAllowed = (CharacterSet(charactersIn: "!*'();:@&=+$,/?%#[] ").inverted)
-        if let encodedURLString = str.addingPercentEncoding(withAllowedCharacters: characterSetTobeAllowed) {
-            return encodedURLString
-        }
-        return str
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-	
-	
     
     //MARK: - WKUIDelegate
     
@@ -285,8 +220,6 @@ class FirstViewController: UIViewController, WKNavigationDelegate, UISearchBarDe
     func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
     }
-	
-    
 }
 
 extension UIBarButtonItem {
@@ -319,10 +252,6 @@ extension UIView {
         //contextにスクリーンショットを書き込む
         layer.render(in: context)
         
-        //        //広告の領域を白で塗りつぶす
-        //        context.setFillColor(UIColor.white.cgColor)
-        //        context.fill(adFrame)
-        //
         //contextをUIImageに書き出す
         let capturedImage : UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         
