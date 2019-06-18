@@ -3,508 +3,467 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 51;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		52B60EC2A583F24ACBB69C113F5488B9 /* SwiftLint */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = AE7B4FB01588B9E6DF09CB79FC7CE7BD /* Build configuration list for PBXAggregateTarget "SwiftLint" */;
+			buildPhases = (
+			);
+			dependencies = (
+			);
+			name = SwiftLint;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
-		0AAEF084B7B04E413AA2BE0D878F480E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */; };
-		2CBE83023B8B190229D0ACADC7637027 /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1DA1E8355E421DE207F0C41A6173B4 /* TabView.swift */; };
-		3466731BC6F1B5B8875AF9712383F10F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */; };
-		5565C92C4E63184D3AC7ECC3B47911A0 /* TabView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE82E0D82DEC8E4DBFE620034BE26130 /* TabView.xib */; };
-		6528489E2AB7A33A128C37CD98BC1600 /* TabPageOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88207395D3FB5D632E5616772AB308E /* TabPageOption.swift */; };
-		6AB04F22EA7DB8F2B27936B406F7BA62 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */; };
-		6DC26481946ECAD5FAFB28008F86D81A /* Pods-TripleBrowserUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 170DEFE97AA321B1F3C47687C621F5A0 /* Pods-TripleBrowserUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7E04D1C96C4F324F28FD9756A6819AF8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */; };
-		8C91C2FA16836646589506BE88BFA435 /* TabPageViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD024C92F51BAA9244EFE031B6674881 /* TabPageViewController.storyboard */; };
-		8D933AE6BFF270472D545B584A286400 /* Pods-TripleBrowser-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 519F8090B2D5C11CD7DEA60F8C56D1E2 /* Pods-TripleBrowser-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A1E1841F7D328D1A7CD1F5CB0E0BB449 /* Pods-TripleBrowserUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 19DE8D6D25B2272BA63D1556296B466F /* Pods-TripleBrowserUITests-dummy.m */; };
-		A247CFC3A9DFEF3B45D1951667394CE9 /* Pods-TripleBrowserTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 22DD120C582E66664730A98D01CDAD7E /* Pods-TripleBrowserTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BA2951F2BA50D114333312A04425F84B /* TabCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F63A079167F169AD0C37EC692B3E9E1E /* TabCollectionCell.xib */; };
-		BCC4128256775C7D388167F75A75490B /* TabPageViewController-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D8125249DC98845A9DD4F6363C4E3065 /* TabPageViewController-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C17BD4E482DC4D8FF688D6930F0BB81C /* TabPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C29AE6F404C29AE6C8651D2F6624BB /* TabPageViewController.swift */; };
-		C996B00257F1E3F05243FA689F4559A1 /* Pods-TripleBrowser-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 61CF4474A70E82D70DE7E3B3B9D20481 /* Pods-TripleBrowser-dummy.m */; };
-		DB81D924BD7005C52DD5235F798620F9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B63C6A64CF66340668996F78DA6BB482 /* UIKit.framework */; };
-		DF021755ED8581C33A6E90B90419A306 /* TabPageViewController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 653B92F43695571126239CA9AAB3DF29 /* TabPageViewController-dummy.m */; };
-		E62637846C51942073E413E842821BA8 /* TabCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB0CEF94F4CA46300BF9EC737C3F4F45 /* TabCollectionCell.swift */; };
-		EA43A566932FC9FA95CCC2FB2CB8B40B /* Pods-TripleBrowserTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AEDF8ED14CE8C1B331F364C50CA61650 /* Pods-TripleBrowserTests-dummy.m */; };
+		1AEC8E32B4CEB2C844867BDCF2F5082A /* Pods-TripleBrowserTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 72DAE12C0E5423B2FCF691814C73EE60 /* Pods-TripleBrowserTests-dummy.m */; };
+		1D1C207B38FE62BDC82F36635614CC4E /* Pods-TripleBrowserUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EF99B6DD3A1D901DD687A4D6F02E567 /* Pods-TripleBrowserUITests-dummy.m */; };
+		5D199196767B5755AAE6C30D84C99175 /* Pods-TripleBrowserUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 99D297CE6F227169C0C503E538C9B732 /* Pods-TripleBrowserUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AA9A9E9184D4FE4F10764E75CE9534C9 /* Pods-TripleBrowserTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 004E30EE189C87D55602F413FD88F465 /* Pods-TripleBrowserTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AD1E899BFFC1AE562E698369A4E8AE28 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		D06DDFC8F83220CD108E614D5996CC77 /* Pods-TripleBrowser-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D70D50E5A1D0FAE9FF0EBAEF491B7F4 /* Pods-TripleBrowser-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DE918C938D17D89723D89C46A9DC0DED /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		EBFEC4BA45EA56A21F2BFF0A2E18990E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		FF006D53C8CECB8C68CE285DC262457B /* Pods-TripleBrowser-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5429E76565564C9F780AC79B5F011BBF /* Pods-TripleBrowser-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		2C77136A186647EC729042CCBD4CE3EF /* PBXContainerItemProxy */ = {
+		4F7D1DF1735FFF889361EF48524470B3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 5903019B20A43C946F38F843CFF2167D;
+			remoteGlobalIDString = E9198BCCFCB75CCA4F7ABDDDDE408DDD;
 			remoteInfo = "Pods-TripleBrowser";
 		};
-		53D6B421D99B8205EBFB2080F04BF7CF /* PBXContainerItemProxy */ = {
+		BADB8B692D50B679722509F27F0CA7B8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 310CDE505ADA3F946C57C911C03E663E;
-			remoteInfo = TabPageViewController;
-		};
-		F1D257A1F371F4D362088090D93DD4DF /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 5903019B20A43C946F38F843CFF2167D;
+			remoteGlobalIDString = E9198BCCFCB75CCA4F7ABDDDDE408DDD;
 			remoteInfo = "Pods-TripleBrowser";
+		};
+		EA3A2808C2BCE47773F1C928E5A33DD8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 52B60EC2A583F24ACBB69C113F5488B9;
+			remoteInfo = SwiftLint;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		130B11029CE95917082F7DE525EE07FA /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		170DEFE97AA321B1F3C47687C621F5A0 /* Pods-TripleBrowserUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TripleBrowserUITests-umbrella.h"; sourceTree = "<group>"; };
-		195E1B222BCD804E87E8A80C789C5664 /* Pods-TripleBrowserUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TripleBrowserUITests-resources.sh"; sourceTree = "<group>"; };
-		19DE8D6D25B2272BA63D1556296B466F /* Pods-TripleBrowserUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TripleBrowserUITests-dummy.m"; sourceTree = "<group>"; };
-		1D7F46A22208F6037B1471808C68A509 /* TabPageViewController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TabPageViewController.xcconfig; sourceTree = "<group>"; };
-		1F1DA1E8355E421DE207F0C41A6173B4 /* TabView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TabView.swift; path = Sources/TabView.swift; sourceTree = "<group>"; };
-		22DD120C582E66664730A98D01CDAD7E /* Pods-TripleBrowserTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TripleBrowserTests-umbrella.h"; sourceTree = "<group>"; };
-		239CFAB41E7875909878FABCF2C73035 /* Pods-TripleBrowser.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TripleBrowser.debug.xcconfig"; sourceTree = "<group>"; };
-		2DF981751B5B79F40E20487651A88508 /* Pods-TripleBrowserTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TripleBrowserTests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		35F8BE5F3E675697E33DB1C44CA809BE /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3FE6312C3AD6A9D79352D84F2B7CF73A /* Pods_TripleBrowser.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TripleBrowser.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4812B485FC4751E017D920D1BAD1A1A8 /* Pods-TripleBrowser-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TripleBrowser-acknowledgements.plist"; sourceTree = "<group>"; };
-		4D562343641F0803BCA9E0B58BAB08EF /* Pods-TripleBrowser-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TripleBrowser-frameworks.sh"; sourceTree = "<group>"; };
-		50C5F04266104AD9B79CC5F8510F3FB2 /* Pods-TripleBrowser-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TripleBrowser-acknowledgements.markdown"; sourceTree = "<group>"; };
-		519F8090B2D5C11CD7DEA60F8C56D1E2 /* Pods-TripleBrowser-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TripleBrowser-umbrella.h"; sourceTree = "<group>"; };
-		52D365FD491F915D202C80F487CF8450 /* Pods-TripleBrowserUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TripleBrowserUITests-acknowledgements.plist"; sourceTree = "<group>"; };
-		5323C0EBEBCB7C21AED6443EAF406C0F /* Pods-TripleBrowserUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TripleBrowserUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		61CF4474A70E82D70DE7E3B3B9D20481 /* Pods-TripleBrowser-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TripleBrowser-dummy.m"; sourceTree = "<group>"; };
-		6508ABC20D891A360FFD47DD23E7CEBD /* Pods-TripleBrowserUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-TripleBrowserUITests.modulemap"; sourceTree = "<group>"; };
-		653B92F43695571126239CA9AAB3DF29 /* TabPageViewController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TabPageViewController-dummy.m"; sourceTree = "<group>"; };
-		666F9D3D8659CEF8736331BC14FF2ED9 /* TabPageViewController.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = TabPageViewController.modulemap; sourceTree = "<group>"; };
-		69D4CAB32A7D404F1A947BB22AFFC510 /* Pods-TripleBrowserTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TripleBrowserTests.release.xcconfig"; sourceTree = "<group>"; };
-		71C30CE0CD7AC3785AF691D9F3C16F20 /* Pods_TripleBrowserTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TripleBrowserTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7243DECBA6F302279288ABDF6C88AA39 /* Pods_TripleBrowserUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TripleBrowserUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7F327EE3135B1E2A6EC7DE17D31D932D /* Pods-TripleBrowserTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TripleBrowserTests.debug.xcconfig"; sourceTree = "<group>"; };
-		83C29AE6F404C29AE6C8651D2F6624BB /* TabPageViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TabPageViewController.swift; path = Sources/TabPageViewController.swift; sourceTree = "<group>"; };
-		858089E3C5C5A6262F6C7385BD221CC2 /* Pods-TripleBrowser.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TripleBrowser.release.xcconfig"; sourceTree = "<group>"; };
-		8E770647AAFF0DCEC9672C7AB4C0CEDE /* Pods-TripleBrowserUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TripleBrowserUITests.release.xcconfig"; sourceTree = "<group>"; };
-		9004C658557782251941D0F56D2AB342 /* Pods-TripleBrowserTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TripleBrowserTests-acknowledgements.plist"; sourceTree = "<group>"; };
-		904B00F34EE4EA73C03669B786EDA9FA /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		97BEC2F14555985CA91B31462C158547 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9CAE6377E71CCFC78B87F4D0BD40F499 /* TabPageViewController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TabPageViewController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		AEDF8ED14CE8C1B331F364C50CA61650 /* Pods-TripleBrowserTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TripleBrowserTests-dummy.m"; sourceTree = "<group>"; };
-		B63C6A64CF66340668996F78DA6BB482 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		BD024C92F51BAA9244EFE031B6674881 /* TabPageViewController.storyboard */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.storyboard; name = TabPageViewController.storyboard; path = Sources/TabPageViewController.storyboard; sourceTree = "<group>"; };
-		C09856BEB89B85333E8234A49C0B5EE9 /* Pods-TripleBrowserTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TripleBrowserTests-frameworks.sh"; sourceTree = "<group>"; };
-		C88207395D3FB5D632E5616772AB308E /* TabPageOption.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TabPageOption.swift; path = Sources/TabPageOption.swift; sourceTree = "<group>"; };
-		C930DF50089B655132A5B9F484DE0ADF /* Pods-TripleBrowserUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TripleBrowserUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		CF62E2A9B58C0658DB4370FB4FABFF29 /* Pods-TripleBrowserUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TripleBrowserUITests-frameworks.sh"; sourceTree = "<group>"; };
-		D07120217A1FF2F85FA2F6CBDAE52F47 /* Pods-TripleBrowserTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-TripleBrowserTests.modulemap"; sourceTree = "<group>"; };
-		D1F8E5BB932261E6A4883030A94E5C9A /* Pods-TripleBrowser-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TripleBrowser-resources.sh"; sourceTree = "<group>"; };
-		D8125249DC98845A9DD4F6363C4E3065 /* TabPageViewController-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TabPageViewController-umbrella.h"; sourceTree = "<group>"; };
-		D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		D92034BFE7538647F55B26DC8E35CFBD /* TabPageViewController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TabPageViewController-prefix.pch"; sourceTree = "<group>"; };
-		DB0CEF94F4CA46300BF9EC737C3F4F45 /* TabCollectionCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TabCollectionCell.swift; path = Sources/TabCollectionCell.swift; sourceTree = "<group>"; };
-		E0583EC5AA7851A831CAF5D226D034DA /* Pods-TripleBrowserTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TripleBrowserTests-resources.sh"; sourceTree = "<group>"; };
-		EE82E0D82DEC8E4DBFE620034BE26130 /* TabView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = TabView.xib; path = Sources/TabView.xib; sourceTree = "<group>"; };
-		F23CEECEBC6BEC23D1239E5E2C762F9C /* Pods-TripleBrowser.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-TripleBrowser.modulemap"; sourceTree = "<group>"; };
-		F63A079167F169AD0C37EC692B3E9E1E /* TabCollectionCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = TabCollectionCell.xib; path = Sources/TabCollectionCell.xib; sourceTree = "<group>"; };
+		004E30EE189C87D55602F413FD88F465 /* Pods-TripleBrowserTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TripleBrowserTests-umbrella.h"; sourceTree = "<group>"; };
+		0409A189A618F1DCF5343375250814DD /* Pods-TripleBrowserTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TripleBrowserTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		10D65B3D0C49F3BAB12C0099ACE3CA60 /* Pods-TripleBrowserUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TripleBrowserUITests-Info.plist"; sourceTree = "<group>"; };
+		14A55E059189BFDF7D9D17A97E79C649 /* Pods_TripleBrowser.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_TripleBrowser.framework; path = "Pods-TripleBrowser.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		23EEB3305110154F8EEEE50607667978 /* Pods-TripleBrowserUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TripleBrowserUITests.release.xcconfig"; sourceTree = "<group>"; };
+		288BB82D22EC6CA3DEACFB767EF33E77 /* Pods-TripleBrowserUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TripleBrowserUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		3187E26DDA8BC9AF05A0F7E924D88E89 /* Pods-TripleBrowserUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-TripleBrowserUITests.modulemap"; sourceTree = "<group>"; };
+		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		4CF59CBA417AB9BD3C36CAE01BDAD557 /* Pods-TripleBrowser-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TripleBrowser-acknowledgements.markdown"; sourceTree = "<group>"; };
+		5429E76565564C9F780AC79B5F011BBF /* Pods-TripleBrowser-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TripleBrowser-dummy.m"; sourceTree = "<group>"; };
+		5A263D4F92DAC9EFAC12DD961C66193D /* Pods-TripleBrowser-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TripleBrowser-acknowledgements.plist"; sourceTree = "<group>"; };
+		5B931ACF7F882538BCBD2C4E2B45B0E5 /* Pods_TripleBrowserUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_TripleBrowserUITests.framework; path = "Pods-TripleBrowserUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5EF99B6DD3A1D901DD687A4D6F02E567 /* Pods-TripleBrowserUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TripleBrowserUITests-dummy.m"; sourceTree = "<group>"; };
+		72DAE12C0E5423B2FCF691814C73EE60 /* Pods-TripleBrowserTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TripleBrowserTests-dummy.m"; sourceTree = "<group>"; };
+		7624D6D5B44182859E4B0CEE3E4F6F12 /* Pods-TripleBrowser.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TripleBrowser.debug.xcconfig"; sourceTree = "<group>"; };
+		76C4326989812719C8D45A6E4F42D978 /* Pods-TripleBrowser-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TripleBrowser-Info.plist"; sourceTree = "<group>"; };
+		7D70D50E5A1D0FAE9FF0EBAEF491B7F4 /* Pods-TripleBrowser-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TripleBrowser-umbrella.h"; sourceTree = "<group>"; };
+		817E563F00784E4419D75DF2A211ECFA /* Pods-TripleBrowser.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TripleBrowser.release.xcconfig"; sourceTree = "<group>"; };
+		89F85ACF3D78B39506B75103B4694B36 /* SwiftLint.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftLint.xcconfig; sourceTree = "<group>"; };
+		8DF02061CF1FF00CC9FA84F775838473 /* Pods-TripleBrowserTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-TripleBrowserTests.modulemap"; sourceTree = "<group>"; };
+		99D297CE6F227169C0C503E538C9B732 /* Pods-TripleBrowserUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TripleBrowserUITests-umbrella.h"; sourceTree = "<group>"; };
+		9A39384DE38C3D556DAA005773EF25E6 /* Pods-TripleBrowserTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TripleBrowserTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		9B2FE78ABD96A4877C0CD631828DF46D /* Pods-TripleBrowserTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TripleBrowserTests-Info.plist"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A7213D581E835883C714D43BF4DB3C1D /* Pods-TripleBrowserTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TripleBrowserTests.release.xcconfig"; sourceTree = "<group>"; };
+		A7C7A90B0EF70A5AD827225C721D2598 /* Pods-TripleBrowserUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TripleBrowserUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		AF3D8B603F8A0B9A4ED6ECB4E4EF4AAB /* Pods-TripleBrowserTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TripleBrowserTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B9FD33B4D8A64B01311141B12DAFDFF2 /* Pods_TripleBrowserTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_TripleBrowserTests.framework; path = "Pods-TripleBrowserTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D6C8232B3D0722D1BC6D2B70504DDFD9 /* Pods-TripleBrowserUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TripleBrowserUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		E330F2C0E4044412032E143F24262EB6 /* Pods-TripleBrowser.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-TripleBrowser.modulemap"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		03A3C3EAC75040B5ADF3F6368BE60873 /* Frameworks */ = {
+		5BB98D1367EB872CBB92A2D1C368B37C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0AAEF084B7B04E413AA2BE0D878F480E /* Foundation.framework in Frameworks */,
-				DB81D924BD7005C52DD5235F798620F9 /* UIKit.framework in Frameworks */,
+				DE918C938D17D89723D89C46A9DC0DED /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		651642D67BF38377F6AC5F121A615D91 /* Frameworks */ = {
+		B2522EEEF95064E92723F81E1DC952E2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6AB04F22EA7DB8F2B27936B406F7BA62 /* Foundation.framework in Frameworks */,
+				EBFEC4BA45EA56A21F2BFF0A2E18990E /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6F8627C48A7E41231A476D999B182371 /* Frameworks */ = {
+		DB664260A0F7EA18A9E936C9E950E466 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7E04D1C96C4F324F28FD9756A6819AF8 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B68C98C145C9BACF38DCFCE8DE792B49 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3466731BC6F1B5B8875AF9712383F10F /* Foundation.framework in Frameworks */,
+				AD1E899BFFC1AE562E698369A4E8AE28 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3340C4EEF909D822F4F45D68B8A87946 /* Pods */ = {
+		075E235762E93DC04B847E5EDB577C44 /* Pods-TripleBrowserTests */ = {
 			isa = PBXGroup;
 			children = (
-				A8EBD62249F695146C8A65C9B28D2D67 /* TabPageViewController */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				438B396F6B4147076630CAEFE34282C1 /* iOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		438B396F6B4147076630CAEFE34282C1 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */,
-				B63C6A64CF66340668996F78DA6BB482 /* UIKit.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		47AD970E89B3A299AD5B3018A2EEEBFD /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				3FE6312C3AD6A9D79352D84F2B7CF73A /* Pods_TripleBrowser.framework */,
-				71C30CE0CD7AC3785AF691D9F3C16F20 /* Pods_TripleBrowserTests.framework */,
-				7243DECBA6F302279288ABDF6C88AA39 /* Pods_TripleBrowserUITests.framework */,
-				9CAE6377E71CCFC78B87F4D0BD40F499 /* TabPageViewController.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		7DB346D0F39D3F0E887471402A8071AB = {
-			isa = PBXGroup;
-			children = (
-				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
-				3340C4EEF909D822F4F45D68B8A87946 /* Pods */,
-				47AD970E89B3A299AD5B3018A2EEEBFD /* Products */,
-				B802FA99EFC9B545042AADF24C65EE7E /* Targets Support Files */,
-			);
-			sourceTree = "<group>";
-		};
-		808FF24FDF803B942727168117ABA93C /* Pods-TripleBrowserUITests */ = {
-			isa = PBXGroup;
-			children = (
-				97BEC2F14555985CA91B31462C158547 /* Info.plist */,
-				6508ABC20D891A360FFD47DD23E7CEBD /* Pods-TripleBrowserUITests.modulemap */,
-				C930DF50089B655132A5B9F484DE0ADF /* Pods-TripleBrowserUITests-acknowledgements.markdown */,
-				52D365FD491F915D202C80F487CF8450 /* Pods-TripleBrowserUITests-acknowledgements.plist */,
-				19DE8D6D25B2272BA63D1556296B466F /* Pods-TripleBrowserUITests-dummy.m */,
-				CF62E2A9B58C0658DB4370FB4FABFF29 /* Pods-TripleBrowserUITests-frameworks.sh */,
-				195E1B222BCD804E87E8A80C789C5664 /* Pods-TripleBrowserUITests-resources.sh */,
-				170DEFE97AA321B1F3C47687C621F5A0 /* Pods-TripleBrowserUITests-umbrella.h */,
-				5323C0EBEBCB7C21AED6443EAF406C0F /* Pods-TripleBrowserUITests.debug.xcconfig */,
-				8E770647AAFF0DCEC9672C7AB4C0CEDE /* Pods-TripleBrowserUITests.release.xcconfig */,
-			);
-			name = "Pods-TripleBrowserUITests";
-			path = "Target Support Files/Pods-TripleBrowserUITests";
-			sourceTree = "<group>";
-		};
-		9BF35BEC764708835FD0714E4F476F40 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				904B00F34EE4EA73C03669B786EDA9FA /* Info.plist */,
-				666F9D3D8659CEF8736331BC14FF2ED9 /* TabPageViewController.modulemap */,
-				1D7F46A22208F6037B1471808C68A509 /* TabPageViewController.xcconfig */,
-				653B92F43695571126239CA9AAB3DF29 /* TabPageViewController-dummy.m */,
-				D92034BFE7538647F55B26DC8E35CFBD /* TabPageViewController-prefix.pch */,
-				D8125249DC98845A9DD4F6363C4E3065 /* TabPageViewController-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/TabPageViewController";
-			sourceTree = "<group>";
-		};
-		A8EBD62249F695146C8A65C9B28D2D67 /* TabPageViewController */ = {
-			isa = PBXGroup;
-			children = (
-				DB0CEF94F4CA46300BF9EC737C3F4F45 /* TabCollectionCell.swift */,
-				C88207395D3FB5D632E5616772AB308E /* TabPageOption.swift */,
-				83C29AE6F404C29AE6C8651D2F6624BB /* TabPageViewController.swift */,
-				1F1DA1E8355E421DE207F0C41A6173B4 /* TabView.swift */,
-				CDAF0940335F8EA0A64E1389C0E2DB64 /* Resources */,
-				9BF35BEC764708835FD0714E4F476F40 /* Support Files */,
-			);
-			path = TabPageViewController;
-			sourceTree = "<group>";
-		};
-		B802FA99EFC9B545042AADF24C65EE7E /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				BC7C788BDC2CEC8565989385F40DC417 /* Pods-TripleBrowser */,
-				FD9FF70BBCBBC0EACC04E31E2594F07A /* Pods-TripleBrowserTests */,
-				808FF24FDF803B942727168117ABA93C /* Pods-TripleBrowserUITests */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		BC7C788BDC2CEC8565989385F40DC417 /* Pods-TripleBrowser */ = {
-			isa = PBXGroup;
-			children = (
-				130B11029CE95917082F7DE525EE07FA /* Info.plist */,
-				F23CEECEBC6BEC23D1239E5E2C762F9C /* Pods-TripleBrowser.modulemap */,
-				50C5F04266104AD9B79CC5F8510F3FB2 /* Pods-TripleBrowser-acknowledgements.markdown */,
-				4812B485FC4751E017D920D1BAD1A1A8 /* Pods-TripleBrowser-acknowledgements.plist */,
-				61CF4474A70E82D70DE7E3B3B9D20481 /* Pods-TripleBrowser-dummy.m */,
-				4D562343641F0803BCA9E0B58BAB08EF /* Pods-TripleBrowser-frameworks.sh */,
-				D1F8E5BB932261E6A4883030A94E5C9A /* Pods-TripleBrowser-resources.sh */,
-				519F8090B2D5C11CD7DEA60F8C56D1E2 /* Pods-TripleBrowser-umbrella.h */,
-				239CFAB41E7875909878FABCF2C73035 /* Pods-TripleBrowser.debug.xcconfig */,
-				858089E3C5C5A6262F6C7385BD221CC2 /* Pods-TripleBrowser.release.xcconfig */,
-			);
-			name = "Pods-TripleBrowser";
-			path = "Target Support Files/Pods-TripleBrowser";
-			sourceTree = "<group>";
-		};
-		CDAF0940335F8EA0A64E1389C0E2DB64 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				F63A079167F169AD0C37EC692B3E9E1E /* TabCollectionCell.xib */,
-				BD024C92F51BAA9244EFE031B6674881 /* TabPageViewController.storyboard */,
-				EE82E0D82DEC8E4DBFE620034BE26130 /* TabView.xib */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		FD9FF70BBCBBC0EACC04E31E2594F07A /* Pods-TripleBrowserTests */ = {
-			isa = PBXGroup;
-			children = (
-				35F8BE5F3E675697E33DB1C44CA809BE /* Info.plist */,
-				D07120217A1FF2F85FA2F6CBDAE52F47 /* Pods-TripleBrowserTests.modulemap */,
-				2DF981751B5B79F40E20487651A88508 /* Pods-TripleBrowserTests-acknowledgements.markdown */,
-				9004C658557782251941D0F56D2AB342 /* Pods-TripleBrowserTests-acknowledgements.plist */,
-				AEDF8ED14CE8C1B331F364C50CA61650 /* Pods-TripleBrowserTests-dummy.m */,
-				C09856BEB89B85333E8234A49C0B5EE9 /* Pods-TripleBrowserTests-frameworks.sh */,
-				E0583EC5AA7851A831CAF5D226D034DA /* Pods-TripleBrowserTests-resources.sh */,
-				22DD120C582E66664730A98D01CDAD7E /* Pods-TripleBrowserTests-umbrella.h */,
-				7F327EE3135B1E2A6EC7DE17D31D932D /* Pods-TripleBrowserTests.debug.xcconfig */,
-				69D4CAB32A7D404F1A947BB22AFFC510 /* Pods-TripleBrowserTests.release.xcconfig */,
+				8DF02061CF1FF00CC9FA84F775838473 /* Pods-TripleBrowserTests.modulemap */,
+				9A39384DE38C3D556DAA005773EF25E6 /* Pods-TripleBrowserTests-acknowledgements.markdown */,
+				0409A189A618F1DCF5343375250814DD /* Pods-TripleBrowserTests-acknowledgements.plist */,
+				72DAE12C0E5423B2FCF691814C73EE60 /* Pods-TripleBrowserTests-dummy.m */,
+				9B2FE78ABD96A4877C0CD631828DF46D /* Pods-TripleBrowserTests-Info.plist */,
+				004E30EE189C87D55602F413FD88F465 /* Pods-TripleBrowserTests-umbrella.h */,
+				AF3D8B603F8A0B9A4ED6ECB4E4EF4AAB /* Pods-TripleBrowserTests.debug.xcconfig */,
+				A7213D581E835883C714D43BF4DB3C1D /* Pods-TripleBrowserTests.release.xcconfig */,
 			);
 			name = "Pods-TripleBrowserTests";
 			path = "Target Support Files/Pods-TripleBrowserTests";
 			sourceTree = "<group>";
 		};
+		40B5319D0069C16547E6691CE77F19AF /* Pods-TripleBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				E330F2C0E4044412032E143F24262EB6 /* Pods-TripleBrowser.modulemap */,
+				4CF59CBA417AB9BD3C36CAE01BDAD557 /* Pods-TripleBrowser-acknowledgements.markdown */,
+				5A263D4F92DAC9EFAC12DD961C66193D /* Pods-TripleBrowser-acknowledgements.plist */,
+				5429E76565564C9F780AC79B5F011BBF /* Pods-TripleBrowser-dummy.m */,
+				76C4326989812719C8D45A6E4F42D978 /* Pods-TripleBrowser-Info.plist */,
+				7D70D50E5A1D0FAE9FF0EBAEF491B7F4 /* Pods-TripleBrowser-umbrella.h */,
+				7624D6D5B44182859E4B0CEE3E4F6F12 /* Pods-TripleBrowser.debug.xcconfig */,
+				817E563F00784E4419D75DF2A211ECFA /* Pods-TripleBrowser.release.xcconfig */,
+			);
+			name = "Pods-TripleBrowser";
+			path = "Target Support Files/Pods-TripleBrowser";
+			sourceTree = "<group>";
+		};
+		608F5C48852A12DC56E119D94A9046DF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				14A55E059189BFDF7D9D17A97E79C649 /* Pods_TripleBrowser.framework */,
+				B9FD33B4D8A64B01311141B12DAFDFF2 /* Pods_TripleBrowserTests.framework */,
+				5B931ACF7F882538BCBD2C4E2B45B0E5 /* Pods_TripleBrowserUITests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		835E7E7CB15E23C8854D973109FC0580 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				40B5319D0069C16547E6691CE77F19AF /* Pods-TripleBrowser */,
+				075E235762E93DC04B847E5EDB577C44 /* Pods-TripleBrowserTests */,
+				CB619C987309516A4271669B8BB88025 /* Pods-TripleBrowserUITests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		965877409E01FB3D85D85E90E6B30185 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9AED61B9A1CFA211C061344F741DBA07 /* SwiftLint */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		9AED61B9A1CFA211C061344F741DBA07 /* SwiftLint */ = {
+			isa = PBXGroup;
+			children = (
+				EEA599FE5C15138FF0981CCFB01E55AA /* Support Files */,
+			);
+			name = SwiftLint;
+			path = SwiftLint;
+			sourceTree = "<group>";
+		};
+		C0834CEBB1379A84116EF29F93051C60 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		CB619C987309516A4271669B8BB88025 /* Pods-TripleBrowserUITests */ = {
+			isa = PBXGroup;
+			children = (
+				3187E26DDA8BC9AF05A0F7E924D88E89 /* Pods-TripleBrowserUITests.modulemap */,
+				288BB82D22EC6CA3DEACFB767EF33E77 /* Pods-TripleBrowserUITests-acknowledgements.markdown */,
+				D6C8232B3D0722D1BC6D2B70504DDFD9 /* Pods-TripleBrowserUITests-acknowledgements.plist */,
+				5EF99B6DD3A1D901DD687A4D6F02E567 /* Pods-TripleBrowserUITests-dummy.m */,
+				10D65B3D0C49F3BAB12C0099ACE3CA60 /* Pods-TripleBrowserUITests-Info.plist */,
+				99D297CE6F227169C0C503E538C9B732 /* Pods-TripleBrowserUITests-umbrella.h */,
+				A7C7A90B0EF70A5AD827225C721D2598 /* Pods-TripleBrowserUITests.debug.xcconfig */,
+				23EEB3305110154F8EEEE50607667978 /* Pods-TripleBrowserUITests.release.xcconfig */,
+			);
+			name = "Pods-TripleBrowserUITests";
+			path = "Target Support Files/Pods-TripleBrowserUITests";
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				965877409E01FB3D85D85E90E6B30185 /* Pods */,
+				608F5C48852A12DC56E119D94A9046DF /* Products */,
+				835E7E7CB15E23C8854D973109FC0580 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C0834CEBB1379A84116EF29F93051C60 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EEA599FE5C15138FF0981CCFB01E55AA /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				89F85ACF3D78B39506B75103B4694B36 /* SwiftLint.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SwiftLint";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		58831BD83A6CE674F519858E2997FAFF /* Headers */ = {
+		BC8A87C2865CE27016B6454128A18EBD /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BCC4128256775C7D388167F75A75490B /* TabPageViewController-umbrella.h in Headers */,
+				5D199196767B5755AAE6C30D84C99175 /* Pods-TripleBrowserUITests-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		67CB32FCA00C963C753EF9ABC03790AE /* Headers */ = {
+		D44714408EA13F2839A3FEF44C21A9C6 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A247CFC3A9DFEF3B45D1951667394CE9 /* Pods-TripleBrowserTests-umbrella.h in Headers */,
+				D06DDFC8F83220CD108E614D5996CC77 /* Pods-TripleBrowser-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6D3306DFFE40BC00C39AB1E9BD5AA840 /* Headers */ = {
+		F1623A8E32C2F9F4A378C1A293F4ACAE /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6DC26481946ECAD5FAFB28008F86D81A /* Pods-TripleBrowserUITests-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D83E56A3EA6B5B6F20D961D5FA88DA81 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8D933AE6BFF270472D545B584A286400 /* Pods-TripleBrowser-umbrella.h in Headers */,
+				AA9A9E9184D4FE4F10764E75CE9534C9 /* Pods-TripleBrowserTests-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		310CDE505ADA3F946C57C911C03E663E /* TabPageViewController */ = {
+		D53B0A9D9D81C20DB972539F914D23E5 /* Pods-TripleBrowserTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 01F4E2E3A786F9D3165BCCCC79B77653 /* Build configuration list for PBXNativeTarget "TabPageViewController" */;
+			buildConfigurationList = 24C9DB71354978AD700A862C206BC28D /* Build configuration list for PBXNativeTarget "Pods-TripleBrowserTests" */;
 			buildPhases = (
-				AA8BC5D3FD1C0A5BF54380045E2D8F53 /* Sources */,
-				03A3C3EAC75040B5ADF3F6368BE60873 /* Frameworks */,
-				1AF733CFC2FF3EA9880887A13D4D5BA6 /* Resources */,
-				58831BD83A6CE674F519858E2997FAFF /* Headers */,
+				F1623A8E32C2F9F4A378C1A293F4ACAE /* Headers */,
+				0A8C8FCF68DD6C6228095F65538ECBE8 /* Sources */,
+				DB664260A0F7EA18A9E936C9E950E466 /* Frameworks */,
+				AB801C653166EF5A0068B87591ED0D98 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-			);
-			name = TabPageViewController;
-			productName = TabPageViewController;
-			productReference = 9CAE6377E71CCFC78B87F4D0BD40F499 /* TabPageViewController.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		5903019B20A43C946F38F843CFF2167D /* Pods-TripleBrowser */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 5D464197ED9D6F270F1363B04315683C /* Build configuration list for PBXNativeTarget "Pods-TripleBrowser" */;
-			buildPhases = (
-				C5F382588B9C86C8FC57E2BD7D208D18 /* Sources */,
-				6F8627C48A7E41231A476D999B182371 /* Frameworks */,
-				D83E56A3EA6B5B6F20D961D5FA88DA81 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				76AAF94D4F6724EE0A4C8C029D25D8FC /* PBXTargetDependency */,
-			);
-			name = "Pods-TripleBrowser";
-			productName = "Pods-TripleBrowser";
-			productReference = 3FE6312C3AD6A9D79352D84F2B7CF73A /* Pods_TripleBrowser.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		5D5448BABF3614EB2151F3FB9B423EDD /* Pods-TripleBrowserTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = EB74DD2768768D2C7FAE8F899900CE93 /* Build configuration list for PBXNativeTarget "Pods-TripleBrowserTests" */;
-			buildPhases = (
-				D482B1D9C49C020FF701B018898E8BE6 /* Sources */,
-				B68C98C145C9BACF38DCFCE8DE792B49 /* Frameworks */,
-				67CB32FCA00C963C753EF9ABC03790AE /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				FF5E291D13EABF3F33BE2454C65CA96A /* PBXTargetDependency */,
+				4A26725E79BEB70B487CC268CEAB27B7 /* PBXTargetDependency */,
 			);
 			name = "Pods-TripleBrowserTests";
 			productName = "Pods-TripleBrowserTests";
-			productReference = 71C30CE0CD7AC3785AF691D9F3C16F20 /* Pods_TripleBrowserTests.framework */;
+			productReference = B9FD33B4D8A64B01311141B12DAFDFF2 /* Pods_TripleBrowserTests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		B7A9F5DE2F7E23C76808E71023790C76 /* Pods-TripleBrowserUITests */ = {
+		E68955A4E038E1F78A8E3A88645C2E0D /* Pods-TripleBrowserUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A6384A9FA01986D9052FAAFE38F523A4 /* Build configuration list for PBXNativeTarget "Pods-TripleBrowserUITests" */;
+			buildConfigurationList = A6177429F34AF96A2D02E21A9EA5CD86 /* Build configuration list for PBXNativeTarget "Pods-TripleBrowserUITests" */;
 			buildPhases = (
-				9D2EBE7B5B96B69518641506B5C08AE8 /* Sources */,
-				651642D67BF38377F6AC5F121A615D91 /* Frameworks */,
-				6D3306DFFE40BC00C39AB1E9BD5AA840 /* Headers */,
+				BC8A87C2865CE27016B6454128A18EBD /* Headers */,
+				7836391C97F6F577C3B7BF2EC1BEE1CF /* Sources */,
+				B2522EEEF95064E92723F81E1DC952E2 /* Frameworks */,
+				90EEE3A69F25DFC94957DF3B8034F6C3 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				6489912611196A38952225E73DD48CD7 /* PBXTargetDependency */,
+				4D379C0F985EDAEEA9F884173FA77B87 /* PBXTargetDependency */,
 			);
 			name = "Pods-TripleBrowserUITests";
 			productName = "Pods-TripleBrowserUITests";
-			productReference = 7243DECBA6F302279288ABDF6C88AA39 /* Pods_TripleBrowserUITests.framework */;
+			productReference = 5B931ACF7F882538BCBD2C4E2B45B0E5 /* Pods_TripleBrowserUITests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		E9198BCCFCB75CCA4F7ABDDDDE408DDD /* Pods-TripleBrowser */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 85FCEC39998467F988DC1A170B50CAE0 /* Build configuration list for PBXNativeTarget "Pods-TripleBrowser" */;
+			buildPhases = (
+				D44714408EA13F2839A3FEF44C21A9C6 /* Headers */,
+				BDAF12DB5E7701D518BEDEDC26BCA557 /* Sources */,
+				5BB98D1367EB872CBB92A2D1C368B37C /* Frameworks */,
+				99F01D34C0080C158EAC06AD197B867A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4B252C12826EE878048388A915DA35EF /* PBXTargetDependency */,
+			);
+			name = "Pods-TripleBrowser";
+			productName = "Pods-TripleBrowser";
+			productReference = 14A55E059189BFDF7D9D17A97E79C649 /* Pods_TripleBrowser.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0930;
-				LastUpgradeCheck = 1010;
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
 			};
-			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
-			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 10.0";
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 47AD970E89B3A299AD5B3018A2EEEBFD /* Products */;
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = 608F5C48852A12DC56E119D94A9046DF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				5903019B20A43C946F38F843CFF2167D /* Pods-TripleBrowser */,
-				5D5448BABF3614EB2151F3FB9B423EDD /* Pods-TripleBrowserTests */,
-				B7A9F5DE2F7E23C76808E71023790C76 /* Pods-TripleBrowserUITests */,
-				310CDE505ADA3F946C57C911C03E663E /* TabPageViewController */,
+				E9198BCCFCB75CCA4F7ABDDDDE408DDD /* Pods-TripleBrowser */,
+				D53B0A9D9D81C20DB972539F914D23E5 /* Pods-TripleBrowserTests */,
+				E68955A4E038E1F78A8E3A88645C2E0D /* Pods-TripleBrowserUITests */,
+				52B60EC2A583F24ACBB69C113F5488B9 /* SwiftLint */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		1AF733CFC2FF3EA9880887A13D4D5BA6 /* Resources */ = {
+		90EEE3A69F25DFC94957DF3B8034F6C3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA2951F2BA50D114333312A04425F84B /* TabCollectionCell.xib in Resources */,
-				8C91C2FA16836646589506BE88BFA435 /* TabPageViewController.storyboard in Resources */,
-				5565C92C4E63184D3AC7ECC3B47911A0 /* TabView.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		99F01D34C0080C158EAC06AD197B867A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AB801C653166EF5A0068B87591ED0D98 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		9D2EBE7B5B96B69518641506B5C08AE8 /* Sources */ = {
+		0A8C8FCF68DD6C6228095F65538ECBE8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A1E1841F7D328D1A7CD1F5CB0E0BB449 /* Pods-TripleBrowserUITests-dummy.m in Sources */,
+				1AEC8E32B4CEB2C844867BDCF2F5082A /* Pods-TripleBrowserTests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AA8BC5D3FD1C0A5BF54380045E2D8F53 /* Sources */ = {
+		7836391C97F6F577C3B7BF2EC1BEE1CF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E62637846C51942073E413E842821BA8 /* TabCollectionCell.swift in Sources */,
-				6528489E2AB7A33A128C37CD98BC1600 /* TabPageOption.swift in Sources */,
-				DF021755ED8581C33A6E90B90419A306 /* TabPageViewController-dummy.m in Sources */,
-				C17BD4E482DC4D8FF688D6930F0BB81C /* TabPageViewController.swift in Sources */,
-				2CBE83023B8B190229D0ACADC7637027 /* TabView.swift in Sources */,
+				1D1C207B38FE62BDC82F36635614CC4E /* Pods-TripleBrowserUITests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C5F382588B9C86C8FC57E2BD7D208D18 /* Sources */ = {
+		BDAF12DB5E7701D518BEDEDC26BCA557 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C996B00257F1E3F05243FA689F4559A1 /* Pods-TripleBrowser-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D482B1D9C49C020FF701B018898E8BE6 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				EA43A566932FC9FA95CCC2FB2CB8B40B /* Pods-TripleBrowserTests-dummy.m in Sources */,
+				FF006D53C8CECB8C68CE285DC262457B /* Pods-TripleBrowser-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		6489912611196A38952225E73DD48CD7 /* PBXTargetDependency */ = {
+		4A26725E79BEB70B487CC268CEAB27B7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-TripleBrowser";
-			target = 5903019B20A43C946F38F843CFF2167D /* Pods-TripleBrowser */;
-			targetProxy = F1D257A1F371F4D362088090D93DD4DF /* PBXContainerItemProxy */;
+			target = E9198BCCFCB75CCA4F7ABDDDDE408DDD /* Pods-TripleBrowser */;
+			targetProxy = BADB8B692D50B679722509F27F0CA7B8 /* PBXContainerItemProxy */;
 		};
-		76AAF94D4F6724EE0A4C8C029D25D8FC /* PBXTargetDependency */ = {
+		4B252C12826EE878048388A915DA35EF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = TabPageViewController;
-			target = 310CDE505ADA3F946C57C911C03E663E /* TabPageViewController */;
-			targetProxy = 53D6B421D99B8205EBFB2080F04BF7CF /* PBXContainerItemProxy */;
+			name = SwiftLint;
+			target = 52B60EC2A583F24ACBB69C113F5488B9 /* SwiftLint */;
+			targetProxy = EA3A2808C2BCE47773F1C928E5A33DD8 /* PBXContainerItemProxy */;
 		};
-		FF5E291D13EABF3F33BE2454C65CA96A /* PBXTargetDependency */ = {
+		4D379C0F985EDAEEA9F884173FA77B87 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-TripleBrowser";
-			target = 5903019B20A43C946F38F843CFF2167D /* Pods-TripleBrowser */;
-			targetProxy = 2C77136A186647EC729042CCBD4CE3EF /* PBXContainerItemProxy */;
+			target = E9198BCCFCB75CCA4F7ABDDDDE408DDD /* Pods-TripleBrowser */;
+			targetProxy = 4F7D1DF1735FFF889361EF48524470B3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		199D972A13F2B4C56847F7A89CCA83BC /* Debug */ = {
+		0B319FBABAE309BD35D24BC43C5A4A5B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AF3D8B603F8A0B9A4ED6ECB4E4EF4AAB /* Pods-TripleBrowserTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-TripleBrowserTests/Pods-TripleBrowserTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TripleBrowserTests/Pods-TripleBrowserTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		257497152829C177993B5EC99C1D227A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -536,8 +495,199 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGNING_ALLOWED = NO;
-				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		3C2407B3C99A503F63B75F3228A8D318 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A7C7A90B0EF70A5AD827225C721D2598 /* Pods-TripleBrowserUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-TripleBrowserUITests/Pods-TripleBrowserUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TripleBrowserUITests/Pods-TripleBrowserUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		84D7C4574E8F0F3095623F0E06F5B402 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 89F85ACF3D78B39506B75103B4694B36 /* SwiftLint.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9A765CD75285C89B3B7B8F9D82181D42 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A7213D581E835883C714D43BF4DB3C1D /* Pods-TripleBrowserTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-TripleBrowserTests/Pods-TripleBrowserTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TripleBrowserTests/Pods-TripleBrowserTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		C3677E55D622FD504CC2B21BF991673B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 23EEB3305110154F8EEEE50607667978 /* Pods-TripleBrowserUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-TripleBrowserUITests/Pods-TripleBrowserUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TripleBrowserUITests/Pods-TripleBrowserUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		DD8F832993327D1DD8046C3CBCBD97CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -557,393 +707,161 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				MTL_ENABLE_DEBUG_INFO = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Debug;
 		};
-		288050CCB3297B099B5B56AD262718E3 /* Release */ = {
+		DEED47E09AF743F48544C1C4FEADEF47 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1D7F46A22208F6037B1471808C68A509 /* TabPageViewController.xcconfig */;
+			baseConfigurationReference = 89F85ACF3D78B39506B75103B4694B36 /* SwiftLint.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/TabPageViewController/TabPageViewController-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/TabPageViewController/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/TabPageViewController/TabPageViewController.modulemap";
-				PRODUCT_MODULE_NAME = TabPageViewController;
-				PRODUCT_NAME = TabPageViewController;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		306C7BA5C5F4CF273B4E6F4ECEF6CC11 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1D7F46A22208F6037B1471808C68A509 /* TabPageViewController.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/TabPageViewController/TabPageViewController-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/TabPageViewController/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/TabPageViewController/TabPageViewController.modulemap";
-				PRODUCT_MODULE_NAME = TabPageViewController;
-				PRODUCT_NAME = TabPageViewController;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		438026EB108EB054DAB7737D38146EBF /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8E770647AAFF0DCEC9672C7AB4C0CEDE /* Pods-TripleBrowserUITests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-TripleBrowserUITests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-TripleBrowserUITests/Pods-TripleBrowserUITests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		898ABC8236D770FFD7A0F8D0657E93D0 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 858089E3C5C5A6262F6C7385BD221CC2 /* Pods-TripleBrowser.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-TripleBrowser/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-TripleBrowser/Pods-TripleBrowser.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		B31DAB616D39B7EBD2D42EAB2B28F3B0 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 69D4CAB32A7D404F1A947BB22AFFC510 /* Pods-TripleBrowserTests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-TripleBrowserTests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-TripleBrowserTests/Pods-TripleBrowserTests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		CD0A2456A66D5A11123BE6A57BC85DC2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7F327EE3135B1E2A6EC7DE17D31D932D /* Pods-TripleBrowserTests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-TripleBrowserTests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-TripleBrowserTests/Pods-TripleBrowserTests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		E3A6FBE9057B3030A94A35EEAA424870 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5323C0EBEBCB7C21AED6443EAF406C0F /* Pods-TripleBrowserUITests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-TripleBrowserUITests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-TripleBrowserUITests/Pods-TripleBrowserUITests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		FB9C8964B2088EB12D9404F78CEE0C78 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 239CFAB41E7875909878FABCF2C73035 /* Pods-TripleBrowser.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-TripleBrowser/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-TripleBrowser/Pods-TripleBrowser.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		FDB2FC4A1E5891381CD9D922145497F1 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGNING_ALLOWED = NO;
-				CODE_SIGNING_REQUIRED = NO;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"POD_CONFIGURATION_RELEASE=1",
+				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
+					"@executable_path/Frameworks",
 				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SYMROOT = "${SRCROOT}/../build";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E881CBFA95D7D567EAA306BABC741913 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7624D6D5B44182859E4B0CEE3E4F6F12 /* Pods-TripleBrowser.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-TripleBrowser/Pods-TripleBrowser-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TripleBrowser/Pods-TripleBrowser.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		F454EDD20D23B585440E29F46450A88E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 817E563F00784E4419D75DF2A211ECFA /* Pods-TripleBrowser.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-TripleBrowser/Pods-TripleBrowser-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TripleBrowser/Pods-TripleBrowser.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		01F4E2E3A786F9D3165BCCCC79B77653 /* Build configuration list for PBXNativeTarget "TabPageViewController" */ = {
+		24C9DB71354978AD700A862C206BC28D /* Build configuration list for PBXNativeTarget "Pods-TripleBrowserTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				306C7BA5C5F4CF273B4E6F4ECEF6CC11 /* Debug */,
-				288050CCB3297B099B5B56AD262718E3 /* Release */,
+				0B319FBABAE309BD35D24BC43C5A4A5B /* Debug */,
+				9A765CD75285C89B3B7B8F9D82181D42 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				199D972A13F2B4C56847F7A89CCA83BC /* Debug */,
-				FDB2FC4A1E5891381CD9D922145497F1 /* Release */,
+				DD8F832993327D1DD8046C3CBCBD97CD /* Debug */,
+				257497152829C177993B5EC99C1D227A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5D464197ED9D6F270F1363B04315683C /* Build configuration list for PBXNativeTarget "Pods-TripleBrowser" */ = {
+		85FCEC39998467F988DC1A170B50CAE0 /* Build configuration list for PBXNativeTarget "Pods-TripleBrowser" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				FB9C8964B2088EB12D9404F78CEE0C78 /* Debug */,
-				898ABC8236D770FFD7A0F8D0657E93D0 /* Release */,
+				E881CBFA95D7D567EAA306BABC741913 /* Debug */,
+				F454EDD20D23B585440E29F46450A88E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A6384A9FA01986D9052FAAFE38F523A4 /* Build configuration list for PBXNativeTarget "Pods-TripleBrowserUITests" */ = {
+		A6177429F34AF96A2D02E21A9EA5CD86 /* Build configuration list for PBXNativeTarget "Pods-TripleBrowserUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E3A6FBE9057B3030A94A35EEAA424870 /* Debug */,
-				438026EB108EB054DAB7737D38146EBF /* Release */,
+				3C2407B3C99A503F63B75F3228A8D318 /* Debug */,
+				C3677E55D622FD504CC2B21BF991673B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EB74DD2768768D2C7FAE8F899900CE93 /* Build configuration list for PBXNativeTarget "Pods-TripleBrowserTests" */ = {
+		AE7B4FB01588B9E6DF09CB79FC7CE7BD /* Build configuration list for PBXAggregateTarget "SwiftLint" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				CD0A2456A66D5A11123BE6A57BC85DC2 /* Debug */,
-				B31DAB616D39B7EBD2D42EAB2B28F3B0 /* Release */,
+				DEED47E09AF743F48544C1C4FEADEF47 /* Debug */,
+				84D7C4574E8F0F3095623F0E06F5B402 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 }

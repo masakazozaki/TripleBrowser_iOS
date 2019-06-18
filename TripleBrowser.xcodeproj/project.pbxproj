@@ -3,11 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		32419965FE46202930CE6D5B /* Pods_TripleBrowserTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 291D1BA0B38F729A06F61CDB /* Pods_TripleBrowserTests.framework */; };
+		A961E7AE6B1D5AD36949BD72 /* Pods_TripleBrowser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65CA7E1E5AE18B8008110B4C /* Pods_TripleBrowser.framework */; };
 		BADADC7821782B5600525596 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADADC7721782B5600525596 /* InitialViewController.swift */; };
+		C957424FA0ADCA872AB4908D /* Pods_TripleBrowserUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BE831D727651CFAE9FC9C2B /* Pods_TripleBrowserUITests.framework */; };
 		E73B7F532083047E0071851A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73B7F522083047E0071851A /* AppDelegate.swift */; };
 		E73B7F582083047E0071851A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E73B7F562083047E0071851A /* Main.storyboard */; };
 		E73B7F5A2083047F0071851A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E73B7F592083047F0071851A /* Assets.xcassets */; };
@@ -36,7 +39,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1F12AAD5CC8402CDA10B7CEF /* Pods-TripleBrowser.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TripleBrowser.debug.xcconfig"; path = "Target Support Files/Pods-TripleBrowser/Pods-TripleBrowser.debug.xcconfig"; sourceTree = "<group>"; };
+		291D1BA0B38F729A06F61CDB /* Pods_TripleBrowserTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TripleBrowserTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2BE831D727651CFAE9FC9C2B /* Pods_TripleBrowserUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TripleBrowserUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4918789006B47C9FE64FFD33 /* Pods-TripleBrowserTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TripleBrowserTests.debug.xcconfig"; path = "Target Support Files/Pods-TripleBrowserTests/Pods-TripleBrowserTests.debug.xcconfig"; sourceTree = "<group>"; };
+		61D355B6CBC907DCB8DD9F8A /* Pods-TripleBrowserUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TripleBrowserUITests.debug.xcconfig"; path = "Target Support Files/Pods-TripleBrowserUITests/Pods-TripleBrowserUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		65CA7E1E5AE18B8008110B4C /* Pods_TripleBrowser.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TripleBrowser.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A3318BAF95A4E1F32E074E92 /* Pods-TripleBrowserTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TripleBrowserTests.release.xcconfig"; path = "Target Support Files/Pods-TripleBrowserTests/Pods-TripleBrowserTests.release.xcconfig"; sourceTree = "<group>"; };
 		BADADC7721782B5600525596 /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
+		D3E05E087C83A67129386C66 /* Pods-TripleBrowserUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TripleBrowserUITests.release.xcconfig"; path = "Target Support Files/Pods-TripleBrowserUITests/Pods-TripleBrowserUITests.release.xcconfig"; sourceTree = "<group>"; };
 		E73B7F4F2083047E0071851A /* TripleBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TripleBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E73B7F522083047E0071851A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E73B7F572083047E0071851A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -51,6 +62,7 @@
 		E73B7F742083047F0071851A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E761DB99208B2F510055D5C2 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		E77BD93721A0224D00F02C3D /* WKWebViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKWebViewModel.swift; sourceTree = "<group>"; };
+		FE62954220A1FEA805FDEC1D /* Pods-TripleBrowser.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TripleBrowser.release.xcconfig"; path = "Target Support Files/Pods-TripleBrowser/Pods-TripleBrowser.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A961E7AE6B1D5AD36949BD72 /* Pods_TripleBrowser.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32419965FE46202930CE6D5B /* Pods_TripleBrowserTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,12 +86,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C957424FA0ADCA872AB4908D /* Pods_TripleBrowserUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		37AC5DA466A60EE00FBCE1FD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1F12AAD5CC8402CDA10B7CEF /* Pods-TripleBrowser.debug.xcconfig */,
+				FE62954220A1FEA805FDEC1D /* Pods-TripleBrowser.release.xcconfig */,
+				4918789006B47C9FE64FFD33 /* Pods-TripleBrowserTests.debug.xcconfig */,
+				A3318BAF95A4E1F32E074E92 /* Pods-TripleBrowserTests.release.xcconfig */,
+				61D355B6CBC907DCB8DD9F8A /* Pods-TripleBrowserUITests.debug.xcconfig */,
+				D3E05E087C83A67129386C66 /* Pods-TripleBrowserUITests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		4189762904363735580C30F4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				65CA7E1E5AE18B8008110B4C /* Pods_TripleBrowser.framework */,
+				291D1BA0B38F729A06F61CDB /* Pods_TripleBrowserTests.framework */,
+				2BE831D727651CFAE9FC9C2B /* Pods_TripleBrowserUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E73B7F462083047E0071851A = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +123,8 @@
 				E73B7F662083047F0071851A /* TripleBrowserTests */,
 				E73B7F712083047F0071851A /* TripleBrowserUITests */,
 				E73B7F502083047E0071851A /* Products */,
+				37AC5DA466A60EE00FBCE1FD /* Pods */,
+				4189762904363735580C30F4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -138,9 +178,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E73B7F772083047F0071851A /* Build configuration list for PBXNativeTarget "TripleBrowser" */;
 			buildPhases = (
+				A1D48879DE49D546B9D753D6 /* [CP] Check Pods Manifest.lock */,
 				E73B7F4B2083047E0071851A /* Sources */,
 				E73B7F4C2083047E0071851A /* Frameworks */,
 				E73B7F4D2083047E0071851A /* Resources */,
+				E78F664C22B932560024A9D4 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -155,6 +197,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E73B7F7A2083047F0071851A /* Build configuration list for PBXNativeTarget "TripleBrowserTests" */;
 			buildPhases = (
+				24321012BA6971A615D235F9 /* [CP] Check Pods Manifest.lock */,
 				E73B7F5F2083047F0071851A /* Sources */,
 				E73B7F602083047F0071851A /* Frameworks */,
 				E73B7F612083047F0071851A /* Resources */,
@@ -173,6 +216,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E73B7F7D2083047F0071851A /* Build configuration list for PBXNativeTarget "TripleBrowserUITests" */;
 			buildPhases = (
+				E9B9F08A115D4BA6FE464AEE /* [CP] Check Pods Manifest.lock */,
 				E73B7F6A2083047F0071851A /* Sources */,
 				E73B7F6B2083047F0071851A /* Frameworks */,
 				E73B7F6C2083047F0071851A /* Resources */,
@@ -264,6 +308,92 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		24321012BA6971A615D235F9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TripleBrowserTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A1D48879DE49D546B9D753D6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TripleBrowser-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E78F664C22B932560024A9D4 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which \"${PODS_ROOT}/SwiftLint/swiftlint\" >/dev/null; then\n${PODS_ROOT}/SwiftLint/swiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		E9B9F08A115D4BA6FE464AEE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TripleBrowserUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E73B7F4B2083047E0071851A /* Sources */ = {
@@ -444,6 +574,7 @@
 		};
 		E73B7F782083047F0071851A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1F12AAD5CC8402CDA10B7CEF /* Pods-TripleBrowser.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -465,6 +596,7 @@
 		};
 		E73B7F792083047F0071851A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FE62954220A1FEA805FDEC1D /* Pods-TripleBrowser.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -486,6 +618,7 @@
 		};
 		E73B7F7B2083047F0071851A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4918789006B47C9FE64FFD33 /* Pods-TripleBrowserTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -507,6 +640,7 @@
 		};
 		E73B7F7C2083047F0071851A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A3318BAF95A4E1F32E074E92 /* Pods-TripleBrowserTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -528,6 +662,7 @@
 		};
 		E73B7F7E2083047F0071851A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 61D355B6CBC907DCB8DD9F8A /* Pods-TripleBrowserUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -548,6 +683,7 @@
 		};
 		E73B7F7F2083047F0071851A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D3E05E087C83A67129386C66 /* Pods-TripleBrowserUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

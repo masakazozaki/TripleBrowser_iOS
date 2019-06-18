@@ -1,16 +1,16 @@
 PODS:
-  - TabPageViewController (0.2.7)
+  - SwiftLint (0.33.0)
 
 DEPENDENCIES:
-  - TabPageViewController
+  - SwiftLint
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
-    - TabPageViewController
+  https://github.com/cocoapods/specs.git:
+    - SwiftLint
 
 SPEC CHECKSUMS:
-  TabPageViewController: c37a1257a50c2b50712dde61bf499768eee95b67
+  SwiftLint: fed9c66336e41fc74dc48a73678380718f0c8b0e
 
-PODFILE CHECKSUM: 09744fd673e75ab46120602341c0732d156aa53f
+PODFILE CHECKSUM: c05361d9ef9a41972155857a51774ced832c4aba
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.7.2

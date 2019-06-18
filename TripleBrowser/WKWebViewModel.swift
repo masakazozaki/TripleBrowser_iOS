@@ -9,8 +9,6 @@
 import Foundation
 
 class WKWebViewModel {
-    
-    
     func urlEncording(str: String) -> String {
         let characterSetTobeAllowed = (CharacterSet(charactersIn: "!*'();:@&=+$,/?%#[] ").inverted)
         if let encodedURLString = str.addingPercentEncoding(withAllowedCharacters: characterSetTobeAllowed) {
@@ -18,10 +16,8 @@ class WKWebViewModel {
         }
         return str
     }
-    
     func checkSearchText(searchText: String) -> URL {
         let url: URL!
-        
         if searchText.hasPrefix("http") {
             url = URL(string: searchText)
         } else if searchText.hasPrefix("www") {
@@ -36,5 +32,4 @@ class WKWebViewModel {
         }
         return url
     }
-    
 }
