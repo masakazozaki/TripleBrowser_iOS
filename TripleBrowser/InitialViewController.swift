@@ -12,30 +12,20 @@ class InitialViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
-
-    
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-		let themeColor:UIColor
-		switch segue.identifier{
+		let themeColor: UIColor
+		switch segue.identifier {
 		case "page1":
-			themeColor = UIColor(red: 54/255, green: 142/255, blue: 235/255, alpha: 1)
-			break
+			themeColor = UIColor(red: 54 / 255, green: 142 / 255, blue: 235 / 255, alpha: 1)
 		case "page2":
-			themeColor = UIColor(red: 1, green: 90/255, blue: 137/255, alpha: 1)
-			break
+			themeColor = UIColor(red: 1, green: 90 / 255, blue: 137 / 255, alpha: 1)
 		case "page3":
-			themeColor = UIColor(red: 100/255, green: 224/255, blue: 96/255, alpha: 1)
-			break
+			themeColor = UIColor(red: 100 / 255, green: 224 / 255, blue: 96 / 255, alpha: 1)
 		default:
 			return
 		}
-		(segue.destination.children.first as! FirstViewController).progressBarColor = themeColor
-		(segue.destination.children.first as! FirstViewController).navigationController!.navigationBar.backgroundColor = themeColor
+        let destination = segue.destination.children.first as? FirstViewController
+        destination?.progressBarColor = themeColor
+        destination?.navigationController?.navigationBar.backgroundColor = themeColor
     }
-
-
 }
