@@ -19,6 +19,8 @@
 		E73B7F732083047F0071851A /* TripleBrowserUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73B7F722083047F0071851A /* TripleBrowserUITests.swift */; };
 		E761DB9A208B2F510055D5C2 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E761DB99208B2F510055D5C2 /* FirstViewController.swift */; };
 		E77BD93821A0224D00F02C3D /* WKWebViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77BD93721A0224D00F02C3D /* WKWebViewModel.swift */; };
+		E79CDAD9231E3E18009CA874 /* TBTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79CDAD8231E3E18009CA874 /* TBTabBarView.swift */; };
+		E79CDADB231E3E26009CA874 /* TBTabBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E79CDADA231E3E26009CA874 /* TBTabBarView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +64,8 @@
 		E73B7F742083047F0071851A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E761DB99208B2F510055D5C2 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		E77BD93721A0224D00F02C3D /* WKWebViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKWebViewModel.swift; sourceTree = "<group>"; };
+		E79CDAD8231E3E18009CA874 /* TBTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBTabBarView.swift; sourceTree = "<group>"; };
+		E79CDADA231E3E26009CA874 /* TBTabBarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TBTabBarView.xib; sourceTree = "<group>"; };
 		FE62954220A1FEA805FDEC1D /* Pods-TripleBrowser.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TripleBrowser.release.xcconfig"; path = "Target Support Files/Pods-TripleBrowser/Pods-TripleBrowser.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -149,6 +153,8 @@
 				E73B7F5E2083047F0071851A /* Info.plist */,
 				BADADC7721782B5600525596 /* InitialViewController.swift */,
 				E77BD93721A0224D00F02C3D /* WKWebViewModel.swift */,
+				E79CDAD8231E3E18009CA874 /* TBTabBarView.swift */,
+				E79CDADA231E3E26009CA874 /* TBTabBarView.xib */,
 			);
 			path = TripleBrowser;
 			sourceTree = "<group>";
@@ -287,6 +293,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E79CDADB231E3E26009CA874 /* TBTabBarView.xib in Resources */,
 				E73B7F5D2083047F0071851A /* LaunchScreen.storyboard in Resources */,
 				E73B7F5A2083047F0071851A /* Assets.xcassets in Resources */,
 				E73B7F582083047E0071851A /* Main.storyboard in Resources */,
@@ -402,6 +409,7 @@
 			files = (
 				BADADC7821782B5600525596 /* InitialViewController.swift in Sources */,
 				E761DB9A208B2F510055D5C2 /* FirstViewController.swift in Sources */,
+				E79CDAD9231E3E18009CA874 /* TBTabBarView.swift in Sources */,
 				E73B7F532083047E0071851A /* AppDelegate.swift in Sources */,
 				E77BD93821A0224D00F02C3D /* WKWebViewModel.swift in Sources */,
 			);

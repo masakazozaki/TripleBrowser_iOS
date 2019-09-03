@@ -1,33 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="keb-hq-cdI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="keb-hq-cdI">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
-        <scene sceneID="bhx-Rc-9Ae">
-            <objects>
-                <navigationController useStoryboardIdentifierAsRestorationIdentifier="YES" id="8oW-Py-WNI" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="1qV-Sc-cef"/>
-                    <navigationBar key="navigationBar" opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Uyc-jf-kuk">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.21168657628573304" green="0.55829951454638016" blue="0.92288626269035534" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="YIF-zm-JDR" kind="relationship" relationship="rootViewController" id="wkl-8T-qfe"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="RrA-78-aPH" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-353" y="-515"/>
-        </scene>
         <!--First View Controller-->
         <scene sceneID="aSu-oZ-rxS">
             <objects>
@@ -35,13 +17,41 @@
                     <view key="view" contentMode="scaleToFill" id="r8e-7u-oks">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6X3-dc-Mhf" customClass="TBTabBarView" customModule="TripleBrowser" customModuleProvider="target">
+                                <rect key="frame" x="7" y="729" width="361" height="83"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="83" id="odv-LT-bKy"/>
+                                </constraints>
+                            </view>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YiB-Kc-hKm">
+                                <rect key="frame" x="0.0" y="44" width="375" height="685"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="6X3-dc-Mhf" firstAttribute="top" secondItem="YiB-Kc-hKm" secondAttribute="bottom" id="CNS-BL-Dqb"/>
+                            <constraint firstItem="6X3-dc-Mhf" firstAttribute="leading" secondItem="AXb-14-Ss8" secondAttribute="leading" constant="7" id="Gfh-kE-aR0"/>
+                            <constraint firstItem="AXb-14-Ss8" firstAttribute="trailing" secondItem="YiB-Kc-hKm" secondAttribute="trailing" id="XLa-2C-M7C"/>
+                            <constraint firstItem="AXb-14-Ss8" firstAttribute="trailing" secondItem="6X3-dc-Mhf" secondAttribute="trailing" constant="7" id="YOx-5D-7Vy"/>
+                            <constraint firstItem="YiB-Kc-hKm" firstAttribute="top" secondItem="AXb-14-Ss8" secondAttribute="top" id="aac-GB-7co"/>
+                            <constraint firstAttribute="bottom" secondItem="6X3-dc-Mhf" secondAttribute="bottom" id="htP-7K-GLu"/>
+                            <constraint firstItem="YiB-Kc-hKm" firstAttribute="leading" secondItem="AXb-14-Ss8" secondAttribute="leading" id="vS0-zc-W74"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="AXb-14-Ss8"/>
                     </view>
-                    <navigationItem key="navigationItem" id="FjF-iS-oKv"/>
+                    <connections>
+                        <outlet property="tabBar" destination="6X3-dc-Mhf" id="A3M-km-bS0"/>
+                        <outlet property="webView" destination="YiB-Kc-hKm" id="KHd-3o-Drm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2S3-dL-Qqm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="422" y="-515"/>
+            <point key="canvasLocation" x="39" y="-503"/>
         </scene>
         <!--Initial View Controller-->
         <scene sceneID="AHX-7r-LLT">
@@ -60,7 +70,7 @@
                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="982-EA-wqK">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                                 <connections>
-                                                    <segue destination="8oW-Py-WNI" kind="embed" identifier="page1" id="Rrg-2j-o7b"/>
+                                                    <segue destination="YIF-zm-JDR" kind="embed" id="MKP-gD-wV4"/>
                                                 </connections>
                                             </containerView>
                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VM5-2H-CRr">
@@ -118,13 +128,13 @@
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gxd-r0-pq6">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                 <connections>
-                                    <segue destination="8oW-Py-WNI" kind="embed" identifier="page2" id="H0u-NI-QdC"/>
+                                    <segue destination="YIF-zm-JDR" kind="embed" id="H1U-w6-Nh5"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kPZ-zy-nMz">
                                 <rect key="frame" x="375" y="0.0" width="375" height="812"/>
                                 <connections>
-                                    <segue destination="8oW-Py-WNI" kind="embed" identifier="page3" id="Jio-kp-Cth"/>
+                                    <segue destination="YIF-zm-JDR" kind="embed" id="vyb-ON-aMp"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -259,6 +269,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="1FZ-AJ-cAB"/>
-        <segue reference="Rrg-2j-o7b"/>
+        <segue reference="H1U-w6-Nh5"/>
     </inferredMetricsTieBreakers>
 </document>
