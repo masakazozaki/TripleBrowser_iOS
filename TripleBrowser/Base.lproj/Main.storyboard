@@ -18,23 +18,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6X3-dc-Mhf" customClass="TBTabBarView" customModule="TripleBrowser" customModuleProvider="target">
-                                <rect key="frame" x="7" y="729" width="361" height="83"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="83" id="odv-LT-bKy"/>
-                                </constraints>
-                            </view>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YiB-Kc-hKm">
-                                <rect key="frame" x="0.0" y="44" width="375" height="685"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6X3-dc-Mhf" customClass="TBTabBarView" customModule="TripleBrowser" customModuleProvider="target">
+                                <rect key="frame" x="7" y="729" width="361" height="83"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="83" id="odv-LT-bKy"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="6X3-dc-Mhf" firstAttribute="top" secondItem="YiB-Kc-hKm" secondAttribute="bottom" id="CNS-BL-Dqb"/>
+                            <constraint firstItem="AXb-14-Ss8" firstAttribute="bottom" secondItem="YiB-Kc-hKm" secondAttribute="bottom" id="CNS-BL-Dqb"/>
                             <constraint firstItem="6X3-dc-Mhf" firstAttribute="leading" secondItem="AXb-14-Ss8" secondAttribute="leading" constant="7" id="Gfh-kE-aR0"/>
                             <constraint firstItem="AXb-14-Ss8" firstAttribute="trailing" secondItem="YiB-Kc-hKm" secondAttribute="trailing" id="XLa-2C-M7C"/>
                             <constraint firstItem="AXb-14-Ss8" firstAttribute="trailing" secondItem="6X3-dc-Mhf" secondAttribute="trailing" constant="7" id="YOx-5D-7Vy"/>
