@@ -34,7 +34,6 @@ class FirstViewController: UIViewController {
 //        progressView = UIProgressView(frame: CGRect(x: 0.0, y: (navigationController?.navigationBar.frame.size.height)! + 10, width: view.frame.size.width, height: 3.0))
         progressView.progressViewStyle = .bar
         progressView.progressTintColor = progressBarColor
-        navigationController?.navigationBar.addSubview(progressView)
         webView.addObserver(self, forKeyPath: "estimatedProgress", options: .new, context: nil)
         webView.addObserver(self, forKeyPath: "loading", options: .new, context: nil)
         tabBar.delegate = self
@@ -49,7 +48,7 @@ class FirstViewController: UIViewController {
         let urlRequest = URLRequest(url: url!)
         webView.load(urlRequest)
     }
-    
+
     deinit {
         webView?.removeObserver(self, forKeyPath: "estimatedProgress", context: nil)
         webView?.removeObserver(self, forKeyPath: "loading", context: nil)
@@ -120,17 +119,6 @@ extension FirstViewController: UISearchBarDelegate {
     }
 }
 
-extension UIView {
-    func getScreenShot(windowFrame: CGRect, adFrame: CGRect) -> UIImage {
-        UIGraphicsBeginImageContextWithOptions(windowFrame.size, false, 0.0)
-        let context: CGContext = UIGraphicsGetCurrentContext()!
-        layer.render(in: context)
-        let capturedImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
-        UIGraphicsEndImageContext()
-        return capturedImage
-    }
-}
-
 extension FirstViewController: TBTabBarViewDelegate {
     func tabBarLeftButtonPressed() {
         if webView.canGoBack {
@@ -172,5 +160,16 @@ extension FirstViewController: TBTabBarViewDelegate {
         alertController.popoverPresentationController?.sourceView = view
         alertController.popoverPresentationController?.sourceRect = CGRect(x: view.frame.size.width - 36.0, y: view.frame.size.height - 40.0, width: 0, height: 0)
         present(alertController, animated: true, completion: nil)
+    }
+}
+
+extension UIView {
+    func getScreenShot(windowFrame: CGRect, adFrame: CGRect) -> UIImage {
+        UIGraphicsBeginImageContextWithOptions(windowFrame.size, false, 0.0)
+        let context: CGContext = UIGraphicsGetCurrentContext()!
+        layer.render(in: context)
+        let capturedImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        return capturedImage
     }
 }
