@@ -21,6 +21,8 @@
 		E77BD93821A0224D00F02C3D /* WKWebViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77BD93721A0224D00F02C3D /* WKWebViewModel.swift */; };
 		E79CDAD9231E3E18009CA874 /* TBTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79CDAD8231E3E18009CA874 /* TBTabBarView.swift */; };
 		E79CDADB231E3E26009CA874 /* TBTabBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E79CDADA231E3E26009CA874 /* TBTabBarView.xib */; };
+		E7B8D9F0231F6ACF00DA7B0A /* TBNavigationBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7B8D9EF231F6ACF00DA7B0A /* TBNavigationBarView.xib */; };
+		E7B8D9F2231F6AE200DA7B0A /* TBNavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B8D9F1231F6AE200DA7B0A /* TBNavigationBarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +68,8 @@
 		E77BD93721A0224D00F02C3D /* WKWebViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKWebViewModel.swift; sourceTree = "<group>"; };
 		E79CDAD8231E3E18009CA874 /* TBTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBTabBarView.swift; sourceTree = "<group>"; };
 		E79CDADA231E3E26009CA874 /* TBTabBarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TBTabBarView.xib; sourceTree = "<group>"; };
+		E7B8D9EF231F6ACF00DA7B0A /* TBNavigationBarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TBNavigationBarView.xib; sourceTree = "<group>"; };
+		E7B8D9F1231F6AE200DA7B0A /* TBNavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBNavigationBarView.swift; sourceTree = "<group>"; };
 		FE62954220A1FEA805FDEC1D /* Pods-TripleBrowser.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TripleBrowser.release.xcconfig"; path = "Target Support Files/Pods-TripleBrowser/Pods-TripleBrowser.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -145,6 +149,7 @@
 		E73B7F512083047E0071851A /* TripleBrowser */ = {
 			isa = PBXGroup;
 			children = (
+				E7B8D9EE231F6A5600DA7B0A /* TBTabBarView */,
 				E73B7F522083047E0071851A /* AppDelegate.swift */,
 				E73B7F562083047E0071851A /* Main.storyboard */,
 				E761DB99208B2F510055D5C2 /* FirstViewController.swift */,
@@ -153,8 +158,8 @@
 				E73B7F5E2083047F0071851A /* Info.plist */,
 				BADADC7721782B5600525596 /* InitialViewController.swift */,
 				E77BD93721A0224D00F02C3D /* WKWebViewModel.swift */,
-				E79CDAD8231E3E18009CA874 /* TBTabBarView.swift */,
-				E79CDADA231E3E26009CA874 /* TBTabBarView.xib */,
+				E7B8D9EF231F6ACF00DA7B0A /* TBNavigationBarView.xib */,
+				E7B8D9F1231F6AE200DA7B0A /* TBNavigationBarView.swift */,
 			);
 			path = TripleBrowser;
 			sourceTree = "<group>";
@@ -175,6 +180,15 @@
 				E73B7F742083047F0071851A /* Info.plist */,
 			);
 			path = TripleBrowserUITests;
+			sourceTree = "<group>";
+		};
+		E7B8D9EE231F6A5600DA7B0A /* TBTabBarView */ = {
+			isa = PBXGroup;
+			children = (
+				E79CDAD8231E3E18009CA874 /* TBTabBarView.swift */,
+				E79CDADA231E3E26009CA874 /* TBTabBarView.xib */,
+			);
+			path = TBTabBarView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -297,6 +311,7 @@
 				E73B7F5D2083047F0071851A /* LaunchScreen.storyboard in Resources */,
 				E73B7F5A2083047F0071851A /* Assets.xcassets in Resources */,
 				E73B7F582083047E0071851A /* Main.storyboard in Resources */,
+				E7B8D9F0231F6ACF00DA7B0A /* TBNavigationBarView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,6 +422,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7B8D9F2231F6AE200DA7B0A /* TBNavigationBarView.swift in Sources */,
 				BADADC7821782B5600525596 /* InitialViewController.swift in Sources */,
 				E761DB9A208B2F510055D5C2 /* FirstViewController.swift in Sources */,
 				E79CDAD9231E3E18009CA874 /* TBTabBarView.swift in Sources */,
