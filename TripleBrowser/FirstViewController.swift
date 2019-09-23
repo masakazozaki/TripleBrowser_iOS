@@ -9,6 +9,10 @@ import Accounts
 import UIKit
 import WebKit
 
+protocol SearchBarCloseDelegate: class {
+    func closeSearchBar()
+}
+
 class FirstViewController: UIViewController {
     public var progressBarColor = UIColor.blue
     private let feedbackGenerator: Any? = {
@@ -23,9 +27,11 @@ class FirstViewController: UIViewController {
     private var webViewModel = WKWebViewModel()
     private var searchBar: UISearchBar!
     private var progressView = UIProgressView()
+    weak var searchBarCloseDelegate: SearchBarCloseDelegate?
 
     @IBOutlet private weak var tabBar: TBTabBarView!
     @IBOutlet private weak var webView: WKWebView!
+    @IBOutlet private weak var navigationBar: TBNavigationBarView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,6 +75,11 @@ class FirstViewController: UIViewController {
                 })
             }
         }
+    }
+
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        searchBarCloseDelegate?.closeSearchBar()
     }
 
     private func setupSearchBar() {

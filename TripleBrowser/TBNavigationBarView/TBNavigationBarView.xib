@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TBNavigationBarView" customModule="TripleBrowser" customModuleProvider="target">
+            <connections>
+                <outlet property="menuBarImageView" destination="JOj-HM-ChM" id="mVo-4z-JXN"/>
+                <outlet property="plusButton" destination="pz8-tb-p3d" id="mEe-Rf-raB"/>
+                <outlet property="searchBar" destination="5vd-sp-dOV" id="SHT-E3-gB5"/>
+                <outlet property="searchBarbackgroundView" destination="qi2-mJ-e1k" id="1Hb-An-9j5"/>
+                <outlet property="swipeAreaView" destination="lsS-gg-139" id="HM4-mg-ezg"/>
+                <outletCollection property="searchBarLargeConstraints" destination="JWB-Ot-HYm" collectionClass="NSMutableArray" id="cE1-tD-mA4"/>
+                <outletCollection property="searchBarSmallConstraints" destination="lyN-vc-1tA" collectionClass="NSMutableArray" id="9Fl-FE-pSY"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bfr-SF-2LX">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pz8-tb-p3d">
+                            <rect key="frame" x="357" y="43" width="40" height="40"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="ZA9-W8-qM9"/>
+                                <constraint firstAttribute="width" constant="40" id="gZP-Pu-lQe"/>
+                            </constraints>
+                            <state key="normal" image="plus"/>
+                            <connections>
+                                <action selector="plusButtonPressed" destination="-1" eventType="touchUpInside" id="Zne-p4-c0W"/>
+                            </connections>
+                        </button>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lsS-gg-139">
+                            <rect key="frame" x="72" y="43" width="270" height="40"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <gestureRecognizers/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="5ez-JW-c8I"/>
+                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="eC6-RE-cN0"/>
+                            </constraints>
+                            <connections>
+                                <outletCollection property="gestureRecognizers" destination="Mbu-13-hht" appends="YES" id="7WS-Oj-coE"/>
+                                <outletCollection property="gestureRecognizers" destination="gX3-HM-hJH" appends="YES" id="TJA-YR-Amx"/>
+                            </connections>
+                        </view>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="horizontalBar" translatesAutoresizingMaskIntoConstraints="NO" id="JOj-HM-ChM">
+                            <rect key="frame" x="189.66666666666666" y="91" width="35" height="4"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="35" id="6Ee-Rq-GPH"/>
+                                <constraint firstAttribute="height" constant="4" id="xEh-lo-NPf"/>
+                            </constraints>
+                        </imageView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qi2-mJ-e1k">
+                            <rect key="frame" x="17" y="43" width="40" height="40"/>
+                            <subviews>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5vd-sp-dOV">
+                                    <rect key="frame" x="10" y="10" width="20" height="20"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <action selector="searchButtonPressed" destination="-1" eventType="touchDown" id="32X-SK-tey"/>
+                                    </connections>
+                                </textField>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="5vd-sp-dOV" firstAttribute="top" secondItem="qi2-mJ-e1k" secondAttribute="top" constant="10" id="2Sg-N8-Ne6"/>
+                                <constraint firstItem="5vd-sp-dOV" firstAttribute="leading" secondItem="qi2-mJ-e1k" secondAttribute="leading" constant="10" id="QgO-J0-1N0"/>
+                                <constraint firstAttribute="bottom" secondItem="5vd-sp-dOV" secondAttribute="bottom" constant="10" id="Tt8-yA-dtm"/>
+                                <constraint firstAttribute="height" constant="40" id="Ve0-G0-UI9"/>
+                                <constraint firstAttribute="trailing" secondItem="5vd-sp-dOV" secondAttribute="trailing" constant="10" id="dqy-mQ-6cY"/>
+                                <constraint firstAttribute="width" constant="40" id="lyN-vc-1tA"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" red="0.41176470590000003" green="0.68235294120000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="pz8-tb-p3d" firstAttribute="leading" secondItem="lsS-gg-139" secondAttribute="trailing" constant="15" id="ACC-8t-yQG"/>
+                        <constraint firstAttribute="trailing" secondItem="qi2-mJ-e1k" secondAttribute="trailing" constant="17" id="JWB-Ot-HYm"/>
+                        <constraint firstAttribute="bottom" secondItem="JOj-HM-ChM" secondAttribute="bottom" constant="5" id="O5p-eU-d8t"/>
+                        <constraint firstAttribute="bottom" secondItem="lsS-gg-139" secondAttribute="bottom" constant="17" id="Rda-Qz-Dsa"/>
+                        <constraint firstAttribute="bottom" secondItem="qi2-mJ-e1k" secondAttribute="bottom" constant="17" id="fV3-fl-S4D"/>
+                        <constraint firstItem="lsS-gg-139" firstAttribute="leading" secondItem="qi2-mJ-e1k" secondAttribute="trailing" constant="15" id="hhZ-TK-xqW"/>
+                        <constraint firstAttribute="trailing" secondItem="pz8-tb-p3d" secondAttribute="trailing" constant="17" id="kNG-uI-Pdo"/>
+                        <constraint firstItem="qi2-mJ-e1k" firstAttribute="leading" secondItem="bfr-SF-2LX" secondAttribute="leading" constant="17" id="kjo-2w-eVQ"/>
+                        <constraint firstItem="JOj-HM-ChM" firstAttribute="centerX" secondItem="bfr-SF-2LX" secondAttribute="centerX" id="lN8-87-igo"/>
+                        <constraint firstAttribute="bottom" secondItem="pz8-tb-p3d" secondAttribute="bottom" constant="17" id="qM0-fX-M7A"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="JWB-Ot-HYm"/>
+                        </mask>
+                    </variation>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="bfr-SF-2LX" secondAttribute="trailing" id="CTi-D5-O0o"/>
+                <constraint firstAttribute="top" secondItem="bfr-SF-2LX" secondAttribute="top" id="hbP-d9-5cc"/>
+                <constraint firstAttribute="bottom" secondItem="bfr-SF-2LX" secondAttribute="bottom" id="lGS-jI-LuP"/>
+                <constraint firstItem="bfr-SF-2LX" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="yzv-2a-Ltn"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="52.799999999999997" y="39.90147783251232"/>
+        </view>
+        <swipeGestureRecognizer direction="right" id="Mbu-13-hht">
+            <connections>
+                <action selector="swipeAreaLeftSwiped" destination="-1" id="hdu-wk-cZI"/>
+            </connections>
+        </swipeGestureRecognizer>
+        <swipeGestureRecognizer direction="left" id="gX3-HM-hJH">
+            <connections>
+                <action selector="swipeAreaRightSwiped" destination="-1" id="nBW-VF-GoM"/>
+            </connections>
+        </swipeGestureRecognizer>
+    </objects>
+    <resources>
+        <image name="horizontalBar" width="35" height="4"/>
+        <image name="plus" width="20" height="21"/>
+    </resources>
+</document>

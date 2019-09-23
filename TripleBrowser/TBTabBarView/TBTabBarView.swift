@@ -8,16 +8,17 @@
 
 import UIKit
 
-protocol TBTabBarViewDelegate {
+protocol TBTabBarViewDelegate: class {
     func tabBarLeftButtonPressed()
     func tabBarRightButtonPressed()
     func tabBarDownButtonPressed()
     func tabBarCameraButtonPressed()
 }
 
-@IBDesignable class TBTabBarView: UIView {
+@IBDesignable
+class TBTabBarView: UIView {
     var view: UIView?
-    var delegate: TBTabBarViewDelegate!
+    weak var delegate: TBTabBarViewDelegate?
     @IBOutlet private weak var backgroundView: UIView!
     @IBOutlet private weak var leftArrowButon: UIButton!
     @IBOutlet private weak var rightArrowButon: UIButton!
@@ -50,18 +51,18 @@ protocol TBTabBarViewDelegate {
     }
 
     @IBAction func leftArrowButtonPressed() {
-        delegate.tabBarLeftButtonPressed()
+        delegate?.tabBarLeftButtonPressed()
     }
 
     @IBAction func rightArrowButtonPressed() {
-        delegate.tabBarRightButtonPressed()
+        delegate?.tabBarRightButtonPressed()
     }
 
     @IBAction func downArrowButtonPressed() {
-        delegate.tabBarDownButtonPressed()
+        delegate?.tabBarDownButtonPressed()
     }
 
     @IBAction func cameraButtonPressed() {
-        delegate.tabBarCameraButtonPressed()
+        delegate?.tabBarCameraButtonPressed()
     }
 }
