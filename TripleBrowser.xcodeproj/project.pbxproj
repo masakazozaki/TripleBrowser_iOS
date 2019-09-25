@@ -21,6 +21,8 @@
 		E77BD93821A0224D00F02C3D /* WKWebViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77BD93721A0224D00F02C3D /* WKWebViewModel.swift */; };
 		E79CDAD9231E3E18009CA874 /* TBTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79CDAD8231E3E18009CA874 /* TBTabBarView.swift */; };
 		E79CDADB231E3E26009CA874 /* TBTabBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E79CDADA231E3E26009CA874 /* TBTabBarView.xib */; };
+		E7B2F39723389B2A0066728F /* UIScrollVeiw+TouchesBegan.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B2F39623389B2A0066728F /* UIScrollVeiw+TouchesBegan.swift */; };
+		E7B2F39923389D3F0066728F /* UIView+GetScreenShot.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B2F39823389D3F0066728F /* UIView+GetScreenShot.swift */; };
 		E7B8D9F0231F6ACF00DA7B0A /* TBNavigationBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7B8D9EF231F6ACF00DA7B0A /* TBNavigationBarView.xib */; };
 		E7B8D9F2231F6AE200DA7B0A /* TBNavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B8D9F1231F6AE200DA7B0A /* TBNavigationBarView.swift */; };
 /* End PBXBuildFile section */
@@ -68,6 +70,8 @@
 		E77BD93721A0224D00F02C3D /* WKWebViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKWebViewModel.swift; sourceTree = "<group>"; };
 		E79CDAD8231E3E18009CA874 /* TBTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBTabBarView.swift; sourceTree = "<group>"; };
 		E79CDADA231E3E26009CA874 /* TBTabBarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TBTabBarView.xib; sourceTree = "<group>"; };
+		E7B2F39623389B2A0066728F /* UIScrollVeiw+TouchesBegan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollVeiw+TouchesBegan.swift"; sourceTree = "<group>"; };
+		E7B2F39823389D3F0066728F /* UIView+GetScreenShot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+GetScreenShot.swift"; sourceTree = "<group>"; };
 		E7B8D9EF231F6ACF00DA7B0A /* TBNavigationBarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TBNavigationBarView.xib; sourceTree = "<group>"; };
 		E7B8D9F1231F6AE200DA7B0A /* TBNavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBNavigationBarView.swift; sourceTree = "<group>"; };
 		FE62954220A1FEA805FDEC1D /* Pods-TripleBrowser.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TripleBrowser.release.xcconfig"; path = "Target Support Files/Pods-TripleBrowser/Pods-TripleBrowser.release.xcconfig"; sourceTree = "<group>"; };
@@ -149,6 +153,7 @@
 		E73B7F512083047E0071851A /* TripleBrowser */ = {
 			isa = PBXGroup;
 			children = (
+				E7B2F39523389B010066728F /* Extensions */,
 				E7E10637232210E80092CDB8 /* TBNavigationBarView */,
 				E7B8D9EE231F6A5600DA7B0A /* TBTabBarView */,
 				E73B7F522083047E0071851A /* AppDelegate.swift */,
@@ -179,6 +184,15 @@
 				E73B7F742083047F0071851A /* Info.plist */,
 			);
 			path = TripleBrowserUITests;
+			sourceTree = "<group>";
+		};
+		E7B2F39523389B010066728F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E7B2F39623389B2A0066728F /* UIScrollVeiw+TouchesBegan.swift */,
+				E7B2F39823389D3F0066728F /* UIView+GetScreenShot.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		E7B8D9EE231F6A5600DA7B0A /* TBTabBarView */ = {
@@ -386,7 +400,7 @@
 		};
 		E78F664C22B932560024A9D4 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			files = (
 			);
 			inputFileListPaths = (
@@ -399,7 +413,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n#if which \"${PODS_ROOT}/SwiftLint/swiftlint\" >/dev/null; then\n#${PODS_ROOT}/SwiftLint/swiftlint\n#else\n#echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\n#fi\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n#if which \"${PODS_ROOT}/SwiftLint/swiftlint\" >/dev/null; then\n#${PODS_ROOT}/SwiftLint/swiftlint\n#else\n#echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\n#fi\n\n\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
 		};
 		E9B9F08A115D4BA6FE464AEE /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -432,10 +446,12 @@
 			files = (
 				E7B8D9F2231F6AE200DA7B0A /* TBNavigationBarView.swift in Sources */,
 				BADADC7821782B5600525596 /* InitialViewController.swift in Sources */,
+				E7B2F39723389B2A0066728F /* UIScrollVeiw+TouchesBegan.swift in Sources */,
 				E761DB9A208B2F510055D5C2 /* FirstViewController.swift in Sources */,
 				E79CDAD9231E3E18009CA874 /* TBTabBarView.swift in Sources */,
 				E73B7F532083047E0071851A /* AppDelegate.swift in Sources */,
 				E77BD93821A0224D00F02C3D /* WKWebViewModel.swift in Sources */,
+				E7B2F39923389D3F0066728F /* UIView+GetScreenShot.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

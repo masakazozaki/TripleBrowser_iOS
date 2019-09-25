@@ -16,48 +16,62 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YiB-Kc-hKm">
-                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
-                                <color key="backgroundColor" red="0.53046467509150896" green="0.21682653036397112" blue="0.63072781735751293" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <wkWebView contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YiB-Kc-hKm">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <gestureRecognizers/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Du7-HW-0p6" appends="YES" id="gCz-Kb-Wh7"/>
+                                </connections>
                             </wkWebView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6X3-dc-Mhf" customClass="TBTabBarView" customModule="TripleBrowser" customModuleProvider="target">
-                                <rect key="frame" x="7" y="729" width="361" height="83"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="83" id="odv-LT-bKy"/>
-                                </constraints>
+                                <rect key="frame" x="8" y="722" width="359" height="90"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GUO-QV-Ds1" customClass="TBNavigationBarView" customModule="TripleBrowser" customModuleProvider="target">
-                                <rect key="frame" x="7" y="0.0" width="361" height="100"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="108"/>
                                 <viewLayoutGuide key="safeArea" id="x4m-cK-CBb"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="GUO-QV-Ds1" firstAttribute="top" secondItem="r8e-7u-oks" secondAttribute="top" id="2ux-Jf-2rY"/>
-                            <constraint firstItem="Mcl-2T-vlP" firstAttribute="bottom" secondItem="YiB-Kc-hKm" secondAttribute="bottom" id="CNS-BL-Dqb"/>
-                            <constraint firstItem="6X3-dc-Mhf" firstAttribute="leading" secondItem="Mcl-2T-vlP" secondAttribute="leading" constant="7" id="Gfh-kE-aR0"/>
-                            <constraint firstItem="GUO-QV-Ds1" firstAttribute="leading" secondItem="Mcl-2T-vlP" secondAttribute="leading" constant="7" id="OIp-RR-Hqs"/>
+                            <constraint firstItem="6X3-dc-Mhf" firstAttribute="top" secondItem="r8e-7u-oks" secondAttribute="bottom" id="3DB-6O-syw"/>
+                            <constraint firstAttribute="bottom" secondItem="YiB-Kc-hKm" secondAttribute="bottom" id="CNS-BL-Dqb"/>
+                            <constraint firstAttribute="top" secondItem="GUO-QV-Ds1" secondAttribute="bottom" id="F5T-6B-Mvu"/>
+                            <constraint firstItem="6X3-dc-Mhf" firstAttribute="leading" secondItem="Mcl-2T-vlP" secondAttribute="leading" constant="8" id="Gfh-kE-aR0"/>
+                            <constraint firstItem="GUO-QV-Ds1" firstAttribute="top" secondItem="r8e-7u-oks" secondAttribute="top" id="Lne-ey-1Q5"/>
+                            <constraint firstItem="GUO-QV-Ds1" firstAttribute="leading" secondItem="Mcl-2T-vlP" secondAttribute="leading" id="OIp-RR-Hqs"/>
+                            <constraint firstItem="6X3-dc-Mhf" firstAttribute="top" secondItem="Mcl-2T-vlP" secondAttribute="bottom" constant="-56" id="UGn-DV-Igq"/>
                             <constraint firstItem="Mcl-2T-vlP" firstAttribute="trailing" secondItem="YiB-Kc-hKm" secondAttribute="trailing" id="XLa-2C-M7C"/>
-                            <constraint firstItem="Mcl-2T-vlP" firstAttribute="trailing" secondItem="6X3-dc-Mhf" secondAttribute="trailing" constant="7" id="YOx-5D-7Vy"/>
-                            <constraint firstItem="Mcl-2T-vlP" firstAttribute="top" secondItem="GUO-QV-Ds1" secondAttribute="bottom" constant="-56" id="YbA-AB-iYo"/>
-                            <constraint firstItem="YiB-Kc-hKm" firstAttribute="top" secondItem="Mcl-2T-vlP" secondAttribute="top" id="aac-GB-7co"/>
+                            <constraint firstItem="Mcl-2T-vlP" firstAttribute="trailing" secondItem="6X3-dc-Mhf" secondAttribute="trailing" constant="8" id="YOx-5D-7Vy"/>
+                            <constraint firstItem="Mcl-2T-vlP" firstAttribute="top" secondItem="GUO-QV-Ds1" secondAttribute="bottom" constant="-64" id="YbA-AB-iYo"/>
+                            <constraint firstItem="YiB-Kc-hKm" firstAttribute="top" secondItem="r8e-7u-oks" secondAttribute="top" id="aac-GB-7co"/>
                             <constraint firstAttribute="bottom" secondItem="6X3-dc-Mhf" secondAttribute="bottom" id="htP-7K-GLu"/>
                             <constraint firstItem="YiB-Kc-hKm" firstAttribute="leading" secondItem="Mcl-2T-vlP" secondAttribute="leading" id="vS0-zc-W74"/>
-                            <constraint firstItem="Mcl-2T-vlP" firstAttribute="trailing" secondItem="GUO-QV-Ds1" secondAttribute="trailing" constant="7" id="wzb-AV-RJe"/>
+                            <constraint firstItem="Mcl-2T-vlP" firstAttribute="trailing" secondItem="GUO-QV-Ds1" secondAttribute="trailing" id="wzb-AV-RJe"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Mcl-2T-vlP"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="F5T-6B-Mvu"/>
+                                <exclude reference="3DB-6O-syw"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="navigationBar" destination="GUO-QV-Ds1" id="9ln-H5-jYZ"/>
                         <outlet property="tabBar" destination="6X3-dc-Mhf" id="A3M-km-bS0"/>
                         <outlet property="webView" destination="YiB-Kc-hKm" id="KHd-3o-Drm"/>
+                        <outletCollection property="barsAppearConstraints" destination="YbA-AB-iYo" collectionClass="NSMutableArray" id="VZx-IN-Y43"/>
+                        <outletCollection property="barsDisappearConstraints" destination="F5T-6B-Mvu" collectionClass="NSMutableArray" id="TZI-c2-Y7b"/>
+                        <outletCollection property="barsDisappearConstraints" destination="3DB-6O-syw" collectionClass="NSMutableArray" id="kQ5-91-AnT"/>
+                        <outletCollection property="barsAppearConstraints" destination="UGn-DV-Igq" collectionClass="NSMutableArray" id="wre-gX-FcE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2S3-dL-Qqm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Du7-HW-0p6"/>
             </objects>
             <point key="canvasLocation" x="2480.8000000000002" y="-434.48275862068965"/>
         </scene>

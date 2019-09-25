@@ -8,6 +8,12 @@
 
 import UIKit
 
+protocol TBNavigationBarDelegate: class {
+    func searchButtonPressed()
+    func swipeAreaSwiped()
+    func plusButtonPressed()
+}
+
 @IBDesignable
 class TBNavigationBarView: UIView {
     var isSearchBarSmall = true
@@ -65,7 +71,11 @@ class TBNavigationBarView: UIView {
         NSLayoutConstraint.deactivate(searchBarSmallConstraints)
         NSLayoutConstraint.activate(searchBarLargeConstraints)
         searchBarbackgroundView.layer.shadowOpacity = 0.3
-        UIView.animate(withDuration: 0.3, delay:0, options: .curveEaseOut, animations: { self.layoutIfNeeded() }, completion: nil)
+        UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseOut, animations: {
+            self.plusButton.isHidden = true
+            self.swipeAreaView.isHidden = true
+            self.layoutIfNeeded()
+        }, completion: nil)
         isSearchBarSmall = false
     }
 
@@ -74,8 +84,18 @@ class TBNavigationBarView: UIView {
         NSLayoutConstraint.activate(searchBarSmallConstraints)
         searchBarbackgroundView.layer.shadowOpacity = 0
         searchBar.resignFirstResponder()
-        UIView.animate(withDuration: 0.3, delay:0, options: .curveEaseOut, animations: { self.layoutIfNeeded()}, completion: nil)
+        UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseOut, animations: {
+            self.layoutIfNeeded()
+        }, completion: { _ in
+            self.plusButton.isHidden = false
+            self.swipeAreaView.isHidden = false
+        })
         isSearchBarSmall = true
+    }
+
+    public func closeSearchBar() {
+    shortenSearchBarSize()
+        print("closesearchBar")
     }
 
     @IBAction func searchButtonPressed() {
@@ -112,11 +132,4 @@ extension TBNavigationBarView: UITextFieldDelegate {
         expandSearchBarSize()
         return true
     }
-}
-
-extension TBNavigationBarView: SearchBarCloseDelegate {
-    func closeSearchBar() {
-        shortenSearchBarSize()
-    }
-    
 }

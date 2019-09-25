@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -28,28 +26,28 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="83"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uPe-9R-BOE">
-                            <rect key="frame" x="89" y="20" width="16" height="22"/>
+                            <rect key="frame" x="88" y="14" width="15" height="26"/>
                             <state key="normal" image="rightArrow"/>
                             <connections>
                                 <action selector="rightArrowButtonPressed" destination="-1" eventType="touchUpInside" id="Rj0-Z5-6jq"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oYd-oO-tv7">
-                            <rect key="frame" x="199" y="20" width="16" height="22"/>
+                            <rect key="frame" x="197.5" y="14" width="19" height="28"/>
                             <state key="normal" image="downArrow"/>
                             <connections>
                                 <action selector="downArrowButtonPressed" destination="-1" eventType="touchUpInside" id="GmK-gX-PVk"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZXp-sz-56J">
-                            <rect key="frame" x="368" y="20" width="16" height="22"/>
+                            <rect key="frame" x="346" y="14" width="38" height="27"/>
                             <state key="normal" image="camera"/>
                             <connections>
                                 <action selector="cameraButtonPressed" destination="-1" eventType="touchUpInside" id="UHb-Um-oj5"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eTY-uI-l4U">
-                            <rect key="frame" x="30" y="20" width="16" height="22"/>
+                            <rect key="frame" x="30" y="14" width="15" height="27"/>
                             <state key="normal" image="leftArrow"/>
                             <connections>
                                 <action selector="leftArrowButtonPressed" destination="-1" eventType="touchUpInside" id="Js4-BW-EDf"/>
@@ -60,10 +58,10 @@
                     <constraints>
                         <constraint firstItem="oYd-oO-tv7" firstAttribute="centerX" secondItem="Fve-J7-H9l" secondAttribute="centerX" id="DeM-Zh-Huv"/>
                         <constraint firstAttribute="trailing" secondItem="ZXp-sz-56J" secondAttribute="trailing" constant="30" id="PXV-w5-tDk"/>
-                        <constraint firstItem="uPe-9R-BOE" firstAttribute="top" secondItem="Fve-J7-H9l" secondAttribute="top" constant="20" id="S3q-Pb-GDL"/>
-                        <constraint firstItem="eTY-uI-l4U" firstAttribute="top" secondItem="Fve-J7-H9l" secondAttribute="top" constant="20" id="Syp-IC-pBQ"/>
-                        <constraint firstItem="oYd-oO-tv7" firstAttribute="top" secondItem="Fve-J7-H9l" secondAttribute="top" constant="20" id="Yqf-bV-NYx"/>
-                        <constraint firstItem="ZXp-sz-56J" firstAttribute="top" secondItem="Fve-J7-H9l" secondAttribute="top" constant="20" id="YyV-dK-hrq"/>
+                        <constraint firstItem="uPe-9R-BOE" firstAttribute="top" secondItem="Fve-J7-H9l" secondAttribute="top" constant="14" id="S3q-Pb-GDL"/>
+                        <constraint firstItem="eTY-uI-l4U" firstAttribute="top" secondItem="Fve-J7-H9l" secondAttribute="top" constant="14" id="Syp-IC-pBQ"/>
+                        <constraint firstItem="oYd-oO-tv7" firstAttribute="top" secondItem="Fve-J7-H9l" secondAttribute="top" constant="14" id="Yqf-bV-NYx"/>
+                        <constraint firstItem="ZXp-sz-56J" firstAttribute="top" secondItem="Fve-J7-H9l" secondAttribute="top" constant="14" id="YyV-dK-hrq"/>
                         <constraint firstItem="eTY-uI-l4U" firstAttribute="leading" secondItem="Fve-J7-H9l" secondAttribute="leading" constant="30" id="nNG-Xz-EQh"/>
                         <constraint firstItem="uPe-9R-BOE" firstAttribute="leading" secondItem="eTY-uI-l4U" secondAttribute="trailing" constant="43" id="rjq-w0-90y"/>
                     </constraints>
@@ -83,7 +81,7 @@
     </objects>
     <resources>
         <image name="camera" width="38" height="27"/>
-        <image name="downArrow" width="27" height="29"/>
+        <image name="downArrow" width="19" height="28"/>
         <image name="leftArrow" width="15" height="27"/>
         <image name="rightArrow" width="15" height="26"/>
     </resources>
