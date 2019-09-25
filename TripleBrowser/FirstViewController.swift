@@ -35,6 +35,14 @@ class FirstViewController: UIViewController {
         progressView.progressViewStyle = .bar
         progressView.progressTintColor = progressBarColor
         tabBar.delegate = self
+        navigationBar.layer.shadowOpacity = 0.4
+        navigationBar.layer.shadowColor = UIColor.black.cgColor
+        navigationBar.layer.shadowOffset = CGSize(width: 0, height: 0)
+        navigationBar.layer.shadowRadius = 8
+        tabBar.layer.shadowOpacity = 0.4
+        tabBar.layer.shadowColor = UIColor.black.cgColor
+        tabBar.layer.shadowOffset = CGSize(width: 0, height: 0)
+        tabBar.layer.shadowRadius = 8
     }
 
     override func viewWillLayoutSubviews() {
@@ -115,7 +123,7 @@ class FirstViewController: UIViewController {
         UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseOut, animations: { self.view.layoutIfNeeded() }, completion: nil)
         setWebViewInsets()
     }
-    
+
     private func setWebViewInsets() {
         webViewEdgeInsets = UIEdgeInsets(top: navigationBar.frame.height - view.safeAreaInsets.top,
                left: 0,
@@ -216,6 +224,20 @@ extension FirstViewController: TBTabBarViewDelegate {
         alertController.popoverPresentationController?.sourceView = view
         alertController.popoverPresentationController?.sourceRect = CGRect(x: view.frame.size.width - 36.0, y: view.frame.size.height - 40.0, width: 0, height: 0)
         present(alertController, animated: true, completion: nil)
+    }
+}
+
+extension FirstViewController: TBNavigationBarDelegate {
+    func searchBarShouldReturn() {
+        
+    }
+
+    func swipeAreaSwiped() {
+        
+    }
+
+    func plusButtonPressed() {
+        
     }
 }
 

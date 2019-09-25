@@ -68,8 +68,10 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qi2-mJ-e1k">
                             <rect key="frame" x="17" y="43" width="40" height="40"/>
                             <subviews>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5vd-sp-dOV">
-                                    <rect key="frame" x="10" y="10" width="20" height="20"/>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder=" Search or enter website name" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="5vd-sp-dOV">
+                                    <rect key="frame" x="8" y="8" width="24" height="24"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
                                     <connections>
@@ -79,12 +81,12 @@
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstItem="5vd-sp-dOV" firstAttribute="top" secondItem="qi2-mJ-e1k" secondAttribute="top" constant="10" id="6X6-xk-fLk"/>
-                                <constraint firstAttribute="trailing" secondItem="5vd-sp-dOV" secondAttribute="trailing" constant="10" id="Kp0-sg-bDG"/>
+                                <constraint firstItem="5vd-sp-dOV" firstAttribute="top" secondItem="qi2-mJ-e1k" secondAttribute="top" constant="8" id="6X6-xk-fLk"/>
+                                <constraint firstAttribute="trailing" secondItem="5vd-sp-dOV" secondAttribute="trailing" constant="8" id="Kp0-sg-bDG"/>
                                 <constraint firstAttribute="height" constant="40" id="Ve0-G0-UI9"/>
-                                <constraint firstItem="5vd-sp-dOV" firstAttribute="leading" secondItem="qi2-mJ-e1k" secondAttribute="leading" constant="10" id="iIO-Lo-F30"/>
+                                <constraint firstItem="5vd-sp-dOV" firstAttribute="leading" secondItem="qi2-mJ-e1k" secondAttribute="leading" constant="8" id="iIO-Lo-F30"/>
                                 <constraint firstAttribute="width" constant="40" id="lyN-vc-1tA"/>
-                                <constraint firstAttribute="bottom" secondItem="5vd-sp-dOV" secondAttribute="bottom" constant="10" id="q37-20-Jhp"/>
+                                <constraint firstAttribute="bottom" secondItem="5vd-sp-dOV" secondAttribute="bottom" constant="8" id="q37-20-Jhp"/>
                             </constraints>
                         </view>
                     </subviews>

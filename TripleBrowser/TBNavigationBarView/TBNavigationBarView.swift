@@ -9,7 +9,7 @@
 import UIKit
 
 protocol TBNavigationBarDelegate: class {
-    func searchButtonPressed()
+    func searchBarShouldReturn()
     func swipeAreaSwiped()
     func plusButtonPressed()
 }
@@ -52,7 +52,7 @@ class TBNavigationBarView: UIView {
         cornerRadius(view: plusButton)
         searchBar.delegate = self
         searchBarLeftImageView.image = UIImage(named: "search")
-        searchBarLeftImageView.frame = CGRect(x: 0, y: 0, width: 20, height: 20)
+        searchBarLeftImageView.frame = CGRect(x: 0, y: 0, width: searchBar.frame.width, height: searchBar.frame.height)
         searchBar.leftView = searchBarLeftImageView
         searchBar.leftViewMode = .unlessEditing
         searchBarbackgroundView.layer.shadowColor = UIColor.black.cgColor
@@ -70,8 +70,8 @@ class TBNavigationBarView: UIView {
     private func expandSearchBarSize() {
         NSLayoutConstraint.deactivate(searchBarSmallConstraints)
         NSLayoutConstraint.activate(searchBarLargeConstraints)
-        searchBarbackgroundView.layer.shadowOpacity = 0.3
         UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseOut, animations: {
+            self.searchBarbackgroundView.layer.shadowOpacity = 0.3
             self.plusButton.isHidden = true
             self.swipeAreaView.isHidden = true
             self.layoutIfNeeded()
@@ -82,9 +82,9 @@ class TBNavigationBarView: UIView {
     private func shortenSearchBarSize() {
         NSLayoutConstraint.deactivate(searchBarLargeConstraints)
         NSLayoutConstraint.activate(searchBarSmallConstraints)
-        searchBarbackgroundView.layer.shadowOpacity = 0
         searchBar.resignFirstResponder()
         UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseOut, animations: {
+            self.searchBarbackgroundView.layer.shadowOpacity = 0
             self.layoutIfNeeded()
         }, completion: { _ in
             self.plusButton.isHidden = false
@@ -94,7 +94,7 @@ class TBNavigationBarView: UIView {
     }
 
     public func closeSearchBar() {
-    shortenSearchBarSize()
+        shortenSearchBarSize()
         print("closesearchBar")
     }
 
