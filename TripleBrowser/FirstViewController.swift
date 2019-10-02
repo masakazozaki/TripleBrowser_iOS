@@ -18,7 +18,6 @@ class FirstViewController: UIViewController {
     }()
     private var webViewEdgeInsets = UIEdgeInsets()
     private var webViewModel = WKWebViewModel()
-    private var searchBar: UISearchBar!
     private var progressView = UIProgressView()
 
     @IBOutlet private weak var tabBar: TBTabBarView!
@@ -30,7 +29,6 @@ class FirstViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setWebView()
-        setupSearchBar()
 //        progressView = UIProgressView(frame: CGRect(x: 0.0, y: (navigationController?.navigationBar.frame.size.height)! + 10, width: view.frame.size.width, height: 3.0))
         progressView.progressViewStyle = .bar
         progressView.progressTintColor = progressBarColor
@@ -95,19 +93,6 @@ class FirstViewController: UIViewController {
     @objc
     private func handleTap(_ sender: UITapGestureRecognizer) {
         navigationBar.closeSearchBar()
-    }
-
-    private func setupSearchBar() {
-//        let searchBar = UISearchBar(frame: (navigationController?.navigationBar.frame)!)
-//        searchBar.delegate = self
-//        searchBar.placeholder = "Search or enter website name"
-//        searchBar.showsCancelButton = false
-//        searchBar.autocapitalizationType = .none
-//        searchBar.keyboardType = UIKeyboardType.default
-////        searchBar.showsBookmarkButton = true
-////        searchBar.setImage(UIImage(named: "reload_x3.png"), for: .bookmark, state: .normal)
-//        searchBar.becomeFirstResponder()
-//        searchBar.resignFirstResponder()
     }
 
     private func appearBars() {
@@ -229,15 +214,15 @@ extension FirstViewController: TBTabBarViewDelegate {
 
 extension FirstViewController: TBNavigationBarDelegate {
     func searchBarShouldReturn() {
-        
+        navigationBar.searchBar.resignFirstResponder()
+        let urlRequest = URLRequest(url: webViewModel.checkSearchText(searchText: self.navigationBar.searchBar.text!))
+        webView.load(urlRequest)
     }
 
     func swipeAreaSwiped() {
-        
     }
 
     func plusButtonPressed() {
-        
     }
 }
 

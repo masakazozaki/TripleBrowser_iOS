@@ -19,7 +19,7 @@ class TBNavigationBarView: UIView {
     var isSearchBarSmall = true
     var view: UIView!
     var searchBarLeftImageView = UIImageView()
-    @IBOutlet private weak var searchBar: UITextField!
+    @IBOutlet public weak var searchBar: UITextField!
     @IBOutlet private weak var searchBarbackgroundView: UIView!
     @IBOutlet private weak var swipeAreaView: UIView!
     @IBOutlet private weak var plusButton: UIButton!

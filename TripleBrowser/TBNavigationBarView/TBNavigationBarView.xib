@@ -89,9 +89,14 @@
                                 <constraint firstAttribute="bottom" secondItem="5vd-sp-dOV" secondAttribute="bottom" constant="8" id="q37-20-Jhp"/>
                             </constraints>
                         </view>
+                        <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="2yj-so-FZ1">
+                            <rect key="frame" x="0.0" y="98" width="414" height="2"/>
+                            <color key="progressTintColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </progressView>
                     </subviews>
                     <color key="backgroundColor" red="0.41176470590000003" green="0.68235294120000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
+                        <constraint firstAttribute="trailing" secondItem="2yj-so-FZ1" secondAttribute="trailing" id="0GC-tm-F6C"/>
                         <constraint firstItem="pz8-tb-p3d" firstAttribute="leading" secondItem="lsS-gg-139" secondAttribute="trailing" constant="15" id="ACC-8t-yQG"/>
                         <constraint firstAttribute="trailing" secondItem="qi2-mJ-e1k" secondAttribute="trailing" constant="17" id="JWB-Ot-HYm"/>
                         <constraint firstAttribute="bottom" secondItem="JOj-HM-ChM" secondAttribute="bottom" constant="5" id="O5p-eU-d8t"/>
@@ -102,6 +107,8 @@
                         <constraint firstItem="qi2-mJ-e1k" firstAttribute="leading" secondItem="bfr-SF-2LX" secondAttribute="leading" constant="17" id="kjo-2w-eVQ"/>
                         <constraint firstItem="JOj-HM-ChM" firstAttribute="centerX" secondItem="bfr-SF-2LX" secondAttribute="centerX" id="lN8-87-igo"/>
                         <constraint firstAttribute="bottom" secondItem="pz8-tb-p3d" secondAttribute="bottom" constant="17" id="qM0-fX-M7A"/>
+                        <constraint firstAttribute="bottom" secondItem="2yj-so-FZ1" secondAttribute="bottom" id="tA7-Zc-B8y"/>
+                        <constraint firstItem="2yj-so-FZ1" firstAttribute="leading" secondItem="bfr-SF-2LX" secondAttribute="leading" id="tPB-Mz-Rtn"/>
                     </constraints>
                     <variation key="default">
                         <mask key="constraints">
