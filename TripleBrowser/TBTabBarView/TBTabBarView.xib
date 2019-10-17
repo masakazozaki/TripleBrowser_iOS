@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -54,7 +55,6 @@
                             </connections>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" red="0.41176470588235292" green="0.68235294117647061" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstItem="oYd-oO-tv7" firstAttribute="centerX" secondItem="Fve-J7-H9l" secondAttribute="centerX" id="DeM-Zh-Huv"/>
                         <constraint firstAttribute="trailing" secondItem="ZXp-sz-56J" secondAttribute="trailing" constant="30" id="PXV-w5-tDk"/>
@@ -67,7 +67,7 @@
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" name="TBSystemLightBackground"/>
             <constraints>
                 <constraint firstItem="Fve-J7-H9l" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="50c-jK-xH0"/>
                 <constraint firstItem="Fve-J7-H9l" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="7Dg-yb-Zcr"/>
@@ -84,5 +84,8 @@
         <image name="downArrow" width="19" height="28"/>
         <image name="leftArrow" width="15" height="27"/>
         <image name="rightArrow" width="15" height="26"/>
+        <namedColor name="TBSystemLightBackground">
+            <color red="0.99607843137254903" green="0.99607843137254903" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

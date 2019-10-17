@@ -10,7 +10,7 @@ import UIKit
 import WebKit
 
 class FirstViewController: UIViewController {
-    public var progressBarColor = UIColor.blue
+    public var themeColor: UIColor?
     private let feedbackGenerator: Any? = {
             let generator = UINotificationFeedbackGenerator()
             generator.prepare()
@@ -18,7 +18,6 @@ class FirstViewController: UIViewController {
     }()
     private var webViewEdgeInsets = UIEdgeInsets()
     private var webViewModel = WKWebViewModel()
-    private var progressView = UIProgressView()
 
     @IBOutlet private weak var tabBar: TBTabBarView!
     @IBOutlet private weak var webView: WKWebView!
@@ -29,9 +28,9 @@ class FirstViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setWebView()
-//        progressView = UIProgressView(frame: CGRect(x: 0.0, y: (navigationController?.navigationBar.frame.size.height)! + 10, width: view.frame.size.width, height: 3.0))
-        progressView.progressViewStyle = .bar
-        progressView.progressTintColor = progressBarColor
+        navigationBar.progressBar.progressTintColor = themeColor
+        navigationBar.tintColor = themeColor
+        tabBar.tintColor = themeColor
         tabBar.delegate = self
         navigationBar.layer.shadowOpacity = 0.4
         navigationBar.layer.shadowColor = UIColor.black.cgColor
@@ -70,16 +69,16 @@ class FirstViewController: UIViewController {
 
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey: Any]?, context: UnsafeMutableRawPointer?) {
         if keyPath == "estimatedProgress" {
-            progressView.alpha = 1.0
-            progressView.setProgress(Float(webView.estimatedProgress), animated: true)
+            navigationBar.progressBar.alpha = 1.0
+            navigationBar.progressBar.setProgress(Float(webView.estimatedProgress), animated: true)
             if webView.estimatedProgress >= 1.0 {
                 UIView.animate(withDuration: 0.9,
                                delay: 0.6,
                                options: [.curveEaseOut],
                                animations: { [weak self] in
-                                self?.progressView.alpha = 0.0
+                                self?.navigationBar.progressBar.alpha = 0.0
                     }, completion: { _ in
-                        self.progressView.setProgress(0.0, animated: false)
+                        self.navigationBar.progressBar.setProgress(0.0, animated: false)
                 })
             }
         }

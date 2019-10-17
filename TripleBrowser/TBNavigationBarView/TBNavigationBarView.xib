@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -11,8 +12,10 @@
             <connections>
                 <outlet property="menuBarImageView" destination="JOj-HM-ChM" id="mVo-4z-JXN"/>
                 <outlet property="plusButton" destination="pz8-tb-p3d" id="mEe-Rf-raB"/>
+                <outlet property="progressBar" destination="2yj-so-FZ1" id="R1H-yh-LJI"/>
                 <outlet property="searchBar" destination="5vd-sp-dOV" id="SHT-E3-gB5"/>
                 <outlet property="searchBarbackgroundView" destination="qi2-mJ-e1k" id="1Hb-An-9j5"/>
+                <outlet property="swipeAreaImageView" destination="SNX-Mk-dqp" id="tdz-fF-JED"/>
                 <outlet property="swipeAreaView" destination="lsS-gg-139" id="HM4-mg-ezg"/>
                 <outletCollection property="searchBarLargeConstraints" destination="JWB-Ot-HYm" collectionClass="NSMutableArray" id="cE1-tD-mA4"/>
                 <outletCollection property="searchBarSmallConstraints" destination="lyN-vc-1tA" collectionClass="NSMutableArray" id="9Fl-FE-pSY"/>
@@ -28,7 +31,7 @@
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pz8-tb-p3d">
                             <rect key="frame" x="357" y="43" width="40" height="40"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="backgroundColor" name="TBSystemDarkBackground"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="40" id="ZA9-W8-qM9"/>
                                 <constraint firstAttribute="width" constant="40" id="gZP-Pu-lQe"/>
@@ -45,7 +48,7 @@
                                     <rect key="frame" x="81" y="10" width="108" height="20"/>
                                 </imageView>
                             </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="backgroundColor" name="TBSystemDarkBackground"/>
                             <gestureRecognizers/>
                             <constraints>
                                 <constraint firstItem="SNX-Mk-dqp" firstAttribute="centerX" secondItem="lsS-gg-139" secondAttribute="centerX" id="2kC-Oe-qqu"/>
@@ -70,8 +73,7 @@
                             <subviews>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder=" Search or enter website name" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="5vd-sp-dOV">
                                     <rect key="frame" x="8" y="8" width="24" height="24"/>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
                                     <connections>
@@ -79,7 +81,7 @@
                                     </connections>
                                 </textField>
                             </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="backgroundColor" name="TBSystemDarkBackground"/>
                             <constraints>
                                 <constraint firstItem="5vd-sp-dOV" firstAttribute="top" secondItem="qi2-mJ-e1k" secondAttribute="top" constant="8" id="6X6-xk-fLk"/>
                                 <constraint firstAttribute="trailing" secondItem="5vd-sp-dOV" secondAttribute="trailing" constant="8" id="Kp0-sg-bDG"/>
@@ -90,11 +92,14 @@
                             </constraints>
                         </view>
                         <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="2yj-so-FZ1">
-                            <rect key="frame" x="0.0" y="98" width="414" height="2"/>
-                            <color key="progressTintColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <rect key="frame" x="0.0" y="96" width="414" height="4"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="4" id="gOI-8r-ask"/>
+                            </constraints>
+                            <color key="progressTintColor" name="TBSystemBlue"/>
                         </progressView>
                     </subviews>
-                    <color key="backgroundColor" red="0.41176470590000003" green="0.68235294120000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" name="TBSystemLightBackground"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="2yj-so-FZ1" secondAttribute="trailing" id="0GC-tm-F6C"/>
                         <constraint firstItem="pz8-tb-p3d" firstAttribute="leading" secondItem="lsS-gg-139" secondAttribute="trailing" constant="15" id="ACC-8t-yQG"/>
@@ -141,5 +146,14 @@
         <image name="horizontalBar" width="35" height="4"/>
         <image name="plus" width="20" height="21"/>
         <image name="swipeAreaArrow" width="108" height="20"/>
+        <namedColor name="TBSystemBlue">
+            <color red="0.41176470588235292" green="0.68235294117647061" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="TBSystemDarkBackground">
+            <color red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="TBSystemLightBackground">
+            <color red="0.99607843137254903" green="0.99607843137254903" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

@@ -22,8 +22,10 @@ class TBNavigationBarView: UIView {
     @IBOutlet public weak var searchBar: UITextField!
     @IBOutlet private weak var searchBarbackgroundView: UIView!
     @IBOutlet private weak var swipeAreaView: UIView!
+    @IBOutlet private weak var swipeAreaImageView: UIImageView!
     @IBOutlet private weak var plusButton: UIButton!
     @IBOutlet private weak var menuBarImageView: UIImageView!
+    @IBOutlet public weak var progressBar: UIProgressView!
     @IBOutlet private var searchBarSmallConstraints: [NSLayoutConstraint]!
     @IBOutlet private var searchBarLargeConstraints: [NSLayoutConstraint]!
 
@@ -47,17 +49,20 @@ class TBNavigationBarView: UIView {
             view!.trailingAnchor.constraint(equalTo: trailingAnchor),
             view!.bottomAnchor.constraint(equalTo: bottomAnchor)
             ])
-        cornerRadius(view: searchBarbackgroundView)
         cornerRadius(view: swipeAreaView)
+        swipeAreaImageView.image = UIImage(named: "swipeAreaArrow")?.withRenderingMode(.alwaysTemplate)
         cornerRadius(view: plusButton)
+        plusButton.setImage(UIImage(named: "plus")?.withRenderingMode(.alwaysTemplate), for: .normal)
         searchBar.delegate = self
-        searchBarLeftImageView.image = UIImage(named: "search")
+        searchBarLeftImageView.image = UIImage(named: "search")?.withRenderingMode(.alwaysTemplate)
         searchBarLeftImageView.frame = CGRect(x: 0, y: 0, width: searchBar.frame.width, height: searchBar.frame.height)
         searchBar.leftView = searchBarLeftImageView
         searchBar.leftViewMode = .unlessEditing
+        cornerRadius(view: searchBarbackgroundView)
         searchBarbackgroundView.layer.shadowColor = UIColor.black.cgColor
         searchBarbackgroundView.layer.shadowOffset = CGSize(width: 0, height: 0)
         searchBarbackgroundView.layer.shadowRadius = 20
+        menuBarImageView.image = UIImage(named: "horizontalBar")?.withRenderingMode(.alwaysTemplate)
         view!.layer.cornerRadius = 20
         view!.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
         view!.layer.masksToBounds = true

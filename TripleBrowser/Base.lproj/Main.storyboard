@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="keb-hq-cdI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="keb-hq-cdI">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -92,7 +92,7 @@
                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="982-EA-wqK">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                                 <connections>
-                                                    <segue destination="YIF-zm-JDR" kind="embed" id="MKP-gD-wV4"/>
+                                                    <segue destination="YIF-zm-JDR" kind="embed" identifier="page1" id="MKP-gD-wV4"/>
                                                 </connections>
                                             </containerView>
                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VM5-2H-CRr">
@@ -122,7 +122,6 @@
                                 </constraints>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="WsY-eL-BAf" secondAttribute="bottom" id="1U2-di-aXi"/>
                             <constraint firstItem="VM5-2H-CRr" firstAttribute="width" secondItem="aJz-9H-cde" secondAttribute="width" multiplier="2" id="2TO-jE-OIt"/>
@@ -150,17 +149,16 @@
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gxd-r0-pq6">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                 <connections>
-                                    <segue destination="YIF-zm-JDR" kind="embed" id="H1U-w6-Nh5"/>
+                                    <segue destination="YIF-zm-JDR" kind="embed" identifier="page2" id="H1U-w6-Nh5"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kPZ-zy-nMz">
                                 <rect key="frame" x="375" y="0.0" width="375" height="812"/>
                                 <connections>
-                                    <segue destination="YIF-zm-JDR" kind="embed" id="vyb-ON-aMp"/>
+                                    <segue destination="YIF-zm-JDR" kind="embed" identifier="page3" id="vyb-ON-aMp"/>
                                 </connections>
                             </containerView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="kPZ-zy-nMz" firstAttribute="leading" secondItem="Gxd-r0-pq6" secondAttribute="trailing" id="3tE-tr-ReY"/>
                             <constraint firstItem="Gxd-r0-pq6" firstAttribute="top" secondItem="JJG-Lp-kOx" secondAttribute="top" id="6Ak-4i-WcB"/>

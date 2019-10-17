@@ -48,6 +48,10 @@ class TBTabBarView: UIView {
         view!.layer.cornerRadius = 23
         view!.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         view!.layer.masksToBounds = true
+        leftArrowButon.setImage(UIImage(named: "leftArrow")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        rightArrowButon.setImage(UIImage(named: "rightArrow")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        downArrowButon.setImage(UIImage(named: "downArrow")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        cameraButon.setImage(UIImage(named: "camera")?.withRenderingMode(.alwaysTemplate), for: .normal)
     }
 
     @IBAction func leftArrowButtonPressed() {

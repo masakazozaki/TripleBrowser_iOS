@@ -16,16 +16,16 @@ class InitialViewController: UIViewController {
 		let themeColor: UIColor
 		switch segue.identifier {
 		case "page1":
-			themeColor = UIColor(red: 54 / 255, green: 142 / 255, blue: 235 / 255, alpha: 1)
+            themeColor = UIColor(named: "TBSystemBlue") ?? .blue
 		case "page2":
-			themeColor = UIColor(red: 1, green: 90 / 255, blue: 137 / 255, alpha: 1)
+            themeColor = UIColor(named: "TBSystemPink") ?? .red
 		case "page3":
-			themeColor = UIColor(red: 100 / 255, green: 224 / 255, blue: 96 / 255, alpha: 1)
+            themeColor = UIColor(named: "TBSystemGreen") ?? .green
 		default:
 			return
 		}
-        let destination = segue.destination.children.first as? FirstViewController
-        destination?.progressBarColor = themeColor
+        let destination = segue.destination as? FirstViewController
+        destination?.themeColor = themeColor
         destination?.navigationController?.navigationBar.backgroundColor = themeColor
     }
 }
