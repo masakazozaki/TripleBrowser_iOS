@@ -25,6 +25,7 @@
 		E7B2F39923389D3F0066728F /* UIView+GetScreenShot.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B2F39823389D3F0066728F /* UIView+GetScreenShot.swift */; };
 		E7B8D9F0231F6ACF00DA7B0A /* TBNavigationBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7B8D9EF231F6ACF00DA7B0A /* TBNavigationBarView.xib */; };
 		E7B8D9F2231F6AE200DA7B0A /* TBNavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B8D9F1231F6AE200DA7B0A /* TBNavigationBarView.swift */; };
+		E7E638C42366E0060033F731 /* UIView+RoundCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E638C32366E0060033F731 /* UIView+RoundCorner.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,7 @@
 		E7B2F39823389D3F0066728F /* UIView+GetScreenShot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+GetScreenShot.swift"; sourceTree = "<group>"; };
 		E7B8D9EF231F6ACF00DA7B0A /* TBNavigationBarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TBNavigationBarView.xib; sourceTree = "<group>"; };
 		E7B8D9F1231F6AE200DA7B0A /* TBNavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBNavigationBarView.swift; sourceTree = "<group>"; };
+		E7E638C32366E0060033F731 /* UIView+RoundCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+RoundCorner.swift"; sourceTree = "<group>"; };
 		FE62954220A1FEA805FDEC1D /* Pods-TripleBrowser.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TripleBrowser.release.xcconfig"; path = "Target Support Files/Pods-TripleBrowser/Pods-TripleBrowser.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -189,6 +191,7 @@
 		E7B2F39523389B010066728F /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				E7E638C32366E0060033F731 /* UIView+RoundCorner.swift */,
 				E7B2F39623389B2A0066728F /* UIScrollVeiw+TouchesBegan.swift */,
 				E7B2F39823389D3F0066728F /* UIView+GetScreenShot.swift */,
 			);
@@ -447,6 +450,7 @@
 				E7B8D9F2231F6AE200DA7B0A /* TBNavigationBarView.swift in Sources */,
 				BADADC7821782B5600525596 /* InitialViewController.swift in Sources */,
 				E7B2F39723389B2A0066728F /* UIScrollVeiw+TouchesBegan.swift in Sources */,
+				E7E638C42366E0060033F731 /* UIView+RoundCorner.swift in Sources */,
 				E761DB9A208B2F510055D5C2 /* FirstViewController.swift in Sources */,
 				E79CDAD9231E3E18009CA874 /* TBTabBarView.swift in Sources */,
 				E73B7F532083047E0071851A /* AppDelegate.swift in Sources */,

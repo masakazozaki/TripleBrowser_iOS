@@ -34,6 +34,14 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="108"/>
                                 <viewLayoutGuide key="safeArea" id="x4m-cK-CBb"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="far-32-LUl">
+                                <rect key="frame" x="164" y="441" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="changeButtonPressed" destination="YIF-zm-JDR" eventType="touchUpInside" id="Msv-wg-yBL"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -61,6 +69,7 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="navigatinobarBottomConstraint" destination="YbA-AB-iYo" id="BqB-6X-BjH"/>
                         <outlet property="navigationBar" destination="GUO-QV-Ds1" id="9ln-H5-jYZ"/>
                         <outlet property="tabBar" destination="6X3-dc-Mhf" id="A3M-km-bS0"/>
                         <outlet property="webView" destination="YiB-Kc-hKm" id="KHd-3o-Drm"/>

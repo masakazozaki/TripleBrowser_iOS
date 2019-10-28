@@ -16,30 +16,54 @@ class FirstViewController: UIViewController {
             generator.prepare()
             return generator
     }()
+
     private var webViewEdgeInsets = UIEdgeInsets()
     private var webViewModel = WKWebViewModel()
 
-    @IBOutlet private weak var tabBar: TBTabBarView!
-    @IBOutlet private weak var webView: WKWebView!
-    @IBOutlet private weak var navigationBar: TBNavigationBarView!
+    @IBOutlet private weak var tabBar: TBTabBarView! {
+        didSet {
+            tabBar.tintColor = themeColor
+            tabBar.delegate = self
+            tabBar.layer.shadowOpacity = 0.4
+            tabBar.layer.shadowColor = UIColor.black.cgColor
+            tabBar.layer.shadowOffset = CGSize(width: 0, height: 0)
+            tabBar.layer.shadowRadius = 8
+        }
+    }
+
+    @IBOutlet private weak var webView: WKWebView! {
+        didSet {
+            webView.addObserver(self, forKeyPath: "estimatedProgress", options: .new, context: nil)
+            webView.addObserver(self, forKeyPath: "loading", options: .new, context: nil)
+            webView.navigationDelegate = self
+            webView.uiDelegate = self
+            let webViewTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
+            webView.addGestureRecognizer(webViewTapRecognizer)
+            webViewTapRecognizer.delegate = self
+            webView.scrollView.delegate = self
+            webView.allowsLinkPreview = true
+        }
+    }
+
+    @IBOutlet private weak var navigationBar: TBNavigationBarView! {
+        didSet {
+            navigationBar.progressBar.progressTintColor = themeColor
+            navigationBar.tintColor = themeColor
+            navigationBar.delegate = self
+            navigationBar.layer.shadowOpacity = 0.4
+            navigationBar.layer.shadowColor = UIColor.black.cgColor
+            navigationBar.layer.shadowOffset = CGSize(width: 0, height: 0)
+            navigationBar.layer.shadowRadius = 8
+        }
+    }
+
     @IBOutlet private var barsDisappearConstraints: [NSLayoutConstraint]!
     @IBOutlet private var barsAppearConstraints: [NSLayoutConstraint]!
+    @IBOutlet private weak var navigatinobarBottomConstraint: NSLayoutConstraint!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setWebView()
-        navigationBar.progressBar.progressTintColor = themeColor
-        navigationBar.tintColor = themeColor
-        tabBar.tintColor = themeColor
-        tabBar.delegate = self
-        navigationBar.layer.shadowOpacity = 0.4
-        navigationBar.layer.shadowColor = UIColor.black.cgColor
-        navigationBar.layer.shadowOffset = CGSize(width: 0, height: 0)
-        navigationBar.layer.shadowRadius = 8
-        tabBar.layer.shadowOpacity = 0.4
-        tabBar.layer.shadowColor = UIColor.black.cgColor
-        tabBar.layer.shadowOffset = CGSize(width: 0, height: 0)
-        tabBar.layer.shadowRadius = 8
     }
 
     override func viewWillLayoutSubviews() {
@@ -48,15 +72,6 @@ class FirstViewController: UIViewController {
     }
 
     func setWebView() {
-        webView.addObserver(self, forKeyPath: "estimatedProgress", options: .new, context: nil)
-        webView.addObserver(self, forKeyPath: "loading", options: .new, context: nil)
-        webView.navigationDelegate = self
-        webView.uiDelegate = self
-        let webViewTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
-        webView.addGestureRecognizer(webViewTapRecognizer)
-        webViewTapRecognizer.delegate = self
-        webView.scrollView.delegate = self
-        webView.allowsLinkPreview = true
         let url = URL(string: "https://www.google.co.jp/")
         let urlRequest = URLRequest(url: url!)
         webView.load(urlRequest)
@@ -115,6 +130,15 @@ class FirstViewController: UIViewController {
                right: 0)
                webView.scrollView.contentInset = webViewEdgeInsets
                webView.scrollView.scrollIndicatorInsets = webViewEdgeInsets
+    }
+
+    var isSwipeMenuOpend = false
+    @IBAction func changeButtonPressed() {
+        navigatinobarBottomConstraint.constant = isSwipeMenuOpend ? -64 : -200
+        UIView.animate(withDuration: 0.3) {
+            self.view.layoutIfNeeded()
+        }
+        isSwipeMenuOpend.toggle()
     }
 }
 
@@ -214,7 +238,7 @@ extension FirstViewController: TBTabBarViewDelegate {
 extension FirstViewController: TBNavigationBarDelegate {
     func searchBarShouldReturn() {
         navigationBar.searchBar.resignFirstResponder()
-        let urlRequest = URLRequest(url: webViewModel.checkSearchText(searchText: self.navigationBar.searchBar.text!))
+        let urlRequest = URLRequest(url: webViewModel.checkSearchText(searchText: self.navigationBar.searchBar.text ?? ""))
         webView.load(urlRequest)
     }
 

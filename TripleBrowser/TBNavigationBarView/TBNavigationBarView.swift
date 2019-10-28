@@ -12,19 +12,65 @@ protocol TBNavigationBarDelegate: class {
     func searchBarShouldReturn()
     func swipeAreaSwiped()
     func plusButtonPressed()
+//    func panMenu()
 }
 
 @IBDesignable
 class TBNavigationBarView: UIView {
     var isSearchBarSmall = true
-    var view: UIView!
-    var searchBarLeftImageView = UIImageView()
-    @IBOutlet public weak var searchBar: UITextField!
-    @IBOutlet private weak var searchBarbackgroundView: UIView!
-    @IBOutlet private weak var swipeAreaView: UIView!
-    @IBOutlet private weak var swipeAreaImageView: UIImageView!
-    @IBOutlet private weak var plusButton: UIButton!
-    @IBOutlet private weak var menuBarImageView: UIImageView!
+    var view: UIView! {
+        didSet {
+            view.layer.cornerRadius = 20
+            view.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
+            view.layer.masksToBounds = true
+            view.translatesAutoresizingMaskIntoConstraints = false
+        }
+    }
+    var userTouchY = 0
+
+    weak var delegate: TBNavigationBarDelegate?
+    @IBOutlet public weak var searchBar: UITextField! {
+        didSet {
+            let searchBarLeftImageView = UIImageView()
+            searchBarLeftImageView.image = UIImage(named: "search")?.withRenderingMode(.alwaysTemplate)
+            searchBarLeftImageView.frame = CGRect(x: 0, y: 0, width: searchBar.frame.width, height: searchBar.frame.height)
+            searchBar.leftView = searchBarLeftImageView
+            searchBar.leftViewMode = .unlessEditing
+        }
+    }
+    @IBOutlet private weak var searchBarbackgroundView: UIView! {
+        didSet {
+            searchBarbackgroundView.roundCorner()
+            searchBarbackgroundView.layer.shadowColor = UIColor.black.cgColor
+            searchBarbackgroundView.layer.shadowOffset = CGSize(width: 0, height: 0)
+            searchBarbackgroundView.layer.shadowRadius = 20
+        }
+    }
+
+    @IBOutlet private weak var swipeAreaView: UIView! {
+        didSet {
+            swipeAreaView.roundCorner()
+        }
+    }
+
+    @IBOutlet private weak var swipeAreaImageView: UIImageView! {
+        didSet {
+            swipeAreaImageView.image = UIImage(named: "swipeAreaArrow")?.withRenderingMode(.alwaysTemplate)
+        }
+    }
+
+    @IBOutlet private weak var plusButton: UIButton! {
+        didSet {
+            plusButton.roundCorner()
+            plusButton.setImage(UIImage(named: "plus")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        }
+    }
+
+    @IBOutlet private weak var menuBarImageView: UIImageView! {
+        didSet {
+             menuBarImageView.image = UIImage(named: "horizontalBar")?.withRenderingMode(.alwaysTemplate)
+        }
+    }
     @IBOutlet public weak var progressBar: UIProgressView!
     @IBOutlet private var searchBarSmallConstraints: [NSLayoutConstraint]!
     @IBOutlet private var searchBarLargeConstraints: [NSLayoutConstraint]!
@@ -42,34 +88,14 @@ class TBNavigationBarView: UIView {
     func instatinateFromNib() {
         view = Bundle(for: type(of: self)).loadNibNamed("TBNavigationBarView", owner: self, options: nil)!.first as? UIView
         addSubview(view!)
-        view!.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             view!.topAnchor.constraint(equalTo: topAnchor),
             view!.leadingAnchor.constraint(equalTo: leadingAnchor),
             view!.trailingAnchor.constraint(equalTo: trailingAnchor),
             view!.bottomAnchor.constraint(equalTo: bottomAnchor)
             ])
-        cornerRadius(view: swipeAreaView)
-        swipeAreaImageView.image = UIImage(named: "swipeAreaArrow")?.withRenderingMode(.alwaysTemplate)
-        cornerRadius(view: plusButton)
-        plusButton.setImage(UIImage(named: "plus")?.withRenderingMode(.alwaysTemplate), for: .normal)
         searchBar.delegate = self
-        searchBarLeftImageView.image = UIImage(named: "search")?.withRenderingMode(.alwaysTemplate)
-        searchBarLeftImageView.frame = CGRect(x: 0, y: 0, width: searchBar.frame.width, height: searchBar.frame.height)
-        searchBar.leftView = searchBarLeftImageView
-        searchBar.leftViewMode = .unlessEditing
-        cornerRadius(view: searchBarbackgroundView)
-        searchBarbackgroundView.layer.shadowColor = UIColor.black.cgColor
-        searchBarbackgroundView.layer.shadowOffset = CGSize(width: 0, height: 0)
-        searchBarbackgroundView.layer.shadowRadius = 20
-        menuBarImageView.image = UIImage(named: "horizontalBar")?.withRenderingMode(.alwaysTemplate)
-        view!.layer.cornerRadius = 20
-        view!.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
-        view!.layer.masksToBounds = true
-    }
 
-    private func cornerRadius<T: UIView>(view: T) {
-        view.layer.cornerRadius = view.frame.height / 2
     }
 
     private func expandSearchBarSize() {
@@ -114,22 +140,23 @@ class TBNavigationBarView: UIView {
     }
 
     @IBAction func plusButtonPressed() {
-        print("plus")
+        delegate?.plusButtonPressed()
     }
 
     @IBAction func swipeAreaLeftSwiped() {
-        print("leftswipe")
+        delegate?.swipeAreaSwiped()
     }
 
     @IBAction func swipeAreaRightSwiped() {
-        print("rightswipe")
+        delegate?.swipeAreaSwiped()
     }
 }
 
 extension TBNavigationBarView: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        resignFirstResponder()
+        textField.resignFirstResponder()
         shortenSearchBarSize()
+        delegate?.searchBarShouldReturn()
         return true
     }
 
