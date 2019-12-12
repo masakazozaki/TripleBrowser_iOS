@@ -1,6 +1,0 @@
-framework module Pods_TripleBrowser {
-  umbrella header "Pods-TripleBrowser-umbrella.h"
-
-  export *
-  module * { export * }
-}
