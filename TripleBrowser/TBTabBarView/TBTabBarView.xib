@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -27,28 +27,28 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="83"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uPe-9R-BOE">
-                            <rect key="frame" x="88" y="14" width="15" height="26"/>
+                            <rect key="frame" x="103" y="14" width="30" height="52"/>
                             <state key="normal" image="rightArrow"/>
                             <connections>
                                 <action selector="rightArrowButtonPressed" destination="-1" eventType="touchUpInside" id="Rj0-Z5-6jq"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oYd-oO-tv7">
-                            <rect key="frame" x="197.5" y="14" width="19" height="28"/>
+                            <rect key="frame" x="188" y="14" width="38" height="56"/>
                             <state key="normal" image="downArrow"/>
                             <connections>
                                 <action selector="downArrowButtonPressed" destination="-1" eventType="touchUpInside" id="GmK-gX-PVk"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZXp-sz-56J">
-                            <rect key="frame" x="346" y="14" width="38" height="27"/>
+                            <rect key="frame" x="308" y="14" width="76" height="54"/>
                             <state key="normal" image="camera"/>
                             <connections>
                                 <action selector="cameraButtonPressed" destination="-1" eventType="touchUpInside" id="UHb-Um-oj5"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eTY-uI-l4U">
-                            <rect key="frame" x="30" y="14" width="15" height="27"/>
+                            <rect key="frame" x="30" y="14" width="30" height="54"/>
                             <state key="normal" image="leftArrow"/>
                             <connections>
                                 <action selector="leftArrowButtonPressed" destination="-1" eventType="touchUpInside" id="Js4-BW-EDf"/>

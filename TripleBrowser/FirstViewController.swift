@@ -59,7 +59,7 @@ class FirstViewController: UIViewController {
 
     @IBOutlet private var barsDisappearConstraints: [NSLayoutConstraint]!
     @IBOutlet private var barsAppearConstraints: [NSLayoutConstraint]!
-    @IBOutlet private weak var navigatinobarBottomConstraint: NSLayoutConstraint!
+    @IBOutlet private weak var navigationBarBottomConstraint: NSLayoutConstraint!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -130,15 +130,6 @@ class FirstViewController: UIViewController {
                right: 0)
                webView.scrollView.contentInset = webViewEdgeInsets
                webView.scrollView.scrollIndicatorInsets = webViewEdgeInsets
-    }
-
-    var isSwipeMenuOpend = false
-    @IBAction func changeButtonPressed() {
-        navigatinobarBottomConstraint.constant = isSwipeMenuOpend ? -64 : -200
-        UIView.animate(withDuration: 0.3) {
-            self.view.layoutIfNeeded()
-        }
-        isSwipeMenuOpend.toggle()
     }
 }
 
@@ -246,6 +237,24 @@ extension FirstViewController: TBNavigationBarDelegate {
     }
 
     func plusButtonPressed() {
+    }
+
+    func panMenu(pointY: CGFloat) {
+        if navigationBarBottomConstraint.constant <= -64 {
+            navigationBarBottomConstraint.constant += pointY
+        } else {
+            navigationBarBottomConstraint.constant = -64
+        }
+        print(navigationBarBottomConstraint.constant)
+    }
+
+    func finishPanMenu() {
+        if navigationBarBottomConstraint.constant <= -200 {
+            navigationBarBottomConstraint.constant = -300
+        } else {
+            navigationBarBottomConstraint.constant = -64
+        }
+        UIView.animate(withDuration: 0.4, delay: 0, options: .curveEaseOut, animations: {self.view.layoutIfNeeded()}, completion: nil)
     }
 }
 

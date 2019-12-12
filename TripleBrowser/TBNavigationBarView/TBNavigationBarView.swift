@@ -12,7 +12,8 @@ protocol TBNavigationBarDelegate: class {
     func searchBarShouldReturn()
     func swipeAreaSwiped()
     func plusButtonPressed()
-//    func panMenu()
+    func panMenu(pointY: CGFloat)
+    func finishPanMenu()
 }
 
 @IBDesignable
@@ -95,7 +96,6 @@ class TBNavigationBarView: UIView {
             view!.bottomAnchor.constraint(equalTo: bottomAnchor)
             ])
         searchBar.delegate = self
-
     }
 
     private func expandSearchBarSize() {
@@ -149,6 +149,33 @@ class TBNavigationBarView: UIView {
 
     @IBAction func swipeAreaRightSwiped() {
         delegate?.swipeAreaSwiped()
+    }
+
+    @IBOutlet private var panGesture: UIPanGestureRecognizer!
+    var currentPointY: CGFloat = 0.0
+    @IBAction func panMenuDraged(sender: UIPanGestureRecognizer) {
+        switch sender.state {
+        case .began:
+            currentPointY = 0.0
+        case .changed:
+            let point = sender.translation(in: self)
+                   print(sender.velocity(in: self))
+                   delegate?.panMenu(pointY: currentPointY - point.y)
+                   print(currentPointY - point.y)
+                   currentPointY = point.y
+        case .ended:
+            delegate?.finishPanMenu()
+        default:
+            break
+        }
+    }
+
+    @IBAction func panFinished() {
+
+    }
+
+    @IBAction func menuImagePressed() {
+        print("menuTapped")
     }
 }
 

@@ -17,15 +17,15 @@ protocol TBTabBarViewDelegate: class {
 
 @IBDesignable
 class TBTabBarView: UIView {
-    var view: UIView? {
+    var view: UIView! {
         didSet {
-            view!.translatesAutoresizingMaskIntoConstraints = false
-            view!.layer.cornerRadius = 23
-            view!.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
-            view!.layer.masksToBounds = true
+            view.translatesAutoresizingMaskIntoConstraints = false
+            view.layer.cornerRadius = 23
+            view.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+            view.layer.masksToBounds = true
         }
     }
-    
+
     weak var delegate: TBTabBarViewDelegate?
     @IBOutlet private weak var backgroundView: UIView!
     @IBOutlet private weak var leftArrowButon: UIButton! {
@@ -33,17 +33,19 @@ class TBTabBarView: UIView {
             leftArrowButon.setImage(UIImage(named: "leftArrow")?.withRenderingMode(.alwaysTemplate), for: .normal)
         }
     }
-    
+
     @IBOutlet private weak var rightArrowButon: UIButton! {
         didSet {
              rightArrowButon.setImage(UIImage(named: "rightArrow")?.withRenderingMode(.alwaysTemplate), for: .normal)
         }
     }
+
     @IBOutlet private weak var downArrowButon: UIButton! {
         didSet {
              downArrowButon.setImage(UIImage(named: "downArrow")?.withRenderingMode(.alwaysTemplate), for: .normal)
         }
     }
+
     @IBOutlet private weak var cameraButon: UIButton! {
         didSet {
             cameraButon.setImage(UIImage(named: "camera")?.withRenderingMode(.alwaysTemplate), for: .normal)
@@ -68,7 +70,7 @@ class TBTabBarView: UIView {
             view!.leadingAnchor.constraint(equalTo: leadingAnchor),
             view!.trailingAnchor.constraint(equalTo: trailingAnchor),
             view!.bottomAnchor.constraint(equalTo: bottomAnchor)
-            ])
+        ])
     }
 
     @IBAction func leftArrowButtonPressed() {

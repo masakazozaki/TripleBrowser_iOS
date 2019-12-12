@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="keb-hq-cdI">
-    <device id="retina5_9" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="keb-hq-cdI">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,11 +13,11 @@
             <objects>
                 <viewController id="YIF-zm-JDR" customClass="FirstViewController" customModule="TripleBrowser" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="r8e-7u-oks">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <wkWebView contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YiB-Kc-hKm">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <gestureRecognizers/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
@@ -28,20 +28,12 @@
                                 </connections>
                             </wkWebView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6X3-dc-Mhf" customClass="TBTabBarView" customModule="TripleBrowser" customModuleProvider="target">
-                                <rect key="frame" x="8" y="722" width="359" height="90"/>
+                                <rect key="frame" x="8" y="806" width="398" height="90"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GUO-QV-Ds1" customClass="TBNavigationBarView" customModule="TripleBrowser" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="108"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="108"/>
                                 <viewLayoutGuide key="safeArea" id="x4m-cK-CBb"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="far-32-LUl">
-                                <rect key="frame" x="164" y="441" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="changeButtonPressed" destination="YIF-zm-JDR" eventType="touchUpInside" id="Msv-wg-yBL"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -69,8 +61,8 @@
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="navigatinobarBottomConstraint" destination="YbA-AB-iYo" id="BqB-6X-BjH"/>
                         <outlet property="navigationBar" destination="GUO-QV-Ds1" id="9ln-H5-jYZ"/>
+                        <outlet property="navigationBarBottomConstraint" destination="YbA-AB-iYo" id="BqB-6X-BjH"/>
                         <outlet property="tabBar" destination="6X3-dc-Mhf" id="A3M-km-bS0"/>
                         <outlet property="webView" destination="YiB-Kc-hKm" id="KHd-3o-Drm"/>
                         <outletCollection property="barsAppearConstraints" destination="YbA-AB-iYo" collectionClass="NSMutableArray" id="VZx-IN-Y43"/>
@@ -89,23 +81,23 @@
             <objects>
                 <viewController id="keb-hq-cdI" customClass="InitialViewController" customModule="TripleBrowser" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aJz-9H-cde">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" translatesAutoresizingMaskIntoConstraints="NO" id="WsY-eL-BAf">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sWk-S8-HDx">
-                                        <rect key="frame" x="0.0" y="0.0" width="1125" height="812"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="1242" height="896"/>
                                         <subviews>
                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="982-EA-wqK">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                                 <connections>
                                                     <segue destination="YIF-zm-JDR" kind="embed" identifier="page1" id="MKP-gD-wV4"/>
                                                 </connections>
                                             </containerView>
                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VM5-2H-CRr">
-                                                <rect key="frame" x="375" y="0.0" width="750" height="812"/>
+                                                <rect key="frame" x="414" y="0.0" width="828" height="896"/>
                                                 <connections>
                                                     <segue destination="etG-bT-Wzw" kind="embed" id="n9N-hR-2UB"/>
                                                 </connections>
@@ -152,17 +144,17 @@
             <objects>
                 <viewController id="etG-bT-Wzw" customClass="InitialViewController" customModule="TripleBrowser" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JJG-Lp-kOx">
-                        <rect key="frame" x="0.0" y="0.0" width="750" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="828" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gxd-r0-pq6">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <connections>
                                     <segue destination="YIF-zm-JDR" kind="embed" identifier="page2" id="H1U-w6-Nh5"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kPZ-zy-nMz">
-                                <rect key="frame" x="375" y="0.0" width="375" height="812"/>
+                                <rect key="frame" x="414" y="0.0" width="414" height="896"/>
                                 <connections>
                                     <segue destination="YIF-zm-JDR" kind="embed" identifier="page3" id="vyb-ON-aMp"/>
                                 </connections>
@@ -190,29 +182,29 @@
             <objects>
                 <viewController id="cfh-mm-cer" customClass="InitialViewController" customModule="TripleBrowser" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="D98-vE-ZbP">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ebH-4g-Jm3">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZmL-fs-aZu">
-                                        <rect key="frame" x="0.0" y="0.0" width="1125" height="812"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="1242" height="896"/>
                                         <subviews>
                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v6w-GF-1G3">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                                 <connections>
                                                     <segue destination="YIF-zm-JDR" kind="embed" id="ZbB-aj-8MR"/>
                                                 </connections>
                                             </containerView>
                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fNE-lR-cV0">
-                                                <rect key="frame" x="375" y="0.0" width="375" height="812"/>
+                                                <rect key="frame" x="414" y="0.0" width="414" height="896"/>
                                                 <connections>
                                                     <segue destination="YIF-zm-JDR" kind="embed" id="lnG-Tb-lhv"/>
                                                 </connections>
                                             </containerView>
                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n9V-ep-zOl">
-                                                <rect key="frame" x="750" y="0.0" width="375" height="812"/>
+                                                <rect key="frame" x="828" y="0.0" width="414" height="896"/>
                                                 <connections>
                                                     <segue destination="YIF-zm-JDR" kind="embed" id="W2n-lE-VTD"/>
                                                 </connections>
@@ -263,6 +255,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="vyb-ON-aMp"/>
+        <segue reference="MKP-gD-wV4"/>
     </inferredMetricsTieBreakers>
 </document>
