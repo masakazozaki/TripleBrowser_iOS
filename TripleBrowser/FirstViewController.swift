@@ -19,7 +19,6 @@ class FirstViewController: UIViewController {
 
     private var webViewEdgeInsets = UIEdgeInsets()
     private var webViewModel = WKWebViewModel()
-
     @IBOutlet private weak var tabBar: TBTabBarView! {
         didSet {
             tabBar.tintColor = themeColor
