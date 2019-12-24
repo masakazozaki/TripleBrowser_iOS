@@ -12,12 +12,9 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TBNavigationBarView" customModule="TripleBrowser" customModuleProvider="target">
             <connections>
                 <outlet property="menuBarImageView" destination="JOj-HM-ChM" id="mVo-4z-JXN"/>
-                <outlet property="panGesture" destination="t63-mw-hUS" id="A42-lH-wlN"/>
                 <outlet property="progressBar" destination="2yj-so-FZ1" id="R1H-yh-LJI"/>
                 <outlet property="searchBar" destination="5vd-sp-dOV" id="SHT-E3-gB5"/>
-                <outlet property="searchBarbackgroundView" destination="qi2-mJ-e1k" id="1Hb-An-9j5"/>
-                <outletCollection property="searchBarLargeConstraints" destination="JWB-Ot-HYm" collectionClass="NSMutableArray" id="cE1-tD-mA4"/>
-                <outletCollection property="searchBarSmallConstraints" destination="lyN-vc-1tA" collectionClass="NSMutableArray" id="9Fl-FE-pSY"/>
+                <outlet property="searchBarbackgroundView" destination="qi2-mJ-e1k" id="lRk-d3-fIx"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -42,9 +39,6 @@
                                     <rect key="frame" x="8" y="8" width="479" height="24"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
-                                    <connections>
-                                        <action selector="searchButtonPressed" destination="-1" eventType="touchDown" id="32X-SK-tey"/>
-                                    </connections>
                                 </textField>
                             </subviews>
                             <color key="backgroundColor" name="TBSystemDarkBackground"/>
@@ -114,26 +108,10 @@
             </connections>
             <point key="canvasLocation" x="90.400000000000006" y="22.906403940886701"/>
         </view>
-        <swipeGestureRecognizer direction="right" id="Mbu-13-hht">
-            <connections>
-                <action selector="swipeAreaLeftSwiped" destination="-1" id="hdu-wk-cZI"/>
-            </connections>
-        </swipeGestureRecognizer>
-        <swipeGestureRecognizer direction="left" id="gX3-HM-hJH">
-            <connections>
-                <action selector="swipeAreaRightSwiped" destination="-1" id="nBW-VF-GoM"/>
-            </connections>
-        </swipeGestureRecognizer>
-        <tapGestureRecognizer id="E01-nf-diT">
-            <connections>
-                <action selector="menuImagePressed" destination="-1" id="cmd-x1-Lje"/>
-            </connections>
-        </tapGestureRecognizer>
-        <panGestureRecognizer minimumNumberOfTouches="1" id="t63-mw-hUS">
-            <connections>
-                <action selector="panMenuDragedWithSender:" destination="-1" id="fBz-G4-bkw"/>
-            </connections>
-        </panGestureRecognizer>
+        <swipeGestureRecognizer direction="right" id="Mbu-13-hht"/>
+        <swipeGestureRecognizer direction="left" id="gX3-HM-hJH"/>
+        <tapGestureRecognizer id="E01-nf-diT"/>
+        <panGestureRecognizer minimumNumberOfTouches="1" id="t63-mw-hUS"/>
     </objects>
     <resources>
         <image name="horizontalBar" width="35" height="4"/>

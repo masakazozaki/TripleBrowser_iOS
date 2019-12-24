@@ -36,9 +36,6 @@ class FirstViewController: UIViewController {
             webView.addObserver(self, forKeyPath: "loading", options: .new, context: nil)
             webView.navigationDelegate = self
             webView.uiDelegate = self
-            let webViewTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
-            webView.addGestureRecognizer(webViewTapRecognizer)
-            webViewTapRecognizer.delegate = self
             webView.scrollView.delegate = self
             webView.allowsLinkPreview = true
         }
@@ -96,16 +93,6 @@ class FirstViewController: UIViewController {
                 })
             }
         }
-    }
-
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesBegan(touches, with: event)
-//        navigationBar.closeSearchBar()
-    }
-
-    @objc
-    private func handleTap(_ sender: UITapGestureRecognizer) {
-//        navigationBar.closeSearchBar()
     }
 
     private func appearBars() {
@@ -230,35 +217,5 @@ extension FirstViewController: TBNavigationBarDelegate {
         navigationBar.searchBar.resignFirstResponder()
         let urlRequest = URLRequest(url: webViewModel.checkSearchText(searchText: self.navigationBar.searchBar.text ?? ""))
         webView.load(urlRequest)
-    }
-
-    func swipeAreaSwiped() {
-    }
-
-    func plusButtonPressed() {
-    }
-
-//    func panMenu(pointY: CGFloat) {
-//        if navigationBarBottomConstraint.constant <= -64 {
-//            navigationBarBottomConstraint.constant += pointY
-//        } else {
-//            navigationBarBottomConstraint.constant = -64
-//        }
-//        print(navigationBarBottomConstraint.constant)
-//    }
-//
-//    func finishPanMenu() {
-//        if navigationBarBottomConstraint.constant <= -200 {
-//            navigationBarBottomConstraint.constant = -300
-//        } else {
-//            navigationBarBottomConstraint.constant = -64
-//        }
-//        UIView.animate(withDuration: 0.4, delay: 0, options: .curveEaseOut, animations: {self.view.layoutIfNeeded()}, completion: nil)
-//    }
-}
-
-extension FirstViewController: UIGestureRecognizerDelegate {
-    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
-        return true
     }
 }
