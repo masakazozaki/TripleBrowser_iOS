@@ -12,8 +12,8 @@ protocol TBNavigationBarDelegate: class {
     func searchBarShouldReturn()
     func swipeAreaSwiped()
     func plusButtonPressed()
-    func panMenu(pointY: CGFloat)
-    func finishPanMenu()
+//    func panMenu(pointY: CGFloat)
+//    func finishPanMenu()
 }
 
 @IBDesignable
@@ -70,6 +70,8 @@ class TBNavigationBarView: UIView {
     @IBOutlet private weak var menuBarImageView: UIImageView! {
         didSet {
              menuBarImageView.image = UIImage(named: "horizontalBar")?.withRenderingMode(.alwaysTemplate)
+            //TODO: history tabelview not implemented
+            menuBarImageView.isHidden = true
         }
     }
     @IBOutlet public weak var progressBar: UIProgressView!
@@ -96,93 +98,95 @@ class TBNavigationBarView: UIView {
             view!.bottomAnchor.constraint(equalTo: bottomAnchor)
             ])
         searchBar.delegate = self
+        // TODO: implement SwipeAreaView
+        expandSearchBarSize()
     }
 
     private func expandSearchBarSize() {
         NSLayoutConstraint.deactivate(searchBarSmallConstraints)
         NSLayoutConstraint.activate(searchBarLargeConstraints)
-        UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseOut, animations: {
-            self.searchBarbackgroundView.layer.shadowOpacity = 0.3
-            self.plusButton.isHidden = true
-            self.swipeAreaView.isHidden = true
+//        UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseOut, animations: {
+//            self.searchBarbackgroundView.layer.shadowOpacity = 0.3
+//            self.plusButton.isHidden = true
+//            self.swipeAreaView.isHidden = true
             self.layoutIfNeeded()
-        }, completion: nil)
+//        }, completion: nil)
         isSearchBarSmall = false
     }
+//
+//    private func shortenSearchBarSize() {
+//        NSLayoutConstraint.deactivate(searchBarLargeConstraints)
+//        NSLayoutConstraint.activate(searchBarSmallConstraints)
+//        searchBar.resignFirstResponder()
+//        UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseOut, animations: {
+//            self.searchBarbackgroundView.layer.shadowOpacity = 0
+//            self.layoutIfNeeded()
+//        }, completion: { _ in
+//            self.plusButton.isHidden = false
+//            self.swipeAreaView.isHidden = false
+//        })
+//        isSearchBarSmall = true
+//    }
+//
+//    public func closeSearchBar() {
+//        shortenSearchBarSize()
+//        print("closesearchBar")
+//    }
 
-    private func shortenSearchBarSize() {
-        NSLayoutConstraint.deactivate(searchBarLargeConstraints)
-        NSLayoutConstraint.activate(searchBarSmallConstraints)
-        searchBar.resignFirstResponder()
-        UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseOut, animations: {
-            self.searchBarbackgroundView.layer.shadowOpacity = 0
-            self.layoutIfNeeded()
-        }, completion: { _ in
-            self.plusButton.isHidden = false
-            self.swipeAreaView.isHidden = false
-        })
-        isSearchBarSmall = true
-    }
-
-    public func closeSearchBar() {
-        shortenSearchBarSize()
-        print("closesearchBar")
-    }
-
-    @IBAction func searchButtonPressed() {
-        print("search")
-        if isSearchBarSmall {
-            expandSearchBarSize()
-        } else {
-            shortenSearchBarSize()
-        }
-        isSearchBarSmall.toggle()
-    }
-
-    @IBAction func plusButtonPressed() {
-        delegate?.plusButtonPressed()
-    }
-
-    @IBAction func swipeAreaLeftSwiped() {
-        delegate?.swipeAreaSwiped()
-    }
-
-    @IBAction func swipeAreaRightSwiped() {
-        delegate?.swipeAreaSwiped()
-    }
-
+//    @IBAction func searchButtonPressed() {
+//        print("search")
+//        if isSearchBarSmall {
+//            expandSearchBarSize()
+//        } else {
+//            shortenSearchBarSize()
+//        }
+//        isSearchBarSmall.toggle()
+//    }
+//
+//    @IBAction func plusButtonPressed() {
+//        delegate?.plusButtonPressed()
+//    }
+//
+//    @IBAction func swipeAreaLeftSwiped() {
+//        delegate?.swipeAreaSwiped()
+//    }
+//
+//    @IBAction func swipeAreaRightSwiped() {
+//        delegate?.swipeAreaSwiped()
+//    }
+//
     @IBOutlet private var panGesture: UIPanGestureRecognizer!
-    var currentPointY: CGFloat = 0.0
-    @IBAction func panMenuDraged(sender: UIPanGestureRecognizer) {
-        switch sender.state {
-        case .began:
-            currentPointY = 0.0
-        case .changed:
-            let point = sender.translation(in: self)
-                   print(sender.velocity(in: self))
-                   delegate?.panMenu(pointY: currentPointY - point.y)
-                   print(currentPointY - point.y)
-                   currentPointY = point.y
-        case .ended:
-            delegate?.finishPanMenu()
-        default:
-            break
-        }
-    }
-
-    @IBAction func panFinished() {
-
-    }
-
-    @IBAction func menuImagePressed() {
-        print("menuTapped")
-    }
+//    var currentPointY: CGFloat = 0.0
+//    @IBAction func panMenuDraged(sender: UIPanGestureRecognizer) {
+//        switch sender.state {
+//        case .began:
+//            currentPointY = 0.0
+//        case .changed:
+//            let point = sender.translation(in: self)
+//                   print(sender.velocity(in: self))
+//                   delegate?.panMenu(pointY: currentPointY - point.y)
+//                   print(currentPointY - point.y)
+//                   currentPointY = point.y
+//        case .ended:
+//            delegate?.finishPanMenu()
+//        default:
+//            break
+//        }
+//    }
+//
+//    @IBAction func panFinished() {
+//
+//    }
+//
+//    @IBAction func menuImagePressed() {
+//        print("menuTapped")
+//    }
 }
 
 extension TBNavigationBarView: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
-        shortenSearchBarSize()
+//        shortenSearchBarSize()
         delegate?.searchBarShouldReturn()
         return true
     }

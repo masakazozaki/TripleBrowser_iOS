@@ -100,12 +100,12 @@ class FirstViewController: UIViewController {
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
-        navigationBar.closeSearchBar()
+//        navigationBar.closeSearchBar()
     }
 
     @objc
     private func handleTap(_ sender: UITapGestureRecognizer) {
-        navigationBar.closeSearchBar()
+//        navigationBar.closeSearchBar()
     }
 
     private func appearBars() {
@@ -238,23 +238,23 @@ extension FirstViewController: TBNavigationBarDelegate {
     func plusButtonPressed() {
     }
 
-    func panMenu(pointY: CGFloat) {
-        if navigationBarBottomConstraint.constant <= -64 {
-            navigationBarBottomConstraint.constant += pointY
-        } else {
-            navigationBarBottomConstraint.constant = -64
-        }
-        print(navigationBarBottomConstraint.constant)
-    }
-
-    func finishPanMenu() {
-        if navigationBarBottomConstraint.constant <= -200 {
-            navigationBarBottomConstraint.constant = -300
-        } else {
-            navigationBarBottomConstraint.constant = -64
-        }
-        UIView.animate(withDuration: 0.4, delay: 0, options: .curveEaseOut, animations: {self.view.layoutIfNeeded()}, completion: nil)
-    }
+//    func panMenu(pointY: CGFloat) {
+//        if navigationBarBottomConstraint.constant <= -64 {
+//            navigationBarBottomConstraint.constant += pointY
+//        } else {
+//            navigationBarBottomConstraint.constant = -64
+//        }
+//        print(navigationBarBottomConstraint.constant)
+//    }
+//
+//    func finishPanMenu() {
+//        if navigationBarBottomConstraint.constant <= -200 {
+//            navigationBarBottomConstraint.constant = -300
+//        } else {
+//            navigationBarBottomConstraint.constant = -64
+//        }
+//        UIView.animate(withDuration: 0.4, delay: 0, options: .curveEaseOut, animations: {self.view.layoutIfNeeded()}, completion: nil)
+//    }
 }
 
 extension FirstViewController: UIGestureRecognizerDelegate {

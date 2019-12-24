@@ -15,8 +15,6 @@
 		E73B7F582083047E0071851A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E73B7F562083047E0071851A /* Main.storyboard */; };
 		E73B7F5A2083047F0071851A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E73B7F592083047F0071851A /* Assets.xcassets */; };
 		E73B7F5D2083047F0071851A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E73B7F5B2083047F0071851A /* LaunchScreen.storyboard */; };
-		E73B7F682083047F0071851A /* TripleBrowserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73B7F672083047F0071851A /* TripleBrowserTests.swift */; };
-		E73B7F732083047F0071851A /* TripleBrowserUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73B7F722083047F0071851A /* TripleBrowserUITests.swift */; };
 		E761DB9A208B2F510055D5C2 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E761DB99208B2F510055D5C2 /* FirstViewController.swift */; };
 		E77BD93821A0224D00F02C3D /* WKWebViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77BD93721A0224D00F02C3D /* WKWebViewModel.swift */; };
 		E79CDAD9231E3E18009CA874 /* TBTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79CDAD8231E3E18009CA874 /* TBTabBarView.swift */; };
@@ -62,11 +60,7 @@
 		E73B7F5C2083047F0071851A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E73B7F5E2083047F0071851A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E73B7F632083047F0071851A /* TripleBrowserTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TripleBrowserTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E73B7F672083047F0071851A /* TripleBrowserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripleBrowserTests.swift; sourceTree = "<group>"; };
-		E73B7F692083047F0071851A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E73B7F6E2083047F0071851A /* TripleBrowserUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TripleBrowserUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E73B7F722083047F0071851A /* TripleBrowserUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripleBrowserUITests.swift; sourceTree = "<group>"; };
-		E73B7F742083047F0071851A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E761DB99208B2F510055D5C2 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		E77BD93721A0224D00F02C3D /* WKWebViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKWebViewModel.swift; sourceTree = "<group>"; };
 		E79CDAD8231E3E18009CA874 /* TBTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBTabBarView.swift; sourceTree = "<group>"; };
@@ -134,8 +128,6 @@
 			isa = PBXGroup;
 			children = (
 				E73B7F512083047E0071851A /* TripleBrowser */,
-				E73B7F662083047F0071851A /* TripleBrowserTests */,
-				E73B7F712083047F0071851A /* TripleBrowserUITests */,
 				E73B7F502083047E0071851A /* Products */,
 				37AC5DA466A60EE00FBCE1FD /* Pods */,
 				4189762904363735580C30F4 /* Frameworks */,
@@ -168,24 +160,6 @@
 				E77BD93721A0224D00F02C3D /* WKWebViewModel.swift */,
 			);
 			path = TripleBrowser;
-			sourceTree = "<group>";
-		};
-		E73B7F662083047F0071851A /* TripleBrowserTests */ = {
-			isa = PBXGroup;
-			children = (
-				E73B7F672083047F0071851A /* TripleBrowserTests.swift */,
-				E73B7F692083047F0071851A /* Info.plist */,
-			);
-			path = TripleBrowserTests;
-			sourceTree = "<group>";
-		};
-		E73B7F712083047F0071851A /* TripleBrowserUITests */ = {
-			isa = PBXGroup;
-			children = (
-				E73B7F722083047F0071851A /* TripleBrowserUITests.swift */,
-				E73B7F742083047F0071851A /* Info.plist */,
-			);
-			path = TripleBrowserUITests;
 			sourceTree = "<group>";
 		};
 		E7B2F39523389B010066728F /* Extensions */ = {
@@ -463,7 +437,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E73B7F682083047F0071851A /* TripleBrowserTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -471,7 +444,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E73B7F732083047F0071851A /* TripleBrowserUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
