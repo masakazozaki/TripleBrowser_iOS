@@ -9,107 +9,71 @@ import Accounts
 import UIKit
 import WebKit
 
-class FirstViewController: UIViewController, UINavigationControllerDelegate {
-    public var progressBarColor = UIColor.blue
+class FirstViewController: UIViewController {
+    public var themeColor: UIColor?
     private let feedbackGenerator: Any? = {
-        if #available(iOS 10.0, *) {
             let generator = UINotificationFeedbackGenerator()
             generator.prepare()
             return generator
-        } else {
-            return nil
-        }
     }()
+
+    private var webViewEdgeInsets = UIEdgeInsets()
     private var webViewModel = WKWebViewModel()
-    private var searchBar: UISearchBar!
-    private var webView: WKWebView!
-    private var progressView = UIProgressView()
+    @IBOutlet private weak var tabBar: TBTabBarView! {
+        didSet {
+            tabBar.tintColor = themeColor
+            tabBar.delegate = self
+            tabBar.layer.shadowOpacity = 0.4
+            tabBar.layer.shadowColor = UIColor.black.cgColor
+            tabBar.layer.shadowOffset = CGSize(width: 0, height: 0)
+            tabBar.layer.shadowRadius = 8
+        }
+    }
+
+    @IBOutlet private weak var webView: WKWebView! {
+        didSet {
+            webView.addObserver(self, forKeyPath: "estimatedProgress", options: .new, context: nil)
+            webView.addObserver(self, forKeyPath: "loading", options: .new, context: nil)
+            webView.navigationDelegate = self
+            webView.uiDelegate = self
+            let webViewTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
+            webView.addGestureRecognizer(webViewTapRecognizer)
+            webViewTapRecognizer.delegate = self
+            webView.scrollView.delegate = self
+            webView.allowsLinkPreview = true
+        }
+    }
+
+    @IBOutlet private weak var navigationBar: TBNavigationBarView! {
+        didSet {
+            navigationBar.progressBar.progressTintColor = themeColor
+            navigationBar.tintColor = themeColor
+            navigationBar.delegate = self
+            navigationBar.layer.shadowOpacity = 0.4
+            navigationBar.layer.shadowColor = UIColor.black.cgColor
+            navigationBar.layer.shadowOffset = CGSize(width: 0, height: 0)
+            navigationBar.layer.shadowRadius = 8
+        }
+    }
+
+    @IBOutlet private var barsDisappearConstraints: [NSLayoutConstraint]!
+    @IBOutlet private var barsAppearConstraints: [NSLayoutConstraint]!
+    @IBOutlet private weak var navigationBarBottomConstraint: NSLayoutConstraint!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setWebView()
-        setupSearchBar()
-        progressView = UIProgressView(frame: CGRect(x: 0.0, y: (navigationController?.navigationBar.frame.size.height)! + 10, width: view.frame.size.width, height: 3.0))
-        progressView.progressViewStyle = .bar
-        progressView.progressTintColor = progressBarColor
-        navigationController?.navigationBar.addSubview(progressView)
-        webView.addObserver(self, forKeyPath: "estimatedProgress", options: .new, context: nil)
-        webView.addObserver(self, forKeyPath: "loading", options: .new, context: nil)
-        let items = [
-            UIBarButtonItem(barButtonHiddenItem: .back, target: self, action: #selector(backButtonTapped)),
-            UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.fixedSpace, target: nil, action: nil),
-            UIBarButtonItem(barButtonHiddenItem: .forward, target: self, action: #selector(forwardButtonTapped)),
-            UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil),
-            UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.action, target: self, action: #selector(actionButtonTapped)),
-            UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil),
-            UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.camera, target: self, action: #selector(screenShotButtonTapped))
-        ]
-        items[1].width = 60
-        navigationController?.setToolbarHidden(false, animated: false)
-        setToolbarItems(items, animated: false)
+    }
+
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        setWebViewInsets()
     }
 
     func setWebView() {
-        let config = WKWebViewConfiguration()
-        config.allowsInlineMediaPlayback = true
-        webView = WKWebView(frame: view.frame, configuration: config)
-        webView.navigationDelegate = self
-        webView.allowsLinkPreview = true
         let url = URL(string: "https://www.google.co.jp/")
         let urlRequest = URLRequest(url: url!)
         webView.load(urlRequest)
-        view.addSubview(webView)
-        webView.translatesAutoresizingMaskIntoConstraints = false
-        webView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        webView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        webView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        webView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-    }
-
-    @objc
-    func backButtonTapped() {
-        if webView.canGoBack {
-            webView.goBack()
-        }
-    }
-
-    @objc
-    func forwardButtonTapped() {
-        if webView.canGoForward {
-            webView.goForward()
-        }
-    }
-
-    @objc
-    func actionButtonTapped() {
-        let shareTitle: String = webView!.title!
-        let shareURL: URL = webView!.url!
-        let shareImage: UIImage = view.getScreenShot(windowFrame: view.frame, adFrame: CGRect.zero)
-        let activityVC = UIActivityViewController(activityItems: [shareTitle, shareURL, shareImage], applicationActivities: nil)
-        activityVC.popoverPresentationController?.sourceView = view
-        activityVC.popoverPresentationController?.sourceRect = CGRect(x: view.frame.size.width / 2, y: view.frame.size.height - 44.0, width: 0, height: 0)
-        present(activityVC, animated: true, completion: nil)
-    }
-
-    @objc
-    func screenShotButtonTapped() {
-        let screenShot = view.getScreenShot(windowFrame: view.frame, adFrame: CGRect(x: 0, y: 0, width: 0, height: 0))
-        let alertController = UIAlertController(title: "Save Screen Shot", message: "To save screen shot, tap the save button", preferredStyle: .actionSheet)
-        let actionChoice1 = UIAlertAction(title: "Save", style: .default) { _ in
-            UIImageWriteToSavedPhotosAlbum(screenShot, self, nil, nil)
-            let alert = UIAlertController(title: "Save Completed", message: "", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default))
-            self.present(alert, animated: true, completion: nil)
-            if #available(iOS 10.0, *), let generator = self.feedbackGenerator as? UINotificationFeedbackGenerator {
-                generator.notificationOccurred(.success)
-            }
-        }
-        let actionCancel = UIAlertAction(title: "Cancel", style: .cancel) { _ in }
-        alertController.addAction(actionChoice1)
-        alertController.addAction(actionCancel)
-        alertController.popoverPresentationController?.sourceView = view
-        alertController.popoverPresentationController?.sourceRect = CGRect(x: view.frame.size.width - 36.0, y: view.frame.size.height - 40.0, width: 0, height: 0)
-        present(alertController, animated: true, completion: nil)
     }
 
     deinit {
@@ -119,43 +83,65 @@ class FirstViewController: UIViewController, UINavigationControllerDelegate {
 
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey: Any]?, context: UnsafeMutableRawPointer?) {
         if keyPath == "estimatedProgress" {
-            progressView.alpha = 1.0
-            progressView.setProgress(Float(webView.estimatedProgress), animated: true)
+            navigationBar.progressBar.alpha = 1.0
+            navigationBar.progressBar.setProgress(Float(webView.estimatedProgress), animated: true)
             if webView.estimatedProgress >= 1.0 {
                 UIView.animate(withDuration: 0.9,
                                delay: 0.6,
                                options: [.curveEaseOut],
                                animations: { [weak self] in
-                                self?.progressView.alpha = 0.0
+                                self?.navigationBar.progressBar.alpha = 0.0
                     }, completion: { _ in
-                        self.progressView.setProgress(0.0, animated: false)
+                        self.navigationBar.progressBar.setProgress(0.0, animated: false)
                 })
             }
         }
     }
 
-    private func setupSearchBar() {
-        let searchBar = UISearchBar(frame: (navigationController?.navigationBar.frame)!)
-        searchBar.delegate = self
-        searchBar.placeholder = "Search or enter website name"
-        searchBar.showsCancelButton = false
-        searchBar.autocapitalizationType = .none
-        searchBar.keyboardType = UIKeyboardType.default
-//        searchBar.showsBookmarkButton = true
-//        searchBar.setImage(UIImage(named: "reload_x3.png"), for: .bookmark, state: .normal)
-        navigationItem.titleView = searchBar
-        navigationItem.titleView?.frame = searchBar.frame
-        searchBar.becomeFirstResponder()
-        searchBar.resignFirstResponder()
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        navigationBar.closeSearchBar()
+    }
+
+    @objc
+    private func handleTap(_ sender: UITapGestureRecognizer) {
+        navigationBar.closeSearchBar()
+    }
+
+    private func appearBars() {
+        NSLayoutConstraint.activate(barsAppearConstraints)
+        NSLayoutConstraint.deactivate(barsDisappearConstraints)
+        UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseOut, animations: { self.view.layoutIfNeeded() }, completion: nil)
+       setWebViewInsets()
+    }
+
+    private func disappearBars() {
+        NSLayoutConstraint.activate(barsDisappearConstraints)
+        NSLayoutConstraint.deactivate(barsAppearConstraints)
+        UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseOut, animations: { self.view.layoutIfNeeded() }, completion: nil)
+        setWebViewInsets()
+    }
+
+    private func setWebViewInsets() {
+        webViewEdgeInsets = UIEdgeInsets(top: navigationBar.frame.height - view.safeAreaInsets.top,
+               left: 0,
+               bottom: tabBar.frame.height - view.safeAreaInsets.bottom,
+               right: 0)
+               webView.scrollView.contentInset = webViewEdgeInsets
+               webView.scrollView.scrollIndicatorInsets = webViewEdgeInsets
     }
 }
 
 extension FirstViewController: WKNavigationDelegate, WKUIDelegate {
-    func webView(_ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView? {
+    func webView(_ webView: WKWebView,
+                 createWebViewWith configuration: WKWebViewConfiguration,
+                 for navigationAction: WKNavigationAction,
+                 windowFeatures: WKWindowFeatures) -> WKWebView? {
         if navigationAction.targetFrame == nil {
             webView.load(navigationAction.request)
         }
-        return nil
+        configuration.allowsInlineMediaPlayback = true
+        return WKWebView(frame: webView.frame, configuration: configuration)
     }
 
     func webView(_ webView: WKWebView,
@@ -174,36 +160,105 @@ extension FirstViewController: WKNavigationDelegate, WKUIDelegate {
     }
 }
 
-extension FirstViewController: UISearchBarDelegate {
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        searchBar.resignFirstResponder()
-        let urlRequest = URLRequest(url: webViewModel.checkSearchText(searchText: searchBar.text!))
+extension FirstViewController: UIScrollViewDelegate {
+    func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
+        if scrollView.panGestureRecognizer.translation(in: scrollView.superview).y > 0 {
+            appearBars()
+        } else if scrollView.panGestureRecognizer.translation(in: scrollView.superview).y < 0 {
+            disappearBars()
+        }
+    }
+
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView.panGestureRecognizer.translation(in: scrollView.superview).y < 0 {
+            disappearBars()
+        }
+    }
+}
+
+extension FirstViewController: TBTabBarViewDelegate {
+    func tabBarLeftButtonPressed() {
+        if webView.canGoBack {
+            webView.goBack()
+        }
+    }
+
+    func tabBarRightButtonPressed() {
+        if webView.canGoForward {
+            webView.goForward()
+        }
+    }
+
+    func tabBarDownButtonPressed() {
+        let shareTitle: String = webView!.title!
+        let shareURL: URL = webView!.url!
+        let shareImage: UIImage = view.getScreenShot(windowFrame: view.frame, adFrame: CGRect.zero)
+        let activityVC = UIActivityViewController(activityItems: [shareTitle, shareURL, shareImage], applicationActivities: nil)
+        activityVC.popoverPresentationController?.sourceView = view
+        activityVC.popoverPresentationController?.sourceRect = CGRect(x: view.frame.size.width / 2,
+                                                                      y: view.frame.size.height - 44.0,
+                                                                      width: 0,
+                                                                      height: 0)
+        present(activityVC, animated: true, completion: nil)
+    }
+
+    func tabBarCameraButtonPressed() {
+        let screenShot = view.getScreenShot(windowFrame: view.frame, adFrame: CGRect(x: 0, y: 0, width: 0, height: 0))
+        let alertController = UIAlertController(title: "Save Screen Shot",
+                                                message: "To save screen shot, tap the save button",
+                                                preferredStyle: .actionSheet)
+        let actionChoice1 = UIAlertAction(title: "Save", style: .default) { _ in
+            UIImageWriteToSavedPhotosAlbum(screenShot, self, nil, nil)
+            let alert = UIAlertController(title: "Save Completed", message: "", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default))
+            self.present(alert, animated: true, completion: nil)
+            if #available(iOS 10.0, *), let generator = self.feedbackGenerator as? UINotificationFeedbackGenerator {
+                generator.notificationOccurred(.success)
+            }
+        }
+        let actionCancel = UIAlertAction(title: "Cancel", style: .cancel) { _ in }
+        alertController.addAction(actionChoice1)
+        alertController.addAction(actionCancel)
+        alertController.popoverPresentationController?.sourceView = view
+        alertController.popoverPresentationController?.sourceRect = CGRect(x: view.frame.size.width - 36.0, y: view.frame.size.height - 40.0, width: 0, height: 0)
+        present(alertController, animated: true, completion: nil)
+    }
+}
+
+extension FirstViewController: TBNavigationBarDelegate {
+    func searchBarShouldReturn() {
+        navigationBar.searchBar.resignFirstResponder()
+        let urlRequest = URLRequest(url: webViewModel.checkSearchText(searchText: self.navigationBar.searchBar.text ?? ""))
         webView.load(urlRequest)
     }
-}
 
-extension UIBarButtonItem {
-    enum HiddenItem: Int {
-        case arrow = 100
-        case back = 101
-        case forward = 102
-        case up = 103
-        case down = 104
+    func swipeAreaSwiped() {
     }
 
-    convenience init(barButtonHiddenItem: HiddenItem, target: AnyObject?, action: Selector?) {
-        let systemItem = UIBarButtonItem.SystemItem(rawValue: barButtonHiddenItem.rawValue)
-        self.init(barButtonSystemItem: systemItem!, target: target, action: action)
+    func plusButtonPressed() {
+    }
+
+    func panMenu(pointY: CGFloat) {
+        if navigationBarBottomConstraint.constant <= -64 {
+            navigationBarBottomConstraint.constant += pointY
+        } else {
+            navigationBarBottomConstraint.constant = -64
+        }
+        print(navigationBarBottomConstraint.constant)
+    }
+
+    func finishPanMenu() {
+        if navigationBarBottomConstraint.constant <= -200 {
+            navigationBarBottomConstraint.constant = -300
+        } else {
+            navigationBarBottomConstraint.constant = -64
+        }
+        UIView.animate(withDuration: 0.4, delay: 0, options: .curveEaseOut, animations: {self.view.layoutIfNeeded()}, completion: nil)
     }
 }
 
-extension UIView {
-    func getScreenShot(windowFrame: CGRect, adFrame: CGRect) -> UIImage {
-        UIGraphicsBeginImageContextWithOptions(windowFrame.size, false, 0.0)
-        let context: CGContext = UIGraphicsGetCurrentContext()!
-        layer.render(in: context)
-        let capturedImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
-        UIGraphicsEndImageContext()
-        return capturedImage
+extension FirstViewController: UIGestureRecognizerDelegate {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
     }
 }

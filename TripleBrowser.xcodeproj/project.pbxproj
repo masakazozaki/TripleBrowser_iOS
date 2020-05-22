@@ -19,6 +19,13 @@
 		E73B7F732083047F0071851A /* TripleBrowserUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73B7F722083047F0071851A /* TripleBrowserUITests.swift */; };
 		E761DB9A208B2F510055D5C2 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E761DB99208B2F510055D5C2 /* FirstViewController.swift */; };
 		E77BD93821A0224D00F02C3D /* WKWebViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77BD93721A0224D00F02C3D /* WKWebViewModel.swift */; };
+		E79CDAD9231E3E18009CA874 /* TBTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79CDAD8231E3E18009CA874 /* TBTabBarView.swift */; };
+		E79CDADB231E3E26009CA874 /* TBTabBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E79CDADA231E3E26009CA874 /* TBTabBarView.xib */; };
+		E7B2F39723389B2A0066728F /* UIScrollVeiw+TouchesBegan.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B2F39623389B2A0066728F /* UIScrollVeiw+TouchesBegan.swift */; };
+		E7B2F39923389D3F0066728F /* UIView+GetScreenShot.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B2F39823389D3F0066728F /* UIView+GetScreenShot.swift */; };
+		E7B8D9F0231F6ACF00DA7B0A /* TBNavigationBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7B8D9EF231F6ACF00DA7B0A /* TBNavigationBarView.xib */; };
+		E7B8D9F2231F6AE200DA7B0A /* TBNavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B8D9F1231F6AE200DA7B0A /* TBNavigationBarView.swift */; };
+		E7E638C42366E0060033F731 /* UIView+RoundCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E638C32366E0060033F731 /* UIView+RoundCorner.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +69,13 @@
 		E73B7F742083047F0071851A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E761DB99208B2F510055D5C2 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		E77BD93721A0224D00F02C3D /* WKWebViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKWebViewModel.swift; sourceTree = "<group>"; };
+		E79CDAD8231E3E18009CA874 /* TBTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBTabBarView.swift; sourceTree = "<group>"; };
+		E79CDADA231E3E26009CA874 /* TBTabBarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TBTabBarView.xib; sourceTree = "<group>"; };
+		E7B2F39623389B2A0066728F /* UIScrollVeiw+TouchesBegan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollVeiw+TouchesBegan.swift"; sourceTree = "<group>"; };
+		E7B2F39823389D3F0066728F /* UIView+GetScreenShot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+GetScreenShot.swift"; sourceTree = "<group>"; };
+		E7B8D9EF231F6ACF00DA7B0A /* TBNavigationBarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TBNavigationBarView.xib; sourceTree = "<group>"; };
+		E7B8D9F1231F6AE200DA7B0A /* TBNavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBNavigationBarView.swift; sourceTree = "<group>"; };
+		E7E638C32366E0060033F731 /* UIView+RoundCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+RoundCorner.swift"; sourceTree = "<group>"; };
 		FE62954220A1FEA805FDEC1D /* Pods-TripleBrowser.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TripleBrowser.release.xcconfig"; path = "Target Support Files/Pods-TripleBrowser/Pods-TripleBrowser.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -141,6 +155,9 @@
 		E73B7F512083047E0071851A /* TripleBrowser */ = {
 			isa = PBXGroup;
 			children = (
+				E7B2F39523389B010066728F /* Extensions */,
+				E7E10637232210E80092CDB8 /* TBNavigationBarView */,
+				E7B8D9EE231F6A5600DA7B0A /* TBTabBarView */,
 				E73B7F522083047E0071851A /* AppDelegate.swift */,
 				E73B7F562083047E0071851A /* Main.storyboard */,
 				E761DB99208B2F510055D5C2 /* FirstViewController.swift */,
@@ -169,6 +186,34 @@
 				E73B7F742083047F0071851A /* Info.plist */,
 			);
 			path = TripleBrowserUITests;
+			sourceTree = "<group>";
+		};
+		E7B2F39523389B010066728F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E7E638C32366E0060033F731 /* UIView+RoundCorner.swift */,
+				E7B2F39623389B2A0066728F /* UIScrollVeiw+TouchesBegan.swift */,
+				E7B2F39823389D3F0066728F /* UIView+GetScreenShot.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E7B8D9EE231F6A5600DA7B0A /* TBTabBarView */ = {
+			isa = PBXGroup;
+			children = (
+				E79CDAD8231E3E18009CA874 /* TBTabBarView.swift */,
+				E79CDADA231E3E26009CA874 /* TBTabBarView.xib */,
+			);
+			path = TBTabBarView;
+			sourceTree = "<group>";
+		};
+		E7E10637232210E80092CDB8 /* TBNavigationBarView */ = {
+			isa = PBXGroup;
+			children = (
+				E7B8D9EF231F6ACF00DA7B0A /* TBNavigationBarView.xib */,
+				E7B8D9F1231F6AE200DA7B0A /* TBNavigationBarView.swift */,
+			);
+			path = TBNavigationBarView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,7 +288,7 @@
 				TargetAttributes = {
 					E73B7F4E2083047E0071851A = {
 						CreatedOnToolsVersion = 9.3;
-						LastSwiftMigration = 1010;
+						LastSwiftMigration = 1030;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 0;
@@ -252,12 +297,12 @@
 					};
 					E73B7F622083047F0071851A = {
 						CreatedOnToolsVersion = 9.3;
-						LastSwiftMigration = 1010;
+						LastSwiftMigration = 1030;
 						TestTargetID = E73B7F4E2083047E0071851A;
 					};
 					E73B7F6D2083047F0071851A = {
 						CreatedOnToolsVersion = 9.3;
-						LastSwiftMigration = 1010;
+						LastSwiftMigration = 1030;
 						TestTargetID = E73B7F4E2083047E0071851A;
 					};
 				};
@@ -287,9 +332,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E79CDADB231E3E26009CA874 /* TBTabBarView.xib in Resources */,
 				E73B7F5D2083047F0071851A /* LaunchScreen.storyboard in Resources */,
 				E73B7F5A2083047F0071851A /* Assets.xcassets in Resources */,
 				E73B7F582083047E0071851A /* Main.storyboard in Resources */,
+				E7B8D9F0231F6ACF00DA7B0A /* TBNavigationBarView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,7 +403,7 @@
 		};
 		E78F664C22B932560024A9D4 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			files = (
 			);
 			inputFileListPaths = (
@@ -369,7 +416,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n#if which \"${PODS_ROOT}/SwiftLint/swiftlint\" >/dev/null; then\n#${PODS_ROOT}/SwiftLint/swiftlint\n#else\n#echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\n#fi\n\n\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
 		};
 		E9B9F08A115D4BA6FE464AEE /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -400,10 +447,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7B8D9F2231F6AE200DA7B0A /* TBNavigationBarView.swift in Sources */,
 				BADADC7821782B5600525596 /* InitialViewController.swift in Sources */,
+				E7B2F39723389B2A0066728F /* UIScrollVeiw+TouchesBegan.swift in Sources */,
+				E7E638C42366E0060033F731 /* UIView+RoundCorner.swift in Sources */,
 				E761DB9A208B2F510055D5C2 /* FirstViewController.swift in Sources */,
+				E79CDAD9231E3E18009CA874 /* TBTabBarView.swift in Sources */,
 				E73B7F532083047E0071851A /* AppDelegate.swift in Sources */,
 				E77BD93821A0224D00F02C3D /* WKWebViewModel.swift in Sources */,
+				E7B2F39923389D3F0066728F /* UIView+GetScreenShot.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -589,7 +641,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.masakazozaki.TripleBrowser-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -611,7 +663,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.masakazozaki.TripleBrowser-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -632,7 +684,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.masakazozaki.TripleBrowserTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TripleBrowser.app/TripleBrowser";
 			};
@@ -654,7 +706,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.masakazozaki.TripleBrowserTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TripleBrowser.app/TripleBrowser";
 			};
@@ -675,7 +727,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.masakazozaki.TripleBrowserUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = TripleBrowser;
 			};
@@ -696,7 +748,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.masakazozaki.TripleBrowserUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = TripleBrowser;
 			};
