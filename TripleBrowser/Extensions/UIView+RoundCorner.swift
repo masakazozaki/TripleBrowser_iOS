@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 extension UIView {
+    /// makeing circle corner
     open func roundCorner() {
         layer.cornerRadius = frame.height / 2
     }

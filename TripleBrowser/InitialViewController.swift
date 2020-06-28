@@ -17,12 +17,15 @@ class InitialViewController: UIViewController {
 		switch segue.identifier {
 		case "page1":
             themeColor = UIColor(named: "TBSystemBlue") ?? .blue
+
 		case "page2":
             themeColor = UIColor(named: "TBSystemPink") ?? .red
+
 		case "page3":
             themeColor = UIColor(named: "TBSystemGreen") ?? .green
-		default:
-			return
+
+        default:
+            return
 		}
         let destination = segue.destination as? FirstViewController
         destination?.themeColor = themeColor

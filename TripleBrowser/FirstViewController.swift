@@ -69,6 +69,7 @@ class FirstViewController: UIViewController {
 
     func setWebView() {
         let url = URL(string: "https://www.google.co.jp/")
+        // swiftlint:disable:next force_unwrapping
         let urlRequest = URLRequest(url: url!)
         webView.load(urlRequest)
     }
@@ -110,12 +111,13 @@ class FirstViewController: UIViewController {
     }
 
     private func setWebViewInsets() {
-        webViewEdgeInsets = UIEdgeInsets(top: navigationBar.frame.height - view.safeAreaInsets.top,
-               left: 0,
-               bottom: tabBar.frame.height - view.safeAreaInsets.bottom,
-               right: 0)
-               webView.scrollView.contentInset = webViewEdgeInsets
-               webView.scrollView.scrollIndicatorInsets = webViewEdgeInsets
+        webViewEdgeInsets = UIEdgeInsets(
+            top: navigationBar.frame.height - view.safeAreaInsets.top,
+            left: 0,
+            bottom: tabBar.frame.height - view.safeAreaInsets.bottom,
+            right: 0)
+        webView.scrollView.contentInset = webViewEdgeInsets
+        webView.scrollView.scrollIndicatorInsets = webViewEdgeInsets
     }
 }
 
@@ -177,8 +179,9 @@ extension FirstViewController: TBTabBarViewDelegate {
     }
 
     func tabBarDownButtonPressed() {
-        let shareTitle: String = webView!.title!
-        let shareURL: URL = webView!.url!
+        guard let shareTitle: String = webView?.title, let shareURL: URL = webView?.url else {
+            return
+        }
         let shareImage: UIImage = view.getScreenShot(windowFrame: view.frame, adFrame: CGRect.zero)
         let activityVC = UIActivityViewController(activityItems: [shareTitle, shareURL, shareImage], applicationActivities: nil)
         activityVC.popoverPresentationController?.sourceView = view
