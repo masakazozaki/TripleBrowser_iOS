@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol TBTabBarViewDelegate: class {
+protocol TBTabBarViewDelegate: AnyObject {
     func tabBarLeftButtonPressed()
     func tabBarRightButtonPressed()
     func tabBarDownButtonPressed()
@@ -63,29 +63,30 @@ class TBTabBarView: UIView {
     }
 
     func instatinateFromNib() {
-        view = Bundle(for: type(of: self)).loadNibNamed("TBTabBarView", owner: self, options: nil)!.first as? UIView
+        view = Bundle(for: type(of: self)).loadNibNamed("TBTabBarView", owner: self, options: nil)?.first as? UIView
+        //swiftlint:disable:next force_unwrapping
         addSubview(view!)
         NSLayoutConstraint.activate([
-            view!.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
-            view!.leadingAnchor.constraint(equalTo: leadingAnchor),
-            view!.trailingAnchor.constraint(equalTo: trailingAnchor),
-            view!.bottomAnchor.constraint(equalTo: bottomAnchor)
+            view.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+            view.leadingAnchor.constraint(equalTo: leadingAnchor),
+            view.trailingAnchor.constraint(equalTo: trailingAnchor),
+            view.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }
 
-    @IBAction func leftArrowButtonPressed() {
+    @IBAction private func leftArrowButtonPressed() {
         delegate?.tabBarLeftButtonPressed()
     }
 
-    @IBAction func rightArrowButtonPressed() {
+    @IBAction private func rightArrowButtonPressed() {
         delegate?.tabBarRightButtonPressed()
     }
 
-    @IBAction func downArrowButtonPressed() {
+    @IBAction private func downArrowButtonPressed() {
         delegate?.tabBarDownButtonPressed()
     }
 
-    @IBAction func cameraButtonPressed() {
+    @IBAction private func cameraButtonPressed() {
         delegate?.tabBarCameraButtonPressed()
     }
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol TBNavigationBarDelegate: class {
+protocol TBNavigationBarDelegate: AnyObject {
     func searchBarShouldReturn()
 }
 
@@ -35,7 +35,7 @@ class TBNavigationBarView: UIView {
             searchBar.leftViewMode = .unlessEditing
         }
     }
-    
+
     @IBOutlet private weak var searchBarbackgroundView: UIView! {
         didSet {
             searchBarbackgroundView.roundCorner()
@@ -62,14 +62,15 @@ class TBNavigationBarView: UIView {
     }
 
     func instatinateFromNib() {
-        view = Bundle(for: type(of: self)).loadNibNamed("TBNavigationBarView", owner: self, options: nil)!.first as? UIView
+        view = Bundle(for: type(of: self)).loadNibNamed("TBNavigationBarView", owner: self, options: nil)?.first as? UIView
+        // swiftlint:disable:next force_unwrapping
         addSubview(view!)
         NSLayoutConstraint.activate([
-            view!.topAnchor.constraint(equalTo: topAnchor),
-            view!.leadingAnchor.constraint(equalTo: leadingAnchor),
-            view!.trailingAnchor.constraint(equalTo: trailingAnchor),
-            view!.bottomAnchor.constraint(equalTo: bottomAnchor)
-            ])
+            view.topAnchor.constraint(equalTo: topAnchor),
+            view.leadingAnchor.constraint(equalTo: leadingAnchor),
+            view.trailingAnchor.constraint(equalTo: trailingAnchor),
+            view.bottomAnchor.constraint(equalTo: bottomAnchor)
+        ])
         searchBar.delegate = self
     }
 }
