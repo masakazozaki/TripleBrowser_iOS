@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TBTabBarView" customModule="TripleBrowser" customModuleProvider="target">
+            <connections>
+                <outlet property="backgroundView" destination="Fve-J7-H9l" id="cme-5d-NuM"/>
+                <outlet property="cameraButon" destination="ZXp-sz-56J" id="VZZ-pV-FVF"/>
+                <outlet property="downArrowButon" destination="oYd-oO-tv7" id="1gP-6M-Wu5"/>
+                <outlet property="leftArrowButon" destination="eTY-uI-l4U" id="xuw-ZA-GuV"/>
+                <outlet property="rightArrowButon" destination="uPe-9R-BOE" id="USF-iH-YIM"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="83"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fve-J7-H9l">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="83"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uPe-9R-BOE">
+                            <rect key="frame" x="103" y="14" width="30" height="52"/>
+                            <state key="normal" image="rightArrow"/>
+                            <connections>
+                                <action selector="rightArrowButtonPressed" destination="-1" eventType="touchUpInside" id="Rj0-Z5-6jq"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oYd-oO-tv7">
+                            <rect key="frame" x="188" y="14" width="38" height="56"/>
+                            <state key="normal" image="downArrow"/>
+                            <connections>
+                                <action selector="downArrowButtonPressed" destination="-1" eventType="touchUpInside" id="GmK-gX-PVk"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZXp-sz-56J">
+                            <rect key="frame" x="308" y="14" width="76" height="54"/>
+                            <state key="normal" image="camera"/>
+                            <connections>
+                                <action selector="cameraButtonPressed" destination="-1" eventType="touchUpInside" id="UHb-Um-oj5"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eTY-uI-l4U">
+                            <rect key="frame" x="30" y="14" width="30" height="54"/>
+                            <state key="normal" image="leftArrow"/>
+                            <connections>
+                                <action selector="leftArrowButtonPressed" destination="-1" eventType="touchUpInside" id="Js4-BW-EDf"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="oYd-oO-tv7" firstAttribute="centerX" secondItem="Fve-J7-H9l" secondAttribute="centerX" id="DeM-Zh-Huv"/>
+                        <constraint firstAttribute="trailing" secondItem="ZXp-sz-56J" secondAttribute="trailing" constant="30" id="PXV-w5-tDk"/>
+                        <constraint firstItem="uPe-9R-BOE" firstAttribute="top" secondItem="Fve-J7-H9l" secondAttribute="top" constant="14" id="S3q-Pb-GDL"/>
+                        <constraint firstItem="eTY-uI-l4U" firstAttribute="top" secondItem="Fve-J7-H9l" secondAttribute="top" constant="14" id="Syp-IC-pBQ"/>
+                        <constraint firstItem="oYd-oO-tv7" firstAttribute="top" secondItem="Fve-J7-H9l" secondAttribute="top" constant="14" id="Yqf-bV-NYx"/>
+                        <constraint firstItem="ZXp-sz-56J" firstAttribute="top" secondItem="Fve-J7-H9l" secondAttribute="top" constant="14" id="YyV-dK-hrq"/>
+                        <constraint firstItem="eTY-uI-l4U" firstAttribute="leading" secondItem="Fve-J7-H9l" secondAttribute="leading" constant="30" id="nNG-Xz-EQh"/>
+                        <constraint firstItem="uPe-9R-BOE" firstAttribute="leading" secondItem="eTY-uI-l4U" secondAttribute="trailing" constant="43" id="rjq-w0-90y"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" name="TBSystemLightBackground"/>
+            <constraints>
+                <constraint firstItem="Fve-J7-H9l" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="50c-jK-xH0"/>
+                <constraint firstItem="Fve-J7-H9l" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="7Dg-yb-Zcr"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Fve-J7-H9l" secondAttribute="trailing" id="QcN-CB-TNV"/>
+                <constraint firstAttribute="bottom" secondItem="Fve-J7-H9l" secondAttribute="bottom" id="VhZ-31-2QG"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="34.782608695652179" y="34.486607142857139"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="camera" width="38" height="27"/>
+        <image name="downArrow" width="19" height="28"/>
+        <image name="leftArrow" width="15" height="27"/>
+        <image name="rightArrow" width="15" height="26"/>
+        <namedColor name="TBSystemLightBackground">
+            <color red="0.99607843137254903" green="0.99607843137254903" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
